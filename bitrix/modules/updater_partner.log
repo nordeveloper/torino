@@ -1,0 +1,22 @@
+2014-12-29 00:04:56 -  - exec CUpdateClientPartner::SearchModulesEx
+2014-12-29 00:04:56 -  - exec CUpdateClientPartner::__CollectRequestData
+2014-12-29 00:04:56 -  - utf=Y&lang=ru&stable=Y&CANGZIP=Y&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=192.168.126.129&LICENSE_KEY=X&SUPD_STS=1&SUPD_URS=0&SUPD_URSA=1&TYPENC=D&CLIENT_PHPVER=5.3.3&dbv=5.1.73&instm=main%2C14.5.0%2CY%3Bbitrix.eshop%2C14.5.0%2CN%3Bbitrix.sitecorporate%2C14.5.0%2CN%3Bbitrixcloud%2C14.0.4%2CN%3Bblog%2C14.5.0%2CN%3Bcatalog%2C14.5.3%2CN%3Bclouds%2C14.5.0%2CN%3Bcompression%2C14.0.0%2CN%3Bcurrency%2C14.0.0%2CN%3Beshopapp%2C14.0.0%2CN%3Bfileman%2C14.5.0%2CN%3Bform%2C14.0.1%2CN%3Bforum%2C14.5.1%2CN%3Bhighloadblock%2C14.0.6%2CN%3Biblock%2C14.5.0%2CN%3Bmobileapp%2C14.0.3%2CN%3Bperfmon%2C14.0.1%2CN%3Bphotogallery%2C14.5.1%2CN%3Bpull%2C14.1.6%2CN%3Breport%2C14.1.1%2CN%3Bsale%2C14.5.2%2CN%3Bscale%2C14.5.0%2CN%3Bsearch%2C14.5.0%2CN%3Bsecurity%2C14.5.0%2CN%3Bseo%2C14.5.0%2CN%3Bsocialservices%2C14.0.4%2CN%3Bsubscribe%2C14.5.0%2CN%3Bvote%2C14.0.2%2CN&search_module_id=&search_module=&search_category=7%2C14&search_type=&search_order=DESC&search_order_by=SORT&search_page=1
+2014-12-29 00:04:56 -  - exec CUpdateClientPartner::GetHTTPPage
+2014-12-29 00:04:58 -  - TIME SearchModulesEx(request) 2.423 sec
+2014-12-29 00:04:58 -  - exec CUpdateClientPartner::ParseServerData
+2014-12-29 00:07:06 -  - exec CUpdateClientPartner::SearchModulesEx
+2014-12-29 00:07:06 -  - exec CUpdateClientPartner::__CollectRequestData
+2014-12-29 00:07:06 -  - utf=Y&lang=ru&stable=Y&CANGZIP=Y&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=192.168.126.129&LICENSE_KEY=X&SUPD_STS=1&SUPD_URS=0&SUPD_URSA=1&TYPENC=D&CLIENT_PHPVER=5.3.3&dbv=5.1.73&instm=main%2C14.5.0%2CY%3Bbitrix.eshop%2C14.5.0%2CN%3Bbitrix.sitecorporate%2C14.5.0%2CN%3Bbitrixcloud%2C14.0.4%2CN%3Bblog%2C14.5.0%2CN%3Bcatalog%2C14.5.3%2CN%3Bclouds%2C14.5.0%2CN%3Bcompression%2C14.0.0%2CN%3Bcurrency%2C14.0.0%2CN%3Beshopapp%2C14.0.0%2CN%3Bfileman%2C14.5.0%2CN%3Bform%2C14.0.1%2CN%3Bforum%2C14.5.1%2CN%3Bhighloadblock%2C14.0.6%2CN%3Biblock%2C14.5.0%2CN%3Bmobileapp%2C14.0.3%2CN%3Bperfmon%2C14.0.1%2CN%3Bphotogallery%2C14.5.1%2CN%3Bpull%2C14.1.6%2CN%3Breport%2C14.1.1%2CN%3Bsale%2C14.5.2%2CN%3Bscale%2C14.5.0%2CN%3Bsearch%2C14.5.0%2CN%3Bsecurity%2C14.5.0%2CN%3Bseo%2C14.5.0%2CN%3Bsocialservices%2C14.0.4%2CN%3Bsubscribe%2C14.5.0%2CN%3Bvote%2C14.0.2%2CN&search_module_id=&search_module=&search_category=7%2C14&search_type=&search_order=DESC&search_order_by=SORT&search_page=1
+2014-12-29 00:07:06 -  - exec CUpdateClientPartner::GetHTTPPage
+2014-12-29 00:07:08 -  - TIME SearchModulesEx(request) 1.634 sec
+2014-12-29 00:07:08 -  - exec CUpdateClientPartner::ParseServerData
+2014-12-29 00:07:14 -  - exec CUpdateClientPartner::LoadModuleNoDemand
+2014-12-29 00:07:14 -  - exec CUpdateClientPartner::__CollectRequestData
+2014-12-29 00:07:14 -  - utf=Y&lang=ru&stable=Y&CANGZIP=Y&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=192.168.126.129&LICENSE_KEY=X&SUPD_STS=1&SUPD_URS=0&SUPD_URSA=1&TYPENC=D&CLIENT_PHPVER=5.3.3&dbv=5.1.73&instm=main%2C14.5.0%2CY%3Bbitrix.eshop%2C14.5.0%2CN%3Bbitrix.sitecorporate%2C14.5.0%2CN%3Bbitrixcloud%2C14.0.4%2CN%3Bblog%2C14.5.0%2CN%3Bcatalog%2C14.5.3%2CN%3Bclouds%2C14.5.0%2CN%3Bcompression%2C14.0.0%2CN%3Bcurrency%2C14.0.0%2CN%3Beshopapp%2C14.0.0%2CN%3Bfileman%2C14.5.0%2CN%3Bform%2C14.0.1%2CN%3Bforum%2C14.5.1%2CN%3Bhighloadblock%2C14.0.6%2CN%3Biblock%2C14.5.0%2CN%3Bmobileapp%2C14.0.3%2CN%3Bperfmon%2C14.0.1%2CN%3Bphotogallery%2C14.5.1%2CN%3Bpull%2C14.1.6%2CN%3Breport%2C14.1.1%2CN%3Bsale%2C14.5.2%2CN%3Bscale%2C14.5.0%2CN%3Bsearch%2C14.5.0%2CN%3Bsecurity%2C14.5.0%2CN%3Bseo%2C14.5.0%2CN%3Bsocialservices%2C14.0.4%2CN%3Bsubscribe%2C14.5.0%2CN%3Bvote%2C14.0.2%2CN&reqm=nsandrey.emptyinstall&lim=Y
+2014-12-29 00:07:14 -  - exec CUpdateClientPartner::GetHTTPPage
+2014-12-29 00:07:15 -  - TIME LoadModuleNoDemand(request) 0.827 sec
+2014-12-29 00:07:15 -  - exec CUpdateClientPartner::UnGzipArchive
+2014-12-29 00:07:15 -  - TIME UnGzipArchive 0.17 sec
+2014-12-29 00:07:15 -  - exec CUpdateClientPartner::GetStepUpdateInfo
+2014-12-29 00:07:15 -  - exec CUpdateClientPartner::ParseServerData
+2014-12-29 00:07:15 -  - TIME UpdateStepModules 0.266 sec

@@ -1,0 +1,54 @@
+.profile-block-hidden
+{
+	display: none;
+}
+
+.profile-block-shown
+{
+	display:block;
+}
+
+.profile-table
+{
+	width: 100%;
+}
+
+.profile-link
+{
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-weight: bold;
+}
+
+.profile-table td {
+	vertical-align: top;
+	width:50%;
+}
+
+div.bx-auth-profile input.bx-auth-input {vertical-align:middle;}
+div.bx-auth-profile span.bx-auth-secure {background-color:#FFFAE3; border:1px solid #DEDBC8; padding:2px; display:inline-block; vertical-align:middle;}
+div.bx-auth-profile div.bx-auth-secure-icon {background-image:url(images/sec.png); background-repeat:no-repeat; background-position:center; width:19px; height:18px;}
+div.bx-auth-profile div.bx-auth-secure-unlock {background-image:url(images/sec-unlocked.png);}
+
+
+div.profile-user-div-link { width:100%; }
+div.profile-user-div-link a {
+    font-family:'PT Sans Narrow', Tahoma, Helvetica, Verdana !important;
+    font-size: 16pt; color:#353535;
+}
+div.profile-user-div-link a:hover{
+    color:#13b1e3;
+}
+
+.profile-user-div-link {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+table.profile-table  tbody tr td select,
+table.profile-table  tbody tr td input[type|="text"],
+table.profile-table  tbody tr td input[type|="password"]{
+    width: 100% !important;
+}

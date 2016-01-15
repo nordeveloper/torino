@@ -1,0 +1,504 @@
+@charset "utf-8";
+/* CSS exts */
+@import url('reset.css');
+/* GoogleFonts */
+/*@import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow:700&subset=latin,cyrillic);*/
+@import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&subset=latin,cyrillic);
+
+/*common*/
+
+
+a, p
+{ font-family:Helvetica, Tahoma, Verdana; }
+h1, h2, h3, h4
+{ font-family:'PT Sans Narrow', Tahoma, Helvetica, Verdana; }
+
+a, a:hover, a:visited
+{ text-decoration:none; }
+
+
+body
+{ /*background-color:#e6f1e4; background-image: url('../img/annd_01.jpg'); background-repeat:repeat-x; background-position:top;*//*#f0f4f8*/ }
+body, html
+{ min-height: 100%;}
+div.clearboth
+{ clear:both; }
+div.fullwidth
+{ width:100%; min-width:1020px; clear:both; }
+div.centered div
+{ float:left; }
+div.centered
+{ width:1020px; margin:auto; }
+/*common*/
+
+
+
+
+/* main block*/
+#mnbl
+{ padding-top:20px; }
+
+#mainblock
+{
+        width:1020px;
+        position:relative; min-height:500px;
+        padding:1em; padding-bottom:35px;
+        margin:0em 10px 2em; /*margin:0em 10px 4em;*/
+        background:#f1f1f2;
+        border-radius:15px;  -moz-border-radius:15px;
+    -webkit-box-shadow:0 4px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow:0 4px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+            box-shadow:0 4px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+        
+}
+#mainblock:before,
+#mainblock:after {
+        content:"";
+        position:absolute;
+        z-index:-2;
+        bottom:15px;
+        left:10px;
+        min-height:20%;
+        max-width:300px;
+    -webkit-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+       -moz-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+            box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+    -webkit-transform:rotate(-3deg);
+       -moz-transform:rotate(-3deg);
+        -ms-transform:rotate(-3deg);
+         -o-transform:rotate(-3deg);
+            transform:rotate(-3deg);
+}
+ 
+#mainblock:after {
+    right:10px;
+    left:auto;
+    -webkit-transform:rotate(3deg);
+       -moz-transform:rotate(3deg);
+        -ms-transform:rotate(3deg);
+         -o-transform:rotate(3deg);
+            transform:rotate(3deg);
+}
+
+/* main block*/
+
+
+
+html,body
+{ width:100%; height:100%; }
+#contain-all
+{ width:100%; min-height:100%; }
+#afooter
+{ height:50px; }
+
+/* footer */ 
+
+#footer
+{ background:#dfecfd; height:50px; margin-top:-50px; }
+#foot
+{ border-top:1px solid #c7c7b0; height:49px; }
+#bottommenu
+{ margin-left:30px; }
+/* footer */ 
+
+
+/* hat */ 
+#hatback
+{ background-color:#f2ca30;  }
+#hatback, #hat
+{ height:200px; }
+
+#hlogo
+{ height:138px; width:417px;
+  background: url('images/torin_03.png') no-repeat; cursor:pointer; 
+  margin:30px 170px 32px 0px;
+}
+
+#htels
+{
+  height:189px; width:396px;
+}
+
+#htels-inn
+{
+    height:30px; width:396px;
+    margin:15px 0px 5px 0px;
+}
+#htels-inn span{
+    float:right;
+    font-family:"PT Sans Narrow";
+    font-size:1.2em; color:#454545;
+    font-weight:bold;
+}
+#htels-inn span.signin{
+    margin:0px 0px 0px 25px;
+    cursor: pointer;
+}
+#htels-inn span.signin:hover{
+    text-decoration: underline;
+    color: #0d7db4;
+}
+#htels-tels {
+    height:119px; width:396px;
+    background: url('images/torin_06.png') no-repeat;
+    margin:0px 0px 5px 0px;
+}
+/* hat */
+
+#buycart{
+    height:24px; width:24px;
+    background: url('images/cartsmall.png') no-repeat;
+    margin-top: -3px; margin-right:7px;
+}
+
+/* main menu*/
+#mmenu
+{ background-color:#c20016; }
+#mmenu, #mmenu div
+{   height:56px;    }
+
+
+h2.mmenuitem
+{
+    padding:9px 30px 0px 30px;
+}
+h2.mmenuitem a
+{   font-size:2em; color:#fafafa;
+    font-family:PT Sans Narrow;
+}
+h2.mmenuitem a:hover
+{ color:#edd5d8; }
+h2.mmround
+{
+    font-size:3em; color:#9c0043;
+    font-family:PT Sans Narrow;
+    padding:0;
+}
+
+/* main menu*/
+/* main slider */
+#sldr
+{    background:url("images/torin_10.jpg") no-repeat scroll center center #151206;/*#3f3a32;*/  }
+#sldr, #sldrcntnr
+{ height:312px;}
+#sldrcntnr
+{  
+   width:1280px; margin:auto; }
+#sldr, #hatback, #mmenu, #yellowtop, #yellowfoot, #pizzabottom
+{min-width:1280px;}
+
+
+/* main slider */
+
+
+#centralblock{
+    /*background-color:#fafafa; min-height:84px;*/
+    /*min-height:900px;*/
+}
+#carousels
+{height:84px;width:1135px;}
+#pizzalist
+{width:300px; height: 100px;}
+/*#pizzacarousel, #sushicarousel
+{}*/
+
+.carousl-block
+{width:100%;}
+
+.halfblock
+{width:50%;height:74px;}
+.halfblock h2, .halfblock h3, .halfblock a
+{font-family:'PT Sans Narrow', Tahoma, Helvetica, Verdana;   color:#101811;}
+.halfblock a:hover
+{color:#0d7db4;/*#7b7f80;*/
+ text-decoration:underline; }
+.halfblock h2
+{margin: 40px 0 0 65px;font-size:36pt;}
+.halfblock h3
+{margin: 60px 70px 0 0;font-size:16pt;text-align:right;}
+
+
+#pizzaz
+{ /*border-bottom:1px solid #bfbfbf;*/ }
+
+#pizzaz, #sushi
+{/*padding:0 0 0 95px;*/width:1135px;}
+
+#yellowtop
+{ margin-top:75px;
+  height:47px; background: url('images/torr_40.png') repeat-x; 
+}
+
+#yellowfoot
+{ min-height:150px; background-color:#ffcb03; }
+
+#footcntnt
+{height:150px;}
+#commoninfo
+{ height:120px;width:310px;padding:15px 0 0 0;}
+
+#btmlogo
+{margin: 0 0 0 152px;height:109px;width:97px;background: url('images/torin_41.png') }
+#commoninfo p
+{font-size:11pt; font-family:'PT Sans Narrow', Tahoma, Helvetica, Verdana;}
+
+#socbuttons
+{margin:42px 0 0 165px;}
+#socbuttons a.socbutton
+{float:left;}
+.socbutton
+{display:block;}
+#gplus
+{background: url('images/torin_44.png');height:46px;width:46px;}
+#gplus:hover
+{background: url('images/torin_44a.png');}
+#instagram
+{background: url('images/torin_45.png');height:46px;width:50px;}
+#instagram:hover
+{background: url('images/torin_45a.png');}
+#pinterest
+{background: url('images/torin_46.png');height:46px;width:42px;}
+#pinterest:hover
+{background: url('images/torin_46a.png');}
+#twitter
+{background: url('images/torin_47.png');height:46px;width:45px;}
+#twitter:hover
+{background: url('images/torin_47a.png');}
+#fbook
+{background: url('images/torin_48.png');height:46px;width:50px;}
+#fbook:hover
+{background: url('images/torin_48a.png');}
+#utube
+{background: url('images/torin_49.png');height:46px;width:41px;}
+#utube:hover
+{background: url('images/torin_49a.png');}
+
+#pizzabottom
+{ height:150px; background: #FFCB03 url('images/torin_52.png') repeat-x; /*f2ca30*/ }
+
+
+li.jcarousel-item a
+{ font-family:'PT Sans Narrow', Tahoma, Helvetica, Verdana; }
+li.jcarousel-item a:hover
+{ text-decoration:underline; }
+li.jcarousel-item p a:hover
+{ text-decoration:none; }
+
+
+.itemmprice{
+    font-family:'PT Sans Narrow', Tahoma, Helvetica, Verdana;
+    font-weight:bold; font-size: 18pt;
+    width:100%; text-align: right; color:#0d7db4;
+}
+
+.pricerbox{
+    margin-top:-40px;
+    font-family:'PT Sans Narrow', Tahoma, Helvetica, Verdana;
+    font-weight:bold; font-size: 16pt;
+}
+
+.pricerbox input.bx_col_input {
+    font-family:'PT Sans Narrow', Tahoma, Helvetica, Verdana;
+    font-weight:bold; font-size: 14pt;
+
+}
+.pricerbox a.buyingbut{
+    font-family:'PT Sans Narrow', Tahoma, Helvetica, Verdana !important;
+    font-weight:bold !important; font-size: 14pt !important;
+    float:left !important; width:70% !important;
+}
+.pricerbox a.buyingbut:hover{
+    color:#F0F5F5 !important;
+}
+.pricerbox span.notavaiblebut{
+    font-family:'PT Sans Narrow', Tahoma, Helvetica, Verdana !important;
+    font-weight:bold !important; font-size: 14pt !important;
+    float:left !important; width:100% !important;
+    text-align: center !important;
+    margin-left:55px; margin-top:30px;
+}
+
+
+/*=========Site Map*/
+
+
+.bx_sitemap{
+    font-family:'PT Sans Narrow', Tahoma, Helvetica, Verdana !important;
+}
+.bx_sitemap h2, .bx_sitemap h2 *{
+    font-size: 13pt !important;
+    float: right !important;
+}
+.bx_sitemap h2{
+    margin-right:20px !important;     margin-top:15px !important;
+}
+.bx_sitemap h2 span.vertsplice{
+    margin-left:15px !important;
+}
+.bx_sitemap h2 a:hover{
+    text-decoration: underline !important;
+    color: #13b1e3;
+}
+
+#cataloguecenter { /*margin-top: 25px;*/
+    margin-top: 5px;
+}
+
+.bx_catalog_line .bx_catalog_line_title a, .bx_catalog_line .bx_catalog_line_title span {
+    font-family:'PT Sans Narrow', Tahoma, Helvetica, Verdana !important;
+    font-size: 14pt !important;
+}
+.bx_catalog_line .bx_catalog_line_title a {
+    margin-left:4px;
+}
+.bx_catalog_line .bx_catalog_line_title a:hover {
+    text-decoration: underline !important;
+    color: #13b1e3;
+}
+
+/*.bx_catalog_line_category_title*/
+.catalogueHead{
+    width: 810px; text-align: right;
+}
+.catalogueHead a
+{font-family:'PT Sans Narrow', Tahoma, Helvetica, Verdana !important;
+ font-size:24pt;}
+
+
+
+ul.bx_catalog_line_ul a{
+/*    background: #C20016;
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod…EiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#A80013), color-stop(100%,#D30920));
+    background: -webkit-linear-gradient(top, #A80013 0%,#D30920 100%);
+    background: -moz-linear-gradient(top, #A80013 0%,#D30920 100%);
+    background: -ms-linear-gradient(top, #A80013 0%,#D30920 100%);
+    background: -o-linear-gradient(top, #A80013 0%,#D30920 100%);
+    background: linear-gradient(to bottom, #A80013 0%,#D30920 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#A80013', endColorstr='#D30920',GradientType=0 );
+    color: #FAFAFA;  */
+    /* filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f5ab', endColorstr='#fbf9cb',GradientType=0 ); */
+}
+
+
+
+#footer-container{
+    width:100%;
+    top:100%;
+    margin-top:-422px;
+}
+
+
+
+/* ==== AUTH RULES ====*/
+
+#registrationpanel, #registrationpanel p,  #registrationpanel input{
+    font-family:'PT Sans Narrow', Tahoma, Helvetica, Verdana !important;
+    font-size: 16pt;
+}
+
+#registrationpanel p a{
+    font-family:'PT Sans Narrow', Tahoma, Helvetica, Verdana !important;
+    font-size: 16pt; color:#353535;
+}
+#registrationpanel p a:hover{
+    color:#13b1e3;
+}
+
+
+.registrationpanel, .registrationpanel p,  .registrationpanel input, .registrationpanel select{
+    font-family:'PT Sans Narrow', Tahoma, Helvetica, Verdana !important;
+    font-size: 16pt;
+}
+
+.registrationpanel p a{
+    font-family:'PT Sans Narrow', Tahoma, Helvetica, Verdana !important;
+    color:#353535;
+}
+#registrationpanel .registrationpanel p.hed {
+    font-size: 18pt !important;
+    margin-bottom: 18px;
+}
+#registrationpanel .registrationpanel input, #registrationpanel .registrationpanel p, #registrationpanel .registrationpanel td
+#registrationpanel .registrationpanel select{
+     font-size: 14pt !important;
+ }
+
+#registrationpanel .registrationpanel textarea{
+    font-family:'PT Sans Narrow', Tahoma, Helvetica, Verdana !important;
+    font-size: 15pt !important;
+}
+
+.registrationpanel p a:hover{
+    color:#13b1e3;
+}
+
+
+#regtable thead {
+    font-size: 22pt;
+}
+
+#regtable tr td {
+    padding:5px 5px;
+}
+
+#regtable thead tr td {
+    padding-top:40px; padding-bottom: 20px;
+}
+
+input.systhref-submit{
+    font-family:'PT Sans Narrow', Tahoma, Helvetica, Verdana !important;
+    font-size: 15pt; font-weight: bold; cursor: pointer;
+    padding: 4px 30px;
+}
+#registrationpanel .registrationpanel input.systhref-submit {
+    font-size: 15pt !important;
+}
+
+div.wrkdiv{
+    padding: 40px 0 50px 0; line-height:30px;
+}
+div.wrkdiv td{
+    padding: 8px 5px;
+}
+#user_div_personal, #user_div_reg {
+    width:75%;
+}
+
+a.headinga, a.headinga2, a.headinga3{
+    font-family:'PT Sans Narrow', Tahoma, Helvetica, Verdana !important;
+    font-weight: bold; cursor: pointer; color: #353535;
+}
+a.headinga{
+    font-size: 16pt;
+}
+a.headinga:hover{
+    color:#13b1e3;
+}
+
+.bx_my_order .bx_my_order_table td a.headinga2, a.headinga2{
+    font-size: 18px;
+}
+.bx_my_order .bx_my_order_table td a.headinga3, a.headinga3{
+    color: #0073a3;
+    font-size: 20px;
+}
+.bx_my_order .bx_my_order_table td a.headinga2:hover, a.headinga2:hover,
+.bx_my_order .bx_my_order_table td a.headinga3:hover, a.headinga3:hover
+{
+    color: #13b1e3;
+}
+.bx_item_container {
+    width:100%;
+}
+
+.item_info_section p, .bx_item_detail .bx_item_description p  {
+    font-family:'PT Sans Narrow', Tahoma, Helvetica, Verdana !important;
+    font-size: 18px !important;
+    line-height: 24px;
+    font-weight: normal;
+}
+
+.inform_block{
+    padding-bottom: 55px;
+}

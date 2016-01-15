@@ -1,0 +1,49 @@
+div.bx-system-auth-form span.bx-auth-secure {background-color:#FFFAE3; border:1px solid #DEDBC8; padding:2px; display:inline-block; vertical-align:bottom; margin-top:-1px;}
+div.bx-system-auth-form div.bx-auth-secure-icon {background-image:url(images/sec.png); background-repeat:no-repeat; background-position:center; width:19px; height:18px;}
+div.bx-system-auth-form div.bx-auth-secure-unlock {background-image:url(images/sec-unlocked.png);}
+
+
+td.systhref{
+    padding:5px 0;
+}
+a.systhref{
+    font-family:'PT Sans Narrow', Tahoma, Helvetica, Verdana !important;
+    font-size: 14pt;
+}
+a.systhref:hover{
+    color:#009FA4;
+}
+input#systinp-login{
+    margin-left: 30px;
+}
+input#systinp-pass{
+    margin-left: 20px;
+}
+#USER_REMEMBER_frm_label{
+    font-family:'PT Sans Narrow', Tahoma, Helvetica, Verdana !important;
+    font-size: 14pt; cursor: pointer;
+}
+#remembercheck{
+    width:25px;
+}
+#USER_REMEMBER_frm_label:hover{
+    color:#009FA4; cursor: pointer;
+}
+input.systhref-submit{
+    font-family:'PT Sans Narrow', Tahoma, Helvetica, Verdana !important;
+    font-size: 15pt; font-weight: bold; cursor: pointer;
+    padding: 4px 50px;
+}
+#forgotter{
+    text-align: right;
+}
+
+#uLogin1{
+    width:280px;
+    text-align: center;
+}
+
+.systhref-txt{
+    font-family:'PT Sans Narrow', Tahoma, Helvetica, Verdana !important;
+    font-size: 15pt;
+}

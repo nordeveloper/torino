@@ -1,0 +1,104 @@
+/* Common */
+@font-face {
+    font-family: "PT Sans Narrow"; /* Имя шрифта */
+    src: url(../fonts/pt_sans-regular.ttf); /* Путь к файлу со шрифтом */
+}
+h1, h2, h3, h4, a, p {font-family: "PT Sans Narrow";}/*, Helvetica;}*/
+
+/*Yellows: ffcc00 vs f2ca30*/
+/* Top Navigation*/
+#topnav{background: #ffcc00; margin-bottom: 0px;}
+#topnav a {background: #ffcc00; font-size: 1.3em; color:#333; font-weight: bold;}
+#topnav li.active a{background: #ffcc00;}
+#topnav li.active a:hover{background: #dcaf36;}
+
+img.top-ico { width:2.0em; margin:0.75em 0 0.75em 0; }
+img.top-ico2 { float:left; width:1.5em; margin:-0.2em 0.5em 0.75em 0; }
+
+#navbar{ float:right;}
+#toppest{ margin: 7.5px 0; float: left;}
+#toppest button{border: 2px solid #464646; margin:4.5px 15px 4.5px 0px; padding:6px 7px;}
+#toppest:hover, #toppest:hover button, #toppest:hover a {background: #dcaf36;}
+#toppest span.icon-bar{ background: #464646;}
+
+#menutoggler{float:right;  line-height: 20px;  padding-top: 10px; padding-bottom: 10px; padding-right:15px; }
+#menutoggler a, #menutoggler a:hover, #menutoggler a:visited {text-decoration: none;}
+
+@media (min-width: 768px) {
+    #topnav {border-radius: 0px;}
+}
+
+/*Top Hat*/
+#hat{background: #ffcc00; padding-bottom: 25px;}
+#freedelivery{width:40%;}
+#hatspace{width:20%;}
+#logo {width:40%;}
+#freedelivery{ margin-top:0.75em;}
+#freedelivery img {float:right}
+
+
+/* Main Menu */
+#mmenu, #mainmenu a  {background: #c20016;}
+#mainmenu li.active, #mainmenu li.active:hover {background: rgba(230, 0, 26, 0.81);}
+#mainmenu li {vertical-align: middle;}
+#mainmenu li:hover { background: rgba(221, 0, 25, 0.86); }
+#mainmenu a {color:#fafafa; background: transparent; font-weight:bold; font-size: 1.5em;}
+#mainmenu a:hover { color:#edd5d8; }
+#mainmenu li.active:hover a {color:#fafafa;}
+
+/* Main Slider */
+#mslider{background: #18110c; }
+
+
+
+/* Footer */
+#footingdvd {margin-top:4em;}
+#wavefooter{background:#fff url("../images/torr_40.png") repeat-x; height:50px;}
+
+#infofooter{background:#ffcc00; padding: 1.1em 0; }
+#footlogo img { margin:auto; }
+#footinfo p {margin-top:1.5em; font-size:1.1em;}
+#footersocs>div {margin-top:2.0em;}
+#footersocs>div a {margin:2px;}
+#pizfooter{
+    background:#ffcc00 url("../images/torin_52.png") repeat-x; height:150px;}
+
+@media (max-width: 768px) {
+    #footinfo p, #footersocs a {font-size:0.75em;}
+    #footersocs>div {margin-top:0.5em;}
+}
+
+
+/*Carousel*/
+.carousel-control.left,.carousel-control.right {background-image:none;}
+.carousel-inner .active.left { left: -33%; }
+.carousel-inner .next        { left:  33%; }
+.carousel-inner .prev        { left: -33%; }
+
+.carousel-control { width:5%;}
+.carousel-control, .carousel-control a:visited { color:#ffcc00; }
+.carousel-control:hover { color:#dcaf36; }
+
+.pricer {border:0;}
+.pricer div{ padding:1em 0;}
+.pricer h4 { color: #0d6aad; font-weight: bold; font-size:1.8em; margin-top:0em;}
+
+
+.sechead {font-weight: bold; color:#101811; }
+h2.sechead {font-size: 2.8em; }
+h3.sechead {font-size: 1.3em; margin-top:2.3em; }
+
+.divider {border-bottom: 1px solid #ddd; margin:2em 0;}
+
+
+.htext {
+    text-align: justify;
+    font-size: 1.25em;
+    margin-top:2em;
+}
+
+.supersechead { color: #43728e;  margin-right:25px;  }
+
+
+.mapdiv { width:80% !important; margin:2em auto; height:50em !important; }
+.mapdiv .ymaps-map { width:100% !important; height:50em !important; }

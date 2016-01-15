@@ -1,0 +1,249 @@
+@charset "utf-8";
+/* CSS exts */
+@import url('reset.css');
+/* GoogleFonts */
+/*@import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow:700&subset=latin,cyrillic);*/
+@import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&subset=latin,cyrillic);
+
+/*common*/
+
+
+a, p
+{ font-family:Helvetica, Tahoma, Verdana; }
+h1, h2, h3, h4
+{ font-family:'PT Sans Narrow', Tahoma, Helvetica, Verdana; }
+
+a, a:hover, a:visited
+{ text-decoration:none; }
+
+
+body
+{ /*background-color:#e6f1e4; background-image: url('../img/annd_01.jpg'); background-repeat:repeat-x; background-position:top;*//*#f0f4f8*/ }
+div.clearboth
+{ clear:both; }
+div.fullwidth
+{ width:100%; min-width:1020px; clear:both; }
+div.centered div
+{ float:left; }
+div.centered
+{ width:1020px; margin:auto; }
+/*common*/
+
+
+
+
+/* main block*/
+#mnbl
+{ padding-top:20px; }
+
+#mainblock
+{
+        width:1020px;
+        position:relative; min-height:500px;
+        padding:1em; padding-bottom:35px;
+        margin:0em 10px 2em; /*margin:0em 10px 4em;*/
+        background:#f1f1f2;
+        border-radius:15px;  -moz-border-radius:15px;
+    -webkit-box-shadow:0 4px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow:0 4px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+            box-shadow:0 4px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+        
+}
+#mainblock:before,
+#mainblock:after {
+        content:"";
+        position:absolute;
+        z-index:-2;
+        bottom:15px;
+        left:10px;
+        min-height:20%;
+        max-width:300px;
+    -webkit-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+       -moz-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+            box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+    -webkit-transform:rotate(-3deg);
+       -moz-transform:rotate(-3deg);
+        -ms-transform:rotate(-3deg);
+         -o-transform:rotate(-3deg);
+            transform:rotate(-3deg);
+}
+ 
+#mainblock:after {
+    right:10px;
+    left:auto;
+    -webkit-transform:rotate(3deg);
+       -moz-transform:rotate(3deg);
+        -ms-transform:rotate(3deg);
+         -o-transform:rotate(3deg);
+            transform:rotate(3deg);
+}
+
+/* main block*/
+
+
+
+html,body
+{ width:100%; height:100%; }
+#contain-all
+{ width:100%; min-height:100%; }
+#afooter
+{ height:50px; }
+
+/* footer */ 
+
+#footer
+{ background:#dfecfd; height:50px; margin-top:-50px; }
+#foot
+{ border-top:1px solid #c7c7b0; height:49px; }
+#bottommenu
+{ margin-left:30px; }
+/* footer */ 
+
+
+/* hat */ 
+#hatback
+{ background-color:#f2ca30;  }
+#hatback, #hat
+{ height:200px; }
+
+#hlogo
+{ height:138px; width:417px;
+  background: url('images/torin_03.png') no-repeat; cursor:pointer; 
+  margin:30px 170px 32px 0px;
+}
+
+#htels
+{
+  height:119px; width:396px;
+  background: url('images/torin_06.png') no-repeat;
+  margin:45px 0px 35px 0px;
+}
+/* hat */
+
+/* main menu*/
+#mmenu
+{ background-color:#c20016; }
+#mmenu, #mmenu div
+{   height:56px;    }
+
+
+h2.mmenuitem
+{
+    padding:9px 30px 0px 30px;
+}
+h2.mmenuitem a
+{   font-size:2em; color:#fafafa;
+    font-family:PT Sans Narrow;
+}
+h2.mmenuitem a:hover
+{ color:#edd5d8; }
+h2.mmround
+{
+    font-size:3em; color:#9c0043;
+    font-family:PT Sans Narrow;
+    padding:0;
+}
+
+/* main menu*/
+/* main slider */
+#sldr
+{    background:url("images/torin_10.jpg") no-repeat scroll center center #3f3a32;  }
+#sldr, #sldrcntnr
+{ height:312px;}
+#sldrcntnr
+{  
+   width:1020px; margin:auto; }
+
+/* main slider */
+
+
+#centralblock
+{ /*background-color:#fafafa;*/ height:84px;}
+#carousels
+{height:84px;}
+#pizzalist
+{width:300px; height: 100px;}
+#pizzacarousel
+{}
+
+.carousl-block
+{width:100%;}
+
+.halfblock
+{width:50%;height:74px;}
+.halfblock h2, .halfblock h3, .halfblock a
+{font-family:'PT Sans Narrow', Tahoma, Helvetica, Verdana;   color:#101811;}
+.halfblock a:hover
+{color:#7b7f80; text-decoration:underline; }
+.halfblock h2
+{margin: 40px 0 0 55px;font-size:36pt;}
+.halfblock h3
+{margin: 60px 45px 0 0;font-size:16pt;text-align:right;}
+
+
+#pizzaz
+{ border-bottom:1px solid #bfbfbf; }
+
+#pizzaz, #sushi
+{/*margin:0 0 0 200px;*/}
+
+#yellowtop
+{ margin-top:75px;
+  height:47px; background: url('images/torr_40.png') repeat-x; 
+}
+
+#yellowfoot
+{ min-height:150px; background-color:#ffcb03; }
+
+#footcntnt
+{height:150px;}
+#commoninfo
+{ height:120px;width:310px;padding:15px 0 0 0;}
+
+#btmlogo
+{margin: 0 0 0 152px;height:109px;width:97px;background: url('images/torin_41.png') }
+#commoninfo p
+{font-size:11pt;/*font-family:'PT Sans Narrow', Tahoma, Helvetica, Verdana;*/}
+
+#socbuttons
+{margin:42px 0 0 165px;}
+#socbuttons a.socbutton
+{float:left;}
+.socbutton
+{display:block;}
+#gplus
+{background: url('images/torin_44.png');height:46px;width:46px;}
+#gplus:hover
+{background: url('images/torin_44a.png');}
+#instagram
+{background: url('images/torin_45.png');height:46px;width:50px;}
+#instagram:hover
+{background: url('images/torin_45a.png');}
+#pinterest
+{background: url('images/torin_46.png');height:46px;width:42px;}
+#pinterest:hover
+{background: url('images/torin_46a.png');}
+#twitter
+{background: url('images/torin_47.png');height:46px;width:45px;}
+#twitter:hover
+{background: url('images/torin_47a.png');}
+#fbook
+{background: url('images/torin_48.png');height:46px;width:50px;}
+#fbook:hover
+{background: url('images/torin_48a.png');}
+#utube
+{background: url('images/torin_49.png');height:46px;width:41px;}
+#utube:hover
+{background: url('images/torin_49a.png');}
+
+#pizzabottom
+{ height:150px; background: #f2ca30 url('images/torin_52.png') repeat-x; }
+
+
+li.jcarousel-item a
+{ font-family:'PT Sans Narrow', Tahoma, Helvetica, Verdana; }
+li.jcarousel-item a:hover
+{ text-decoration:underline; }
+li.jcarousel-item p a:hover
+{ text-decoration:none; }
+
