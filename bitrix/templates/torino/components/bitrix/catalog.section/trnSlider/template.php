@@ -100,7 +100,13 @@ if (!empty($arResult['ITEMS'])) {
                                 <div class="pricer table-responsive">
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-left">
                                         <p>
-                                            <a href="#" class="btn btn-primary" role="button">Заказать</a>
+<!--                                            <a href="#" class="btn btn-primary addtocart" role="button">Заказать</a>-->
+                                            <a id="<? echo $arItemIDs['BUY_LINK']; ?>" role="button" class="btn btn-primary addtocart" href="javascript:void(0)" rel="nofollow" data-item-id="<? echo $arItem['ID'] ?>">Заказать</a>
+                                        <!--<div id="<? echo $arItemIDs['BASKET_ACTIONS']; ?>" class="bx_catalog_item_controls_blocktwo">-->
+                                            <!--<a id="<? echo $arItemIDs['BUY_LINK']; ?>" class="bx_bt_button bx_medium" href="javascript:void(0)" rel="nofollow">
+                                            Заказать
+                                            </a>-->
+                                            <!--<div>-->
                                         </p>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-right" >
@@ -108,7 +114,65 @@ if (!empty($arResult['ITEMS'])) {
                                     </div>
                                 </div>
                             </div>
+                            <script type="text/javascript">
+                                <?/*
+                                    $arJSParams = array(
+                                        'PRODUCT_TYPE' => $arItem['CATALOG_TYPE'],
+                                        'SHOW_QUANTITY' => ($arParams['USE_PRODUCT_QUANTITY'] == 'Y'),
+                                        'SHOW_ADD_BASKET_BTN' => false,
+                                        'SHOW_BUY_BTN' => true,
+                                        'SHOW_ABSENT' => true,
+                                        'SHOW_SKU_PROPS' => $arItem['OFFERS_PROPS_DISPLAY'],
+                                        'SECOND_PICT' => $arItem['SECOND_PICT'],
+                                        'SHOW_OLD_PRICE' => ('Y' == $arParams['SHOW_OLD_PRICE']),
+                                        'SHOW_DISCOUNT_PERCENT' => ('Y' == $arParams['SHOW_DISCOUNT_PERCENT']),
+                                        'ADD_TO_BASKET_ACTION' => $arParams['ADD_TO_BASKET_ACTION'],
+                                        'SHOW_CLOSE_POPUP' => ($arParams['SHOW_CLOSE_POPUP'] == 'Y'),
+                                        'DISPLAY_COMPARE' => $arParams['DISPLAY_COMPARE'],
+                                        'DEFAULT_PICTURE' => array(
+                                            'PICTURE' => $arItem['PRODUCT_PREVIEW'],
+                                            'PICTURE_SECOND' => $arItem['PRODUCT_PREVIEW_SECOND']
+                                        ),
+                                        'VISUAL' => array(
+                                            'ID' => $arItemIDs['ID'],
+                                            'PICT_ID' => $arItemIDs['PICT'],
+                                            'SECOND_PICT_ID' => $arItemIDs['SECOND_PICT'],
+                                            'QUANTITY_ID' => $arItemIDs['QUANTITY'],
+                                            'QUANTITY_UP_ID' => $arItemIDs['QUANTITY_UP'],
+                                            'QUANTITY_DOWN_ID' => $arItemIDs['QUANTITY_DOWN'],
+                                            'QUANTITY_MEASURE' => $arItemIDs['QUANTITY_MEASURE'],
+                                            'PRICE_ID' => $arItemIDs['PRICE'],
+                                            'TREE_ID' => $arItemIDs['PROP_DIV'],
+                                            'TREE_ITEM_ID' => $arItemIDs['PROP'],
+                                            'BUY_ID' => $arItemIDs['BUY_LINK'],
+                                            'ADD_BASKET_ID' => $arItemIDs['ADD_BASKET_ID'],
+                                            'DSC_PERC' => $arItemIDs['DSC_PERC'],
+                                            'SECOND_DSC_PERC' => $arItemIDs['SECOND_DSC_PERC'],
+                                            'DISPLAY_PROP_DIV' => $arItemIDs['DISPLAY_PROP_DIV'],
+                                            'BASKET_ACTIONS_ID' => $arItemIDs['BASKET_ACTIONS'],
+                                            'NOT_AVAILABLE_MESS' => $arItemIDs['NOT_AVAILABLE_MESS'],
+                                            'COMPARE_LINK_ID' => $arItemIDs['COMPARE_LINK']
+                                        ),
+                                        'BASKET' => array(
+                                            'QUANTITY' => $arParams['PRODUCT_QUANTITY_VARIABLE'],
+                                            'PROPS' => $arParams['PRODUCT_PROPS_VARIABLE'],
+                                            'SKU_PROPS' => $arItem['OFFERS_PROP_CODES'],
+                                            'ADD_URL_TEMPLATE' => $arResult['~ADD_URL_TEMPLATE'],
+                                            'BUY_URL_TEMPLATE' => $arResult['~BUY_URL_TEMPLATE']
+                                        ),
+                                        'PRODUCT' => array(
+                                            'ID' => $arItem['ID'],
+                                            'NAME' => $productTitle
+                                        ),
+                                        'OFFERS' => $arItem['JS_OFFERS'],
+                                        'OFFER_SELECTED' => $arItem['OFFERS_SELECTED'],
+                                        'TREE_PROPS' => $arSkuProps,
+                                        'LAST_ELEMENT' => $arItem['LAST_ELEMENT']
+                                    );*/
+                                ?>
 
+                                //var <? echo $strObName; ?> = new JCCatalogSection(<? echo CUtil::PhpToJSObject($arJSParams, false, true); ?>);
+                            </script>
 
                         </div>
                     </div>
@@ -141,40 +205,7 @@ if (!empty($arResult['ITEMS'])) {
         });
 
         $(function(){
-            $('a.addtocart').click(function(){
-                return;
-                var id = this.getAttribute('data-item-id');
-                Cart.AddItem(id,1,
-                    function(data)
-                    {
-//					var dialogParams =
-//					{
-//						'title': 'Элемент добавлен',
-//						'content': id,
-//						'width': 500,
-//						'height': 200
-//					}
-                        //new BX.PopupWindow(dialogParams).Show();
-                        var oPopup = new BX.PopupWindow('call_feedback', window.body, {
-                            autoHide : true,
-                            offsetTop : 1,
-                            offsetLeft : 0,
-                            lightShadow : true,
-                            closeIcon : true,
-                            closeByEsc : true,
-                            overlay: {
-                                backgroundColor: 'red', opacity: '80'
-                            }
-                        })
-                        oPopup.setContent('Элемент ' + id + ' добавлен в корзину');
-                        oPopup.show();
-                    },
-                    function(data)
-                    {
 
-                    }
-                );
-            });
         });
 
     </script>
@@ -189,41 +220,4 @@ if (!empty($arResult['ITEMS'])) {
 }
 ?>
 
-<script type="text/javascript">
-    $('#myCarousel<?=$arResult["ID"]?>').carousel({
-        interval: 19000
-    });
 
-    $(window).resize(location.reload);
-
-    $(window).load(function() {
-        var win_w = $(window).width();
-        if (win_w > 768) {
-            $('.carousel .item').each(function() {
-                var next = $(this).next();
-                if (!next.length) {
-                    next = $(this).siblings(':first');
-                }
-                next.children(':first-child').clone().appendTo($(this));
-
-                if (next.next().length > 0) {
-                    next.next().children(':first-child').clone().appendTo($(this));
-                }
-                else {
-                    $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
-                }
-            });
-        } else if (win_w > 480) {
-            $('.carousel .item').each(function() {
-                var next = $(this).next();
-                if (!next.length) {
-                    next = $(this).siblings(':first');
-                }
-                next.children(':first-child').clone().appendTo($(this));
-            });
-        }
-        else {
-            return;
-        }
-    });
-</script>

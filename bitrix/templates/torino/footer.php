@@ -40,13 +40,13 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 
 
 
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -- >
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="<?=SITE_TEMPLATE_PATH?>/js/bootstrap.min.js"></script>
 
         <script type="text/javascript">
-            $(window).load(function() {
+            $(function() {
                 var win_w = $(window).width();
                 if (win_w > 768) {
                     $('.carousel .item').each(function() {
@@ -75,6 +75,8 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
                 else {
                     return;
                 }
+
+                Cart.Init();
             });
 
             //======================================
