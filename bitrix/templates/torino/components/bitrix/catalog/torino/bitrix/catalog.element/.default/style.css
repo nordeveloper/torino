@@ -2,6 +2,7 @@
 .item_info_section, .item_info_section p { font-size:1.2em !important; line-height: 1.5em !important; }
 
 .item_info_section p.elprop { font-style: italic; font-size: 1em !important; line-height: 1em !important;; }
+.item_info_section p.elprop b { font-style: normal; }
 
 
 
