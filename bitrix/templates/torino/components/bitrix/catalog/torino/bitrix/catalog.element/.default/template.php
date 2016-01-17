@@ -284,19 +284,19 @@ else
 */?>
 <div class="<?//bx_rb?> col-lg-6 col-md-6 col-sm-12 col-xs-12">
 <div class="item_info_section">
-<?if ('' != $arResult['DETAIL_TEXT'])
-{?>
-	<div class="bx_item_description">
+    <div class="bx_item_description">
 		<?/*<div class="bx_item_section_name_gray" style="border-bottom: 1px solid #f2f2f2;"><? echo GetMessage('FULL_DESCRIPTION'); ?></div>*/?>
 
-        <?if ('html' == $arResult['DETAIL_TEXT_TYPE'])
-        {
-            echo $arResult['DETAIL_TEXT'];
-        }
-        else
-        {?>
-            <p><? echo $arResult['DETAIL_TEXT'];?></p>
-        <?}?>
+        <?
+        if ('' != $arResult['DETAIL_TEXT'])
+            if ('html' == $arResult['DETAIL_TEXT_TYPE'])
+            {
+                echo $arResult['DETAIL_TEXT'];
+            }
+            else
+            {?>
+                <p><? echo $arResult['DETAIL_TEXT'];?></p>
+            <?}?>
 
 
         <?foreach ($arResult['PROPERTIES'] as $arProper):?>
@@ -307,15 +307,10 @@ else
                 </p>
             <?endif;?>
         <?endforeach;?>
-
-
 	</div>
-<?
-}
-?>
 </div>
 </div>
-
+        <div style="clear: both;"></div>
         <div class="bx_rt">
             <?
             $useBrands = ('Y' == $arParams['BRAND_USE']);
