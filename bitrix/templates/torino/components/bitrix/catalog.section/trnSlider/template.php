@@ -35,6 +35,10 @@ if (!empty($arResult['ITEMS'])) {
     $arElementDeleteParams = array("CONFIRM" => GetMessage('CT_BCS_TPL_ELEMENT_DELETE_CONFIRM'));
     ?>
 
+    <script type="text/javascript">
+        if (!basketItems)
+            var basketItems = [];
+    </script>
 
     <div class="row">
         <div class="carousel slide" id="myCarousel<?=$arResult["ID"]?>">
@@ -99,7 +103,7 @@ if (!empty($arResult['ITEMS'])) {
                                 </p>
                                 <div class="pricer table-responsive">
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-left">
-                                        <p>
+                                        <p id="<? echo $arItemIDs['BASKET_ACTIONS']; ?>">
 <!--                                            <a href="#" class="btn btn-primary addtocart" role="button">Заказать</a>-->
                                             <a id="<? echo $arItemIDs['BUY_LINK']; ?>" role="button" class="btn btn-primary addtocart" href="javascript:void(0)" rel="nofollow" data-item-id="<? echo $arItem['ID'] ?>">Заказать</a>
                                         <!--<div id="<? echo $arItemIDs['BASKET_ACTIONS']; ?>" class="bx_catalog_item_controls_blocktwo">-->
@@ -115,7 +119,7 @@ if (!empty($arResult['ITEMS'])) {
                                 </div>
                             </div>
                             <script type="text/javascript">
-                                <?/*
+                                <?
                                     $arJSParams = array(
                                         'PRODUCT_TYPE' => $arItem['CATALOG_TYPE'],
                                         'SHOW_QUANTITY' => ($arParams['USE_PRODUCT_QUANTITY'] == 'Y'),
@@ -162,16 +166,24 @@ if (!empty($arResult['ITEMS'])) {
                                         ),
                                         'PRODUCT' => array(
                                             'ID' => $arItem['ID'],
-                                            'NAME' => $productTitle
+                                            'NAME' => $productTitle,
+                                            'CAN_BUY' => $arItem["CAN_BUY"],
+                                            'PICT' => ('Y' == $arItem['SECOND_PICT'] ? $arItem['PREVIEW_PICTURE_SECOND'] : $arItem['PREVIEW_PICTURE']),
+                                            'BASIS_PRICE' => $arItem['MIN_BASIS_PRICE']
+
                                         ),
                                         'OFFERS' => $arItem['JS_OFFERS'],
                                         'OFFER_SELECTED' => $arItem['OFFERS_SELECTED'],
                                         'TREE_PROPS' => $arSkuProps,
                                         'LAST_ELEMENT' => $arItem['LAST_ELEMENT']
-                                    );*/
+                                    );
                                 ?>
 
                                 //var <? echo $strObName; ?> = new JCCatalogSection(<? echo CUtil::PhpToJSObject($arJSParams, false, true); ?>);
+
+                                basketItems.push(
+                                        <? echo CUtil::PhpToJSObject($arJSParams, false, true); ?>
+                                    );
                             </script>
 
                         </div>

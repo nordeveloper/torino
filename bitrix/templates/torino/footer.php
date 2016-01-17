@@ -76,7 +76,17 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
                     return;
                 }
 
-                Cart.Init();
+                //Cart.Init();
+
+                if (basketItems)
+                {
+                    for (var i=0; i<basketItems.length; i++)
+                    {
+                        var params = basketItems[i];
+                        var temp = new JCCatalogSection(params);
+                    };
+
+                }
             });
 
             //======================================
