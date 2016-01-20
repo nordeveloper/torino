@@ -264,8 +264,17 @@ if (!empty($arResult['ITEMS']))
                 </div>
                 <script>
                     $("input[name='<? echo $arItemIDs['QUANTITY']; ?>']").TouchSpin({
-                        postfix: "<? echo $arItem['CATALOG_MEASURE_NAME']; ?>"
+                        postfix: "<? echo $arItem['CATALOG_MEASURE_NAME']; ?>",
+                        min: 1,
+                        max: 100,
+                        decimals: 0,
+                        step: 1
                     });
+
+                    $( "input[name='<? echo $arItemIDs['QUANTITY']; ?>']" ).on( "change", function() {
+                        $("#<?echo $arItemIDs['ID'];?>_price").innerHTML = "LESH";
+                    });
+
                 </script>
                 <?/*<a id="<? echo $arItemIDs['QUANTITY_DOWN']; ?>" href="javascript:void(0)" class="bx_bt_button_type_2 bx_small" rel="nofollow">-</a>
                 <input type="text" class="bx_col_input" id="<? echo $arItemIDs['QUANTITY']; ?>" name="<? echo $arParams["PRODUCT_QUANTITY_VARIABLE"]; ?>" value="<? echo $arItem['CATALOG_MEASURE_RATIO']; ?>">
@@ -274,8 +283,8 @@ if (!empty($arResult['ITEMS']))
 		    </div>
             <div style="display: inline-block;position: relative;" class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
                 <div class="bx_catalog_item_price cata3_price">
-                    <div id="<? echo $arItemIDs['PRICE']; ?>" class="bx_price"><?
-                        if (!empty($arItem['MIN_PRICE']))
+                    <div id="<? echo $arItemIDs['PRICE']; ?>" class="bx_price">
+                        <?if (!empty($arItem['MIN_PRICE']))
                         {
                             if ('N' == $arParams['PRODUCT_DISPLAY_MODE'] && isset($arItem['OFFERS']) && !empty($arItem['OFFERS']))
                             {
@@ -301,8 +310,7 @@ if (!empty($arResult['ITEMS']))
                             {
                                 ?> <span><? echo $arItem['MIN_PRICE']['PRINT_VALUE']; ?></span><?
                             }
-                        }
-                        ?>
+                        }?>
                     </div>
                 </div>
             </div>
@@ -344,24 +352,19 @@ if (!empty($arResult['ITEMS']))
 				{
 					?><a id="<? echo $arItemIDs['COMPARE_LINK']; ?>" class="bx_bt_button_type_2 bx_medium" href="javascript:void(0)"><? echo $compareBtnMessage; ?></a><?
 				}
-				if ($showSubscribeBtn)
-				{
-				?>
-				<a id="<? echo $arItemIDs['SUBSCRIBE_LINK']; ?>" class="bx_bt_button_type_2 bx_medium" href="javascript:void(0)"><?
-					echo ('' != $arParams['MESS_BTN_SUBSCRIBE'] ? $arParams['MESS_BTN_SUBSCRIBE'] : GetMessage('CT_BCS_TPL_MESS_BTN_SUBSCRIBE'));
-					?></a><?
-				}
-				?>
-			</div><?
-			}
-		}
-		?><div style="clear: both;"></div></div><?
-		if (isset($arItem['DISPLAY_PROPERTIES']) && !empty($arItem['DISPLAY_PROPERTIES']))
-		{
-?>
+				if ($showSubscribeBtn) { ?>
+                    <a id="<? echo $arItemIDs['SUBSCRIBE_LINK']; ?>" class="bx_bt_button_type_2 bx_medium" href="javascript:void(0)"><?
+                        echo ('' != $arParams['MESS_BTN_SUBSCRIBE'] ? $arParams['MESS_BTN_SUBSCRIBE'] : GetMessage('CT_BCS_TPL_MESS_BTN_SUBSCRIBE'));?>
+                    </a>
+                <?}?>
+			</div>
+            <?}
+		}?>
+        <div style="clear: both;"></div></div>
+        <?if (isset($arItem['DISPLAY_PROPERTIES']) && !empty($arItem['DISPLAY_PROPERTIES']))
+		{?>
 			<div class="bx_catalog_item_articul">
-<?
-			foreach ($arItem['DISPLAY_PROPERTIES'] as $arOneProp)
+            <?foreach ($arItem['DISPLAY_PROPERTIES'] as $arOneProp)
 			{
 				?><br><strong><? echo $arOneProp['NAME']; ?></strong> <?
 					echo (
@@ -369,8 +372,7 @@ if (!empty($arResult['ITEMS']))
 						? implode('<br>', $arOneProp['DISPLAY_VALUE'])
 						: $arOneProp['DISPLAY_VALUE']
 					);
-			}
-?>
+			}?>
 			</div>
 <?
 		}
