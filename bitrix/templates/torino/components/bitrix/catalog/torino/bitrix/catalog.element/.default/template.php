@@ -286,14 +286,11 @@ else
 <div class="item_info_section">
     <div class="bx_item_description">
 		<?/*<div class="bx_item_section_name_gray" style="border-bottom: 1px solid #f2f2f2;"><? echo GetMessage('FULL_DESCRIPTION'); ?></div>*/?>
-
         <?
         if ('' != $arResult['DETAIL_TEXT'])
-            if ('html' == $arResult['DETAIL_TEXT_TYPE'])
-            {
+            if ('html' == $arResult['DETAIL_TEXT_TYPE']) {
                 echo $arResult['DETAIL_TEXT'];
-            }
-            else
+            } else
             {?>
                 <p><? echo $arResult['DETAIL_TEXT'];?></p>
             <?}?>
@@ -302,7 +299,7 @@ else
         <?foreach ($arResult['PROPERTIES'] as $arProper):?>
             <?if (isset($arProper["VALUE"]) && $arProper["VALUE"] != ""):?>
                 <p class="elprop">
-                    <b><?= $arProper["NAME"] ?>: </b>
+                    <b><?= $arProper["NAME"] ?>:</b>
                     <?= $arProper["VALUE"] ?>
                 </p>
             <?endif;?>

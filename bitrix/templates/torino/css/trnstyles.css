@@ -1,4 +1,8 @@
 /* Common */
+body
+{ background:#f8f8f8 url("../images/pizzaback2.jpg") repeat; }
+
+
 @font-face {
     font-family: "PT Sans Narrow"; /* Имя шрифта */
     src: url(../fonts/pt_sans-regular.ttf); /* Путь к файлу со шрифтом */
@@ -53,7 +57,7 @@ img.top-ico2 { float:left; width:1.5em; margin:-0.2em 0.5em 0.75em 0; }
 
 /* Footer */
 #footingdvd {margin-top:4em;}
-#wavefooter{background:#fff url("../images/torr_40.png") repeat-x; height:50px;}
+#wavefooter{background:url("../images/torr_40.png") repeat-x; height:50px;}
 
 #infofooter{background:#ffcc00; padding: 1.1em 0; }
 #footlogo img { margin:auto; }

@@ -166,11 +166,13 @@ if (!empty($arResult['ITEMS']))
 <div class="catsecitems  col-lg-4 col-md-4 col-sm-6 col-xs-12
 <?// echo ($arItem['SECOND_PICT'] ? 'bx_catalog_item double' : 'bx_catalog_item'); ?>">
     <div class="bx_catalog_item_container" id="<? echo $strMainID; ?>">
-		<a id="<? echo $arItemIDs['PICT']; ?>" href="<? echo $arItem['DETAIL_PAGE_URL']; ?>" class="" title="<? echo $productTitle; ?>">
+		<a id="<? echo $arItemIDs['PICT']; ?>" href="<? echo $arItem['DETAIL_PAGE_URL']; ?>" class="" title="<?echo $productTitle; ?>">
             <? if (isset($arItem['PREVIEW_PICTURE']['SRC'])): ?>
+                <p>LEsh</p>
                 <img src="<?= $arItem['PREVIEW_PICTURE']['SRC'];?>" alt="" class="bx-width100 img-responsive img-rounded img-thumbnail" title="<?= $imgTitle; ?>"/>
             <? else: ?>
-                <img src="<?= SITE_TEMPLATE_PATH?>/images/<?=$nophoto?>;?>" alt="" class="bx-width100 img-responsive img-rounded img-thumbnail" title="<?= $productTitle; ?>"/>
+				<p>LEsh NO</p>
+                <img src="<?= SITE_TEMPLATE_PATH?>/images/<?echo $nophoto;?>?>" alt="" class="bx-width100 img-responsive img-rounded img-thumbnail" title="<?= $productTitle; ?>"/>
             <? endif; ?>
 
     <?if ('Y' == $arParams['SHOW_DISCOUNT_PERCENT'])
