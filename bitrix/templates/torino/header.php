@@ -39,6 +39,10 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 		<link rel="stylesheet" type="text/css" href="/js/tango/skin.css" media="screen" />
 		<link rel="stylesheet" type="text/css" href="/js/tango/mskin.css" media="handheld" />
         <link href="//cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/3.3.0/ekko-lightbox.min.css" rel="stylesheet">
+
+        <!--Spin Edit -->
+        <link rel="stylesheet" type="text/css" href="<?=SITE_TEMPLATE_PATH?>/css/jquery.bootstrap-touchspin.css" />
+        <script type="text/javascript" src="<?=SITE_TEMPLATE_PATH?>/js/jquery.bootstrap-touchspin.js"></script>
 	</HEAD>
 
 	<BODY>

@@ -95,7 +95,7 @@ $arSectionDeleteParams = array("CONFIRM" => GetMessage('CT_BCSL_ELEMENT_DELETE_C
                     ?><li id="<? echo $this->GetEditAreaId($arSection['ID']); ?>">
                         <div class="hidden-xs hidden-sm">
                             <a href="<? echo $arSection['SECTION_PAGE_URL']; ?>">
-                                <img class="img-responsive img-roundednded img-thumbnail" src="<? echo $arSection['PICTURE']['SRC']; ?>" alt="<? echo $arSection['PICTURE']['TITLE']; ?>" title="<? echo $arSection['PICTURE']['TITLE']; ?>">
+                                <img src="<? echo $arSection['PICTURE']['SRC']; ?>" alt="<? echo $arSection['PICTURE']['TITLE']; ?>" title="<? echo $arSection['PICTURE']['TITLE']; ?>" class="img-responsive img-rounded img-thumbnail"/>
                             </a>
                         </div>
                         <h2 class="bx_catalog_line_title text-center"><a href="<? echo $arSection['SECTION_PAGE_URL']; ?>"><? echo $arSection['NAME']; ?></a><?

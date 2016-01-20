@@ -159,7 +159,6 @@ if ($verticalGrid)
 	$component,
 	array("HIDE_ICONS" => "Y")
 );?>
-<?echo $arParams["SECTION_TOP_DEPTH"];?>
 <div class="divider" id="secdetsdiv"></div>
 
 
