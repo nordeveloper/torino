@@ -167,27 +167,20 @@ if (!empty($arResult['ITEMS']))
 <?// echo ($arItem['SECOND_PICT'] ? 'bx_catalog_item double' : 'bx_catalog_item'); ?>">
     <div class="bx_catalog_item_container" id="<? echo $strMainID; ?>">
 		<a id="<? echo $arItemIDs['PICT']; ?>" href="<? echo $arItem['DETAIL_PAGE_URL']; ?>" class="" title="<?echo $productTitle; ?>">
-            <? if (isset($arItem['PREVIEW_PICTURE']['SRC'])): ?>
-                <p>LEsh</p>
-                <img src="<?= $arItem['PREVIEW_PICTURE']['SRC'];?>" alt="" class="bx-width100 img-responsive img-rounded img-thumbnail" title="<?= $imgTitle; ?>"/>
-            <? else: ?>
-				<p>LEsh NO</p>
-                <img src="<?= SITE_TEMPLATE_PATH?>/images/<?echo $nophoto;?>?>" alt="" class="bx-width100 img-responsive img-rounded img-thumbnail" title="<?= $productTitle; ?>"/>
-            <? endif; ?>
-
-    <?if ('Y' == $arParams['SHOW_DISCOUNT_PERCENT'])
-	{
-	?>
-			<div id="<? echo $arItemIDs['DSC_PERC']; ?>" class="bx_stick_disc right bottom" style="display:<? echo (0 < $arItem['MIN_PRICE']['DISCOUNT_DIFF_PERCENT'] ? '' : 'none'); ?>;">-<? echo $arItem['MIN_PRICE']['DISCOUNT_DIFF_PERCENT']; ?>%</div>
-	<?
-	}
-	if ($arItem['LABEL'])
-	{
-	?>
-			<div id="<? echo $arItemIDs['STICKER_ID']; ?>" class="bx_stick average left top" title="<? echo $arItem['LABEL_VALUE']; ?>"><? echo $arItem['LABEL_VALUE']; ?></div>
-	<?
-	}
-	?>
+            <img src="<?= $arItem['PREVIEW_PICTURE']['SRC'];?>" alt="" class="bx-width100 img-responsive img-rounded img-thumbnail" title="<?= $imgTitle; ?>"/>
+            <?if ('Y' == $arParams['SHOW_DISCOUNT_PERCENT'])
+            {
+            ?>
+                    <div id="<? echo $arItemIDs['DSC_PERC']; ?>" class="bx_stick_disc right bottom" style="display:<? echo (0 < $arItem['MIN_PRICE']['DISCOUNT_DIFF_PERCENT'] ? '' : 'none'); ?>;">-<? echo $arItem['MIN_PRICE']['DISCOUNT_DIFF_PERCENT']; ?>%</div>
+            <?
+            }
+            if ($arItem['LABEL'])
+            {
+            ?>
+                    <div id="<? echo $arItemIDs['STICKER_ID']; ?>" class="bx_stick average left top" title="<? echo $arItem['LABEL_VALUE']; ?>"><? echo $arItem['LABEL_VALUE']; ?></div>
+            <?
+            }
+            ?>
 		</a><?
 	if ($arItem['SECOND_PICT'])
 	{
