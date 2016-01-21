@@ -15,7 +15,7 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
             <div class="container">
                 <div class="col-lg-5 col-md-5 col-sm-4 col-xs-4" id="footinfo">
                     <p>© 2015. Torino group.<br/>
-                        Разработка сайта — «Интеллектуальные системы».</p>
+                        Разработка сайта: «Интеллектуальные системы».</p>
                 </div>
                 <div class="col-lg-2 col-md-2 col-sm-4 col-xs-4" id="footlogo">
                     <img src="<?=SITE_TEMPLATE_PATH?>/images/torin_41.png" alt="Torino" class="img-responsive">
@@ -48,36 +48,46 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
         <script type="text/javascript">
             $(function() {
                 var win_w = $(window).width();
-                /*if (win_w > 768) {
-                    $('.carousel .item').each(function() {
-                        var next = $(this).next();
-                        if (!next.length) {
-                            next = $(this).siblings(':first');
-                        }
-                        next.children(':first-child').clone().appendTo($(this));
 
-                        if (next.next().length > 0) {
-                            next.next().children(':first-child').clone().appendTo($(this));
-                        }
-                        else {
-                            $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
-                        }
-                    });
-                } else if (win_w > 480) {
-                    $('.carousel .item').each(function() {
-                        var next = $(this).next();
-                        if (!next.length) {
-                            next = $(this).siblings(':first');
-                        }
-                        next.children(':first-child').clone().appendTo($(this));
-                    });
+                if ((win_w < 768) && (win_w > 480)) {
+                    $(".daughterslide_3").remove();
                 }
-                else {
-                    return;
-                }*/
+                else if (win_w < 480) {
+                    $(".daughterslide_2").remove();
+                    $(".daughterslide_3").remove();
+                }
 
                 Cart.Init();
             });
+
+            //======================================
+            /*if (win_w > 768) {
+             $('.carousel .item').each(function() {
+             var next = $(this).next();
+             if (!next.length) {
+             next = $(this).siblings(':first');
+             }
+             next.children(':first-child').clone().appendTo($(this));
+
+             if (next.next().length > 0) {
+             next.next().children(':first-child').clone().appendTo($(this));
+             }
+             else {
+             $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
+             }
+             });
+             } else if (win_w > 480) {
+             $('.carousel .item').each(function() {
+             var next = $(this).next();
+             if (!next.length) {
+             next = $(this).siblings(':first');
+             }
+             next.children(':first-child').clone().appendTo($(this));
+             });
+             }
+             else {
+             return;
+             }*/
 
             //======================================
 

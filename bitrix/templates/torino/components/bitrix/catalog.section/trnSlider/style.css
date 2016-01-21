@@ -1,3 +1,8 @@
+.btn-greenbutton, .btn-redbutton, .btn-darkredbutton {
+    margin-top: 0em !important;
+}
+.bx_catalog_item_controls_blockone {padding:1px !important;}
+.cata3_price>.bx_price { font-size: 1.4em !important; font-weight: bold;}
 /* catalog.section */
 .bx-section-desc-post{
 	font-size: 12px;
