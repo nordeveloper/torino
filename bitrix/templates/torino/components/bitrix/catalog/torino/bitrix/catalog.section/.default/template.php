@@ -251,7 +251,8 @@ if (!empty($arResult['ITEMS']))
 	$compareBtnMessage = ($arParams['MESS_BTN_COMPARE'] != '' ? $arParams['MESS_BTN_COMPARE'] : GetMessage('CT_BCS_TPL_MESS_BTN_COMPARE'));
 	if (!isset($arItem['OFFERS']) || empty($arItem['OFFERS']))
 	{
-		?><div class="bx_catalog_item_controls"><?
+		?>
+		<div class="bx_catalog_item_controls"><?
 		if ($arItem['CAN_BUY'])
 		{
 			if ('Y' == $arParams['USE_PRODUCT_QUANTITY'])
@@ -361,6 +362,7 @@ if (!empty($arResult['ITEMS']))
             <?}
 		}?>
         <div style="clear: both;"></div></div>
+
         <?if (isset($arItem['DISPLAY_PROPERTIES']) && !empty($arItem['DISPLAY_PROPERTIES']))
 		{?>
 			<div class="bx_catalog_item_articul">
@@ -490,9 +492,11 @@ if (!empty($arResult['ITEMS']))
 			);
 		}
 		unset($emptyProductProperties);
-?><script type="text/javascript">
-var <? echo $strObName; ?> = new JCCatalogSection(<? echo CUtil::PhpToJSObject($arJSParams, false, true); ?>);
-</script><?
+?>
+<script type="text/javascript">
+    var <? echo $strObName; ?> = new JCCatalogSection(<? echo CUtil::PhpToJSObject($arJSParams, false, true); ?>);
+</script>
+    <?
 	}
 	else
 	{
