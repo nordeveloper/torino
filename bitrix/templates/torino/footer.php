@@ -48,7 +48,7 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
         <script type="text/javascript">
             $(function() {
                 var win_w = $(window).width();
-                if (win_w > 768) {
+                /*if (win_w > 768) {
                     $('.carousel .item').each(function() {
                         var next = $(this).next();
                         if (!next.length) {
@@ -74,7 +74,7 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
                 }
                 else {
                     return;
-                }
+                }*/
 
                 Cart.Init();
             });

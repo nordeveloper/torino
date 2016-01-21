@@ -218,35 +218,6 @@ if (!empty($arResult['ITEMS']))
         </div>
     </div>
 
-	<?/*<div class="bx_catalog_item_price cata3_price"><div id="<? echo $arItemIDs['PRICE']; ?>" class="bx_price"><?
-	if (!empty($arItem['MIN_PRICE']))
-	{
-		if ('N' == $arParams['PRODUCT_DISPLAY_MODE'] && isset($arItem['OFFERS']) && !empty($arItem['OFFERS']))
-		{
-			echo GetMessage(
-				'CT_BCS_TPL_MESS_PRICE_SIMPLE_MODE',
-				array(
-					'#PRICE#' => $arItem['MIN_PRICE']['PRINT_DISCOUNT_VALUE'],
-					'#MEASURE#' => GetMessage(
-						'CT_BCS_TPL_MESS_MEASURE_SIMPLE_MODE',
-						array(
-							'#VALUE#' => $arItem['MIN_PRICE']['CATALOG_MEASURE_RATIO'],
-							'#UNIT#' => $arItem['MIN_PRICE']['CATALOG_MEASURE_NAME']
-						)
-					)
-				)
-			);
-		}
-		else
-		{
-			echo $arItem['MIN_PRICE']['PRINT_DISCOUNT_VALUE'];
-		}
-		if ('Y' == $arParams['SHOW_OLD_PRICE'] && $arItem['MIN_PRICE']['DISCOUNT_VALUE'] < $arItem['MIN_PRICE']['VALUE'])
-		{
-			?> <span><? echo $arItem['MIN_PRICE']['PRINT_VALUE']; ?></span><?
-		}
-	}
-	?></div></div>*/?>
     <?$showSubscribeBtn = false;
 	$compareBtnMessage = ($arParams['MESS_BTN_COMPARE'] != '' ? $arParams['MESS_BTN_COMPARE'] : GetMessage('CT_BCS_TPL_MESS_BTN_COMPARE'));
 	if (!isset($arItem['OFFERS']) || empty($arItem['OFFERS']))
@@ -274,15 +245,10 @@ if (!empty($arResult['ITEMS']))
 
                     $( "input[name='<? echo $arItemIDs['QUANTITY']; ?>']" ).on( "change", function() {
                         var prc =  $("#<?echo $arItemIDs['ID'];?>_priceperitem")[0].value;
-                        console.log($("#<?echo $arItemIDs['ID'];?>_priceperitem")[0]);
 						$("#<?echo $arItemIDs['ID'];?>_price").html((this.value*prc).toFixed(2).toString()+" р.");
                     });
 
                 </script>
-                <?/*<a id="<? echo $arItemIDs['QUANTITY_DOWN']; ?>" href="javascript:void(0)" class="bx_bt_button_type_2 bx_small" rel="nofollow">-</a>
-                <input type="text" class="bx_col_input" id="<? echo $arItemIDs['QUANTITY']; ?>" name="<? echo $arParams["PRODUCT_QUANTITY_VARIABLE"]; ?>" value="<? echo $arItem['CATALOG_MEASURE_RATIO']; ?>">
-                <a id="<? echo $arItemIDs['QUANTITY_UP']; ?>" href="javascript:void(0)" class="bx_bt_button_type_2 bx_small" rel="nofollow">+</a>
-                <span id="<? echo $arItemIDs['QUANTITY_MEASURE']; ?>"><? echo $arItem['CATALOG_MEASURE_NAME']; ?></span>*/?>
 		    </div>
             <div style="display: inline-block;position: relative;" class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
                 <div class="bx_catalog_item_price cata3_price">

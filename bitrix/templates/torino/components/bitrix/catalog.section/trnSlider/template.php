@@ -108,15 +108,12 @@ if (!empty($arResult['ITEMS'])) {
                                                                     step: 1
                                                                 });
 
-                                                                /*$( "input[name='< ? echo $arItemIDs['QUANTITY']; ?>']" ).on( "change", function() {
-                                                                    $("#< ?echo $arItemIDs['ID'];?>_price").innerHTML = "LESH";
-                                                                });*/
+                                                                $( "input[name='<? echo $arItemIDs['QUANTITY']; ?>']" ).on( "change", function() {
+                                                                    var prc =  $("#<?echo $arItemIDs['ID'];?>_priceperitem")[0].value;
+                                                                    $("#<?echo $arItemIDs['ID'];?>_price").html((this.value*prc).toFixed(2).toString()+" р.");
+                                                                });
 
                                                             </script>
-                                                            <?/*<a id="<? echo $arItemIDs['QUANTITY_DOWN']; ?>" href="javascript:void(0)" class="bx_bt_button_type_2 bx_small" rel="nofollow">-</a>
-                                                            <input type="text" class="bx_col_input" id="<? echo $arItemIDs['QUANTITY']; ?>" name="<? echo $arParams["PRODUCT_QUANTITY_VARIABLE"]; ?>" value="<? echo $arItem['CATALOG_MEASURE_RATIO']; ?>">
-                                                            <a id="<? echo $arItemIDs['QUANTITY_UP']; ?>" href="javascript:void(0)" class="bx_bt_button_type_2 bx_small" rel="nofollow">+</a>
-                                                            <span id="<? echo $arItemIDs['QUANTITY_MEASURE']; ?>"><? echo $arItem['CATALOG_MEASURE_NAME']; ?></span>*/?>
                                                         </div>
                                                         <div style="display: inline-block;position: relative;" class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
                                                             <div class="bx_catalog_item_price cata3_price">
@@ -142,13 +139,16 @@ if (!empty($arResult['ITEMS'])) {
                                                                         else
                                                                         {
                                                                             echo $arItem['MIN_PRICE']['PRINT_DISCOUNT_VALUE'];
+                                                                            $priceperitem = $arItem['MIN_PRICE']['DISCOUNT_VALUE_NOVAT'];
                                                                         }
                                                                         if ('Y' == $arParams['SHOW_OLD_PRICE'] && $arItem['MIN_PRICE']['DISCOUNT_VALUE'] < $arItem['MIN_PRICE']['VALUE'])
-                                                                        {
-                                                                            ?> <span><? echo $arItem['MIN_PRICE']['PRINT_VALUE']; ?></span><?
+                                                                        {?>
+                                                                            <span><? echo $arItem['MIN_PRICE']['PRINT_VALUE']; ?></span>
+                                                                            <?$priceperitem = $arItem['MIN_PRICE']['VALUE_NOVAT'];
                                                                         }
                                                                     }?>
                                                                 </div>
+                                                                <input name="<?echo $arItemIDs['ID'];?>_priceperitem" id="<?echo $arItemIDs['ID'];?>_priceperitem" type="hidden" value="<?=$priceperitem;?>"/>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -196,18 +196,6 @@ if (!empty($arResult['ITEMS'])) {
                                             }?>
                                             <div style="clear: both;"></div>
                                         </div>
-
-                                        <?/*
-                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-left">
-                                            <p>
-                                                <a id="<? echo $arItemIDs['BUY_LINK']; ?>" role="button" class="btn btn-primary addtocart" href="javascript:void(0)" rel="nofollow" data-item-id="<? echo $arItem['ID'] ?>">Заказать</a>
-                                            </p>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-right" >
-                                            <h4 id="<? echo $arItemIDs['PRICE']; ?>"><?=$itemPrice?></h4>
-                                        </div>
-                                        */?>
-
 
                                     </div>
                                 </div>
