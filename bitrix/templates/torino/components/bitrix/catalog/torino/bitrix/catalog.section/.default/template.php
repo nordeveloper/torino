@@ -273,7 +273,9 @@ if (!empty($arResult['ITEMS']))
                     });
 
                     $( "input[name='<? echo $arItemIDs['QUANTITY']; ?>']" ).on( "change", function() {
-                        $("#<?echo $arItemIDs['ID'];?>_price").innerHTML = "LESH";
+                        var prc =  $("#<?echo $arItemIDs['ID'];?>_priceperitem")[0].value;
+                        console.log($("#<?echo $arItemIDs['ID'];?>_priceperitem")[0]);
+						$("#<?echo $arItemIDs['ID'];?>_price").html((this.value*prc).toFixed(2).toString()+" р.");
                     });
 
                 </script>
@@ -306,13 +308,16 @@ if (!empty($arResult['ITEMS']))
                             else
                             {
                                 echo $arItem['MIN_PRICE']['PRINT_DISCOUNT_VALUE'];
+                                $priceperitem = $arItem['MIN_PRICE']['DISCOUNT_VALUE_NOVAT'];
                             }
                             if ('Y' == $arParams['SHOW_OLD_PRICE'] && $arItem['MIN_PRICE']['DISCOUNT_VALUE'] < $arItem['MIN_PRICE']['VALUE'])
-                            {
-                                ?> <span><? echo $arItem['MIN_PRICE']['PRINT_VALUE']; ?></span><?
+                            {?>
+								<span><? echo $arItem['MIN_PRICE']['PRINT_VALUE']; ?></span>
+                                <?$priceperitem = $arItem['MIN_PRICE']['VALUE_NOVAT'];
                             }
                         }?>
                     </div>
+                    <input name="<?echo $arItemIDs['ID'];?>_priceperitem" id="<?echo $arItemIDs['ID'];?>_priceperitem" type="hidden" value="<?=$priceperitem;?>"/>
                 </div>
             </div>
         </div>
