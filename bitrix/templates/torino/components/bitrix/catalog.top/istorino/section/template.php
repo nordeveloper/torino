@@ -10,12 +10,10 @@
 /** @var array $templateData */
 global $APPLICATION;
 ?>
-<?/*
-    <div class="bx_catalog_top_home col< ? echo $arParams['LINE_ELEMENT_COUNT']; ?> < ? echo $templateData['TEMPLATE_CLASS']; ?>">
-*/?>
+<?/*<div class="bx_catalog_top_home col< ? echo $arParams['LINE_ELEMENT_COUNT']; ?> ">*/?>
 
 
-<?if (!($arResult["ITEMS"])) { ?>
+<?if (!empty($arResult["ITEMS"])) { ?>
 
 <?foreach ($arResult['ITEMS'] as $key => $arItem)
 {
@@ -61,7 +59,7 @@ global $APPLICATION;
 		: $arItem['NAME']
 	);
 ?>
-    <div class="col-md-4 col-sm-6 col-xs-12">
+    <div class="col-md-4 col-sm-6 col-xs-12 <?echo $templateData['TEMPLATE_CLASS'];?>">
         <div class="thumbnail bx_catalog_item_container">
             <a id="<? echo $arItemIDs['PICT']; ?>" href="<?= $arItem['DETAIL_PAGE_URL']; ?>"><img alt="<?= $imgTitle; ?>" title="<?= $imgTitle; ?>" src="<?= $arItem['PREVIEW_PICTURE']['SRC']; ?>" class="img-responsive img-thumbnail"></a>
             <div class="caption">
@@ -89,7 +87,7 @@ global $APPLICATION;
 
                                         $( "input[name='<? echo $arItemIDs['QUANTITY']; ?>']" ).on( "change", function() {
                                             var prc =  $("#<?echo $arItemIDs['ID'];?>_priceperitem")[0].value;
-                                            $("#<?echo $arItemIDs['ID'];?>_price").html((this.value*prc).toFixed(2).toString()+" ð.");
+                                            $("#<?echo $arItemIDs['ID'];?>_price").html((this.value*prc).toFixed(2).toString()+" Ñ€.");
                                         });
 
                                     </script>

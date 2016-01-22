@@ -177,8 +177,8 @@ a.addtocart.adding
 .btn-greenbutton.disabled,
 .btn-greenbutton[disabled] {
     color: #ffffff !important;
-    background-color: #11943d;
-    *background-color: #0f7d33;
+    background-color: #11943d !important;
+    *background-color: #0f7d33 !important;
 }
 .btn-greenbutton:active,
 .btn-greenbutton.active {
@@ -215,12 +215,12 @@ a.addtocart.adding
 .btn-redbutton.disabled,
 .btn-redbutton[disabled] {
     color: #ffffff;
-    background-color: #f5001c;
-    *background-color: #db0019;
+    background-color: #f5001c !important;
+    *background-color: #db0019 !important;
 }
 .btn-redbutton:active,
 .btn-redbutton.active {
-    background-color: #c20016 ;
+    background-color: #c20016 !important;
 }
 
 
@@ -253,12 +253,12 @@ a.addtocart.adding
 .btn-darkredbutton.disabled,
 .btn-darkredbutton[disabled] {
     color: #ffffff;
-    background-color: #8f0010;
-    *background-color: #76000d;
+    background-color: #8f0010 !important;
+    *background-color: #76000d !important;
 }
 .btn-darkredbutton:active,
 .btn-darkredbutton.active {
-    background-color: #5c000a ;
+    background-color: #5c000a !important;
 }
 
 
