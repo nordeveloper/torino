@@ -1,3 +1,16 @@
+.pricer div { padding:0.15em 0 !important;}
+
+.pricer div.bx_catalog_item_controls_blocktwo { padding-top:3.5em !important;}
+
+
+.bx_catalog_item_controls_blockone span
+{ font-size: 1.3em; font-weight:bold; }
+.bx_catalog_item_controls_blockone button
+{ font-size: 0.45em; }
+.bx_catalog_item_controls_blockone input
+{ font-size: 0.75em; height:1.68em;  }
+
+
 
 .item_info_section, .item_info_section p { font-size:1.2em !important; line-height: 1.5em !important; }
 
@@ -125,7 +138,7 @@
     color: #9b9b9b;
     font-size: 15px;
     font-weight: bold;
-    text-align: right;
+    text-align: left;
     margin-right:10px;
 }
 .bx_item_detail .item_info_section dl{

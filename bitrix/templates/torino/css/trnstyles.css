@@ -190,7 +190,7 @@ a.addtocart.adding
 .btn-redbutton.active {
     color: rgba(255, 255, 255, 0.75);
 }
-.btn-redbutton {
+.btn-redbutton,.btn-darkredbutton:hover {
     color: #ffffff !important;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
     background-color: #d60018;
@@ -246,7 +246,7 @@ a.addtocart.adding
 
     filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
-.btn-darkredbutton:hover,
+/*.btn-darkredbutton:hover,*/
 .btn-darkredbutton:focus,
 .btn-darkredbutton:active,
 .btn-darkredbutton.active,
