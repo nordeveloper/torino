@@ -3,6 +3,10 @@ body
 { background:#f8f8f8 url("../images/pizzaback2.jpg") repeat; }
 
 
+a, a:hover, a:active {text-decoration: none;}
+a:visited {text-decoration: none !important;}
+
+
 @font-face {
     font-family: "PT Sans Narrow"; /* Имя шрифта */
     src: url(../fonts/pt_sans-regular.ttf); /* Путь к файлу со шрифтом */
@@ -126,7 +130,8 @@ a.addtocart.adding
 
 .bx_catalog_item_container:hover{
     background-color: rgba(255, 255, 255, 0.75);
-    border-radius: 5px;
+    border: 1px solid #aaaaaa;
+    border-radius: 10px;
 }
 
 .bx_catalog_item_container:hover .img-thumbnail {border: 1px solid #aaaaaa; }
