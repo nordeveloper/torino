@@ -85,14 +85,32 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
                         <!-- <img class="img-responsive top-ico" src="images/Shopping-Cart-03-128.png" alt="Вход для пользователей"/> -->
                         <!-- <img class="img-responsive top-ico" src="images/Shopping-Basket-01-128.png" alt="Вход для пользователей"/> -->
                     </li>
-                    <li class="hidden-xs"><a>
-                            <!-- <span class="glyphicon glyphicon-user"></span> -->
-                            Вход для пользователей:
-                        </a></li>
-                    <li class="active"><a href="#">
-                            <img class="img-responsive top-ico2 hidden visible-xs" src="<?=SITE_TEMPLATE_PATH?>/images/Pizza-02-128.png" alt="Вход для пользователей"/>
-                            <span class="signin">Войти</span><span id="buycart"></span>
-                        </a></li>
+
+                    <?if ($USER->IsAuthorized()) {
+                        $userFilter = Array("ID" => $_SESSION['SESS_AUTH']['USER_ID']);
+                        $userData = CUser::GetList($userFilter);
+                        test_dump($USER);
+                    ?>
+                        <li class="hidden-xs"><a>
+                                <!-- <span class="glyphicon glyphicon-user"></span> -->
+                                Вы вошли как:
+                            </a></li>
+                        <li class="active"><a href="#">
+                                <img class="img-responsive top-ico2 hidden visible-xs" src="<?=SITE_TEMPLATE_PATH?>/images/Pizza-02-128.png" alt="Вход для пользователей"/>
+                                <span class="signin"><?="lesh"?></span><span id="buycart"></span>
+                            </a>
+                        </li>
+                    <?} else {?>
+                        <li class="hidden-xs"><a>
+                                <!-- <span class="glyphicon glyphicon-user"></span> -->
+                                Вход для пользователей:
+                            </a></li>
+                        <li class="active"><a href="#">
+                                <img class="img-responsive top-ico2 hidden visible-xs" src="<?=SITE_TEMPLATE_PATH?>/images/Pizza-02-128.png" alt="Вход для пользователей"/>
+                                <span class="signin">Войти</span><span id="buycart"></span>
+                            </a>
+                        </li>
+                    <?}?>
                 </ul>
             </div><!--/.nav-collapse -->
         </div>
