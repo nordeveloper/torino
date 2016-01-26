@@ -157,8 +157,9 @@ else:
 	<table width="100%;">
 		<tr>
 			<td align="center" style="padding-bottom: 8px;" class="systhref-txt">
-                <br /><br />
-                Приветствуем на нашем сайте! <br /><br />
+                <br />
+                Приветствуем на сайте <br />
+				<strong>Torino Pizza</strong>! <br /><br />
                 Вы вошли как<br />
 				<a class="systhref" href="/auth/index.php" title="<?=GetMessage("AUTH_PROFILE")?>"><i><?=$arResult["USER_NAME"]?></i></a><br />
                 <a class="systhref" style="font-weight:bold;" href="/auth/index.php" title="<?=GetMessage("AUTH_PROFILE")?>">[<?=$arResult["USER_LOGIN"]?>]</a>

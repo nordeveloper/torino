@@ -74,7 +74,7 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
             <div class="navbar-header" id="toppest">
                 <span id="menutoggler" class="top-left visible-xs"><a href="#">Меню</a></span>
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainmenu">
-                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                    <span class="glyphicon glyphicon-th-list"></span>
                 </button>
             </div>
 

@@ -309,3 +309,7 @@ font.text { font-size:1.2em; line-height: 1.5em; font-weight: bold; font-family:
 
 #registrationpanel, #registrationpanel a, #registrationpanel p
 { font-size:1.1em;}
+
+.profile-user-div-link h4 a{
+    font-weight:bold; color:#337ab7;
+}

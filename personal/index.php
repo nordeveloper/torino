@@ -1,17 +1,18 @@
+<? require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php"); ?>
 
-    <? require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php"); ?>
+<? $APPLICATION->SetTitle("Torino: Личный кабинет"); ?>
 
-    <div class="fullwidth"><div class="centered"><div class="bx-auth wrkdiv" id="registrationpanel" style="padding-top: 0px !important; width:100%; max-width: 100% !important;">
-
-    <? $APPLICATION->SetTitle("Личный кабинет"); ?>
-
-    Приветствуем на нашем сайте! Вы зашли как <strong><a class="headinga" href="#us_params"><? echo CUser::GetFullName() ?></a></strong>.
+<div id="registrationpanel" class="container">
+    <br/><p>
+        Приветствуем на сайте <strong>Torino Pizza</strong>!
+        Вы вошли как <strong><a class="headinga" href="#us_params"><? echo CUser::GetFullName() ?></a></strong>.
+    </p>
 
 
     <div class="bx-auth registrationpanel" id="" style="padding-top: 0px !important; width:100%; max-width: 100% !important;">
         <hr/>
         <div class="bx-auth registrationpanel" id="" style="padding-top: 0px !important; width:100%; max-width: 100% !important;">
-            <p class="hed" id="us_params"><strong>Параметры учетной записи</strong></p>
+            <h2 class="hed text-center" id="us_params"><strong>Параметры учетной записи</strong></h2>
             <?$APPLICATION->IncludeComponent(
                 "bitrix:main.profile",
                 "torino",
@@ -23,7 +24,7 @@
     <div class="bx-auth registrationpanel" id="" style="padding-top: 0px !important; width:100%; max-width: 100% !important;">
     <hr/>
     <div class="bx-auth registrationpanel" id="" style="padding-top: 0px !important; width:100%; max-width: 100% !important;">
-    <p class="hed"><strong>Ваши заказы</strong></p>
+    <h2 class="hed text-center"><strong>Ваши заказы</strong></h2>
          <?$APPLICATION->IncludeComponent(
             "bitrix:sale.personal.order",
             "",
@@ -44,7 +45,11 @@
     );?>
     </div></div> */?>
 
-</div></div></div>
+
+
+</div>
+
+
 
 
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

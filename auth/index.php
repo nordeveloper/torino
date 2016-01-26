@@ -19,12 +19,14 @@ $APPLICATION->SetTitle("Torino: Авторизация");?>
 
         <br/><br/><br/><br/>
 
-        <p class="text-center">Вы зарегистрированы и успешно авторизовались. <br/>
-            Используйте кнопки ниже для навигации по пользовательским страницам.</p>
+        <p class="text-center">
+                Вы зарегистрированы и успешно авторизовались. <br/>
+                Используйте кнопки ниже для навигации по пользовательским страницам.
+        </p>
 
-        <p class="text-center"><a href="<?=SITE_DIR?>/personal/index.php"><strong>Личные данные</strong></a></p>
+        <p class="text-center"><a href="/personal/index.php"><strong>Личные данные</strong></a></p>
 
-        <p class="text-center"><a href="<?=SITE_DIR?>/personal/basket.php"><strong>Моя корзина</strong></a></p>
+        <p class="text-center"><a href="/personal/basket.php"><strong>Моя корзина</strong></a></p>
 
         <p class="text-center"><a href="<?=SITE_DIR?>"><strong>Вернуться на главную страницу</strong></a></p>
 

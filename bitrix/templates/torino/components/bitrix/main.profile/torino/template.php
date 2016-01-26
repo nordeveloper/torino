@@ -38,8 +38,12 @@ var cookie_prefix = '<?=$arResult["COOKIE_PREFIX"]?>';
 <?=$arResult["BX_SESSION_CHECK"]?>
 <input type="hidden" name="lang" value="<?=LANG?>" />
 <input type="hidden" name="ID" value=<?=$arResult["ID"]?> />
-
-<div class="profile-link profile-user-div-link"><a title="<?=GetMessage("REG_SHOW_HIDE")?>" href="javascript:void(0)" onclick="SectionClick('reg')"><?=GetMessage("REG_SHOW_HIDE")?></a></div>
+<br/>
+<div class="profile-link profile-user-div-link text-center">
+    <h4>
+	    <a title="<?=GetMessage("REG_SHOW_HIDE")?>" href="javascript:void(0)" onclick="SectionClick('reg')"><?=GetMessage("REG_SHOW_HIDE")?></a>
+    </h4>
+</div>
 <div class="profile-block-<?=strpos($arResult["opened"], "reg") === false ? "hidden" : "shown"?>" id="user_div_reg">
 <table class="profile-table data-table">
 	<?/*<thead>
@@ -159,7 +163,11 @@ document.getElementById('bx_auth_secure').style.display = 'inline-block';
 </table>
 </div>
 
-<div class="profile-link profile-user-div-link"><a title="<?=GetMessage("USER_SHOW_HIDE")?>" href="javascript:void(0)" onclick="SectionClick('personal')"><?=GetMessage("USER_PERSONAL_INFO")?></a></div>
+<div class="profile-link profile-user-div-link text-center">
+    <h4>
+        <a title="<?=GetMessage("USER_SHOW_HIDE")?>" href="javascript:void(0)" onclick="SectionClick('personal')"><?=GetMessage("USER_PERSONAL_INFO")?></a>
+    </h4>
+</div>
 <div id="user_div_personal" class="profile-block-<?=strpos($arResult["opened"], "personal") === false ? "hidden" : "shown"?>">
 <table class="data-table profile-table">
     <?/*<thead>
@@ -304,9 +312,17 @@ document.getElementById('bx_auth_secure').style.display = 'inline-block';
 	</div>
 	<?endif;?>
 	<?if($arResult["IS_ADMIN"]):?>
-	<div class="profile-link profile-user-div-link"><a title="<?=GetMessage("USER_SHOW_HIDE")?>" href="javascript:void(0)" onclick="SectionClick('admin')"><?=GetMessage("USER_ADMIN_NOTES")?></a></div>
+	<div class="profile-link profile-user-div-link text-center">
+        <h4>
+            <a title="<?=GetMessage("USER_SHOW_HIDE")?>" href="javascript:void(0)" onclick="SectionClick('admin')"><?=GetMessage("USER_ADMIN_NOTES")?></a>
+        </h4>
+    </div>
 	<div id="user_div_admin" class="profile-block-<?=strpos($arResult["opened"], "admin") === false ? "hidden" : "shown"?>">
-        <textarea cols="96" rows="7" name="ADMIN_NOTES"><?=$arResult["arUser"]["ADMIN_NOTES"]?></textarea>
+        <div class="form-group">
+            <label for="comment">Комментарии и заметки:</label>
+            <textarea class="form-control" rows="10" id="comment" name="ADMIN_NOTES"><?=$arResult["arUser"]["ADMIN_NOTES"]?></textarea>
+        </div>
+
         <? /*
         <table class="data-table profile-table">
 		<thead>
@@ -352,12 +368,18 @@ document.getElementById('bx_auth_secure').style.display = 'inline-block';
 	<?endif;?>
 	<?// ******************** /User properties ***************************************************?>
 	<?//<p><?echo $arResult["GROUP_POLICY"]["PASSWORD_REQUIREMENTS"];? ></p>?>
-    <div style="margin:20px 0 0 0px;" class="profile-link profile-user-div-link">
-	    <p style="width:100%;">
-            <input class="systhref-submit" type="submit" name="save" value="<?=(($arResult["ID"]>0) ? GetMessage("MAIN_SAVE") : GetMessage("MAIN_ADD"))?>">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <input class="systhref-submit" type="reset" value="<?=GetMessage('MAIN_RESET');?>">
+    <div style="margin:20px 0 0 0px;" class="profile-link profile-user-div-link text-center">
+        <br/><br/>
+	    <p>
+            <button class="btn btn-lg btn-success" type="submit" name="save">
+                <span class='glyphicon glyphicon-check'></span>&nbsp;&nbsp;<?=(($arResult["ID"]>0) ? GetMessage("MAIN_SAVE") : GetMessage("MAIN_ADD"))?>
+            </button>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="btn btn-lg btn-danger" type="reset">
+                <span class='glyphicon glyphicon-remove'></span>&nbsp;&nbsp;<?=GetMessage('MAIN_RESET');?>
+            </button>
         </p>
+        <br/><br/>
     </div>
 </form>
 <?
