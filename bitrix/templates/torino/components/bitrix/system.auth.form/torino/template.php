@@ -1,6 +1,6 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
 
-<div class="bx-system-auth-form">
+<div class="bx-system-auth-form text-center">
 
 <?
 if ($arResult['SHOW_ERRORS'] == 'Y' && $arResult['ERROR'])
@@ -18,7 +18,7 @@ if ($arResult['SHOW_ERRORS'] == 'Y' && $arResult['ERROR'])
 <?endforeach?>
 	<input type="hidden" name="AUTH_FORM" value="Y" />
 	<input type="hidden" name="TYPE" value="AUTH" />
-	<table width="95%">
+	<table width="100%">
 		<tr>
 			<td colspan="2" class="systhref">
 			<?=GetMessage("AUTH_LOGIN")?>:
@@ -119,7 +119,7 @@ elseif($arResult["FORM_TYPE"] == "otp"):
 <?endif?>
 	<input type="hidden" name="AUTH_FORM" value="Y" />
 	<input type="hidden" name="TYPE" value="OTP" />
-	<table width="95%">
+	<table width="100%;">
 		<tr>
 			<td colspan="2">
 			<?echo GetMessage("auth_form_comp_otp")?><br />
@@ -154,13 +154,13 @@ else:
 ?>
 
 <form action="<?=$arResult["AUTH_URL"]?>">
-	<table width="95%">
+	<table width="100%;">
 		<tr>
 			<td align="center" style="padding-bottom: 8px;" class="systhref-txt">
                 <br /><br />
                 Приветствуем на нашем сайте! <br /><br />
                 Вы вошли как<br />
-				<?=$arResult["USER_NAME"]?> &nbsp;
+				<a class="systhref" href="/auth/index.php" title="<?=GetMessage("AUTH_PROFILE")?>"><i><?=$arResult["USER_NAME"]?></i></a><br />
                 <a class="systhref" style="font-weight:bold;" href="/auth/index.php" title="<?=GetMessage("AUTH_PROFILE")?>">[<?=$arResult["USER_LOGIN"]?>]</a>
                 <br /><br />
 			</td>

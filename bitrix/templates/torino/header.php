@@ -135,7 +135,7 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
             var login_dialog;
             login_dialog = $("#login_dialog").dialog({
                 autoOpen: false,
-                height: 340,
+                height: 380,
                 width: 310,
                 modal: true,
                 closeOnEscape: true

@@ -304,3 +304,8 @@ font.text { font-size:1.2em; line-height: 1.5em; font-weight: bold; font-family:
     font-size: 1.3em !important; margin-top: 0.2em;
     /*font-size: 20px !important;*/
 }
+
+
+
+#registrationpanel, #registrationpanel a, #registrationpanel p
+{ font-size:1.1em;}
