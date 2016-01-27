@@ -25,11 +25,11 @@
     <hr/>
     <div class="bx-auth registrationpanel" id="" style="padding-top: 0px !important; width:100%; max-width: 100% !important;">
     <h2 class="hed text-center"><strong>Ваши заказы</strong></h2>
-         <?$APPLICATION->IncludeComponent(
-            "bitrix:sale.personal.order",
-            "",
-            Array()
-         );?>
+         <?$APPLICATION->IncludeComponent("bitrix:sale.personal.order", "persOrder", Array(
+	
+	),
+	false
+);?>
     </div></div>
 
 

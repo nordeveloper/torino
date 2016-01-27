@@ -45,122 +45,124 @@ var cookie_prefix = '<?=$arResult["COOKIE_PREFIX"]?>';
     </h4>
 </div>
 <div class="profile-block-<?=strpos($arResult["opened"], "reg") === false ? "hidden" : "shown"?>" id="user_div_reg">
-<table class="profile-table data-table">
-	<?/*<thead>
-		<tr>
-			<td colspan="2">&nbsp;</td>
-		</tr>
-	</thead>*/?>
-	<tbody>
-	<tr>
-		<td><?=GetMessage('NAME')?></td>
-		<td><input type="text" name="NAME" maxlength="50" value="<?=$arResult["arUser"]["NAME"]?>" /></td>
-	</tr>
-	<tr>
-		<td><?=GetMessage('LAST_NAME')?></td>
-		<td><input type="text" name="LAST_NAME" maxlength="50" value="<?=$arResult["arUser"]["LAST_NAME"]?>" /></td>
-	</tr>
-	<tr>
-		<td><?=GetMessage('SECOND_NAME')?></font></td>
-		<td><input type="text" name="SECOND_NAME" maxlength="50" value="<?=$arResult["arUser"]["SECOND_NAME"]?>" /></td>
-	</tr>
+<br/><br/>
+<table class="profile-table data-table table table-hover">
+<?/*<thead>
     <tr>
-        <td><?echo GetMessage("main_profile_title")?></td>
-        <td><input type="text" name="TITLE" value="<?=$arResult["arUser"]["TITLE"]?>" /></td>
+        <td colspan="2">&nbsp;</td>
     </tr>
-	<tr>
-		<td><?=GetMessage('EMAIL')?><?if($arResult["EMAIL_REQUIRED"]):?><span class="starrequired">*</span><?endif?></td>
-		<td><input type="text" name="EMAIL" maxlength="50" value="<? echo $arResult["arUser"]["EMAIL"]?>" /></td>
-	</tr>
-	<tr>
-		<td><?=GetMessage('LOGIN')?><span class="starrequired">*</span></td>
-		<td><input type="text" name="LOGIN" maxlength="50" value="<? echo $arResult["arUser"]["LOGIN"]?>" /></td>
-	</tr>
+</thead>*/?>
+<tbody>
+<tr>
+    <td><?=GetMessage('NAME')?></td>
+    <td><input type="text" name="NAME" maxlength="50" value="<?=$arResult["arUser"]["NAME"]?>" /></td>
+</tr>
+<tr>
+    <td><?=GetMessage('LAST_NAME')?></td>
+    <td><input type="text" name="LAST_NAME" maxlength="50" value="<?=$arResult["arUser"]["LAST_NAME"]?>" /></td>
+</tr>
+<tr>
+    <td><?=GetMessage('SECOND_NAME')?></font></td>
+    <td><input type="text" name="SECOND_NAME" maxlength="50" value="<?=$arResult["arUser"]["SECOND_NAME"]?>" /></td>
+</tr>
+<tr>
+    <td><?echo GetMessage("main_profile_title")?></td>
+    <td><input type="text" name="TITLE" value="<?=$arResult["arUser"]["TITLE"]?>" /></td>
+</tr>
+<tr>
+    <td><?=GetMessage('EMAIL')?><?if($arResult["EMAIL_REQUIRED"]):?><span class="starrequired">*</span><?endif?></td>
+    <td><input type="text" name="EMAIL" maxlength="50" value="<? echo $arResult["arUser"]["EMAIL"]?>" /></td>
+</tr>
+<tr>
+    <td><?=GetMessage('LOGIN')?><span class="starrequired">*</span></td>
+    <td><input type="text" name="LOGIN" maxlength="50" value="<? echo $arResult["arUser"]["LOGIN"]?>" /></td>
+</tr>
 <?if($arResult["arUser"]["EXTERNAL_AUTH_ID"] == ''):?>
-	<tr>
-		<td><?=GetMessage('NEW_PASSWORD_REQ')?></td>
-		<td><input type="password" name="NEW_PASSWORD" maxlength="50" value="" autocomplete="off" class="bx-auth-input" />
+<tr>
+    <td><?=GetMessage('NEW_PASSWORD_REQ')?></td>
+    <td><input type="password" name="NEW_PASSWORD" maxlength="50" value="" autocomplete="off" class="bx-auth-input" />
 <?if($arResult["SECURE_AUTH"]):?>
-				<span class="bx-auth-secure" id="bx_auth_secure" title="<?echo GetMessage("AUTH_SECURE_NOTE")?>" style="display:none">
-					<div class="bx-auth-secure-icon"></div>
-				</span>
-				<noscript>
-				<span class="bx-auth-secure" title="<?echo GetMessage("AUTH_NONSECURE_NOTE")?>">
-					<div class="bx-auth-secure-icon bx-auth-secure-unlock"></div>
-				</span>
-				</noscript>
+            <span class="bx-auth-secure" id="bx_auth_secure" title="<?echo GetMessage("AUTH_SECURE_NOTE")?>" style="display:none">
+                <div class="bx-auth-secure-icon"></div>
+            </span>
+            <noscript>
+            <span class="bx-auth-secure" title="<?echo GetMessage("AUTH_NONSECURE_NOTE")?>">
+                <div class="bx-auth-secure-icon bx-auth-secure-unlock"></div>
+            </span>
+            </noscript>
 <script type="text/javascript">
 document.getElementById('bx_auth_secure').style.display = 'inline-block';
 </script>
-		</td>
-	</tr>
+    </td>
+</tr>
 <?endif?>
-	<tr>
-		<td><?=GetMessage('NEW_PASSWORD_CONFIRM')?></td>
-		<td><input type="password" name="NEW_PASSWORD_CONFIRM" maxlength="50" value="" autocomplete="off" /></td>
-	</tr>
-    <tr>
-        <td colspan="2"><p style="color:#b41a26; font-style: italic;">
-                <?echo $arResult["GROUP_POLICY"]["PASSWORD_REQUIREMENTS"];?>
-        </p></td>
-    </tr>
+<tr>
+    <td><?=GetMessage('NEW_PASSWORD_CONFIRM')?></td>
+    <td><input type="password" name="NEW_PASSWORD_CONFIRM" maxlength="50" value="" autocomplete="off" /></td>
+</tr>
+<tr>
+    <td colspan="2"><p class="text-center" style="color:#b41a26; font-style: italic;">
+            <?echo $arResult["GROUP_POLICY"]["PASSWORD_REQUIREMENTS"];?>
+    </p></td>
+</tr>
+<?
+if($arResult["ID"]>0)
+{
+    ?>
     <?
-    if($arResult["ID"]>0)
+    if (strlen($arResult["arUser"]["TIMESTAMP_X"])>0)
     {
         ?>
-        <?
-        if (strlen($arResult["arUser"]["TIMESTAMP_X"])>0)
-        {
-            ?>
-            <tr>
-                <td><?=GetMessage('LAST_UPDATE')?></td>
-                <td><?=$arResult["arUser"]["TIMESTAMP_X"]?></td>
-            </tr>
-        <?
-        }
-        ?>
-        <?
-        if (strlen($arResult["arUser"]["LAST_LOGIN"])>0)
-        {
-            ?>
-            <tr>
-                <td><?=GetMessage('LAST_LOGIN')?></td>
-                <td><?=$arResult["arUser"]["LAST_LOGIN"]?></td>
-            </tr>
-        <?
-        }
-        ?>
+        <tr>
+            <td><?=GetMessage('LAST_UPDATE')?></td>
+            <td><?=$arResult["arUser"]["TIMESTAMP_X"]?></td>
+        </tr>
     <?
     }
     ?>
+    <?
+    if (strlen($arResult["arUser"]["LAST_LOGIN"])>0)
+    {
+        ?>
+        <tr>
+            <td><?=GetMessage('LAST_LOGIN')?></td>
+            <td><?=$arResult["arUser"]["LAST_LOGIN"]?></td>
+        </tr>
+    <?
+    }
+    ?>
+<?
+}
+?>
 <?endif?>
 <?if($arResult["TIME_ZONE_ENABLED"] == true):?>
-	<tr>
-		<td colspan="2" class="profile-header"><?echo GetMessage("main_profile_time_zones")?></td>
-	</tr>
-	<tr>
-		<td><?echo GetMessage("main_profile_time_zones_auto")?></td>
-		<td>
-			<select name="AUTO_TIME_ZONE" onchange="this.form.TIME_ZONE.disabled=(this.value != 'N')">
-				<option value=""><?echo GetMessage("main_profile_time_zones_auto_def")?></option>
-				<option value="Y"<?=($arResult["arUser"]["AUTO_TIME_ZONE"] == "Y"? ' SELECTED="SELECTED"' : '')?>><?echo GetMessage("main_profile_time_zones_auto_yes")?></option>
-				<option value="N"<?=($arResult["arUser"]["AUTO_TIME_ZONE"] == "N"? ' SELECTED="SELECTED"' : '')?>><?echo GetMessage("main_profile_time_zones_auto_no")?></option>
-			</select>
-		</td>
-	</tr>
-	<tr>
-		<td><?echo GetMessage("main_profile_time_zones_zones")?></td>
-		<td>
-			<select name="TIME_ZONE"<?if($arResult["arUser"]["AUTO_TIME_ZONE"] <> "N") echo ' disabled="disabled"'?>>
+<tr>
+    <td colspan="2" class="profile-header"><?echo GetMessage("main_profile_time_zones")?></td>
+</tr>
+<tr>
+    <td><?echo GetMessage("main_profile_time_zones_auto")?></td>
+    <td>
+        <select name="AUTO_TIME_ZONE" onchange="this.form.TIME_ZONE.disabled=(this.value != 'N')">
+            <option value=""><?echo GetMessage("main_profile_time_zones_auto_def")?></option>
+            <option value="Y"<?=($arResult["arUser"]["AUTO_TIME_ZONE"] == "Y"? ' SELECTED="SELECTED"' : '')?>><?echo GetMessage("main_profile_time_zones_auto_yes")?></option>
+            <option value="N"<?=($arResult["arUser"]["AUTO_TIME_ZONE"] == "N"? ' SELECTED="SELECTED"' : '')?>><?echo GetMessage("main_profile_time_zones_auto_no")?></option>
+        </select>
+    </td>
+</tr>
+<tr>
+    <td><?echo GetMessage("main_profile_time_zones_zones")?></td>
+    <td>
+        <select name="TIME_ZONE"<?if($arResult["arUser"]["AUTO_TIME_ZONE"] <> "N") echo ' disabled="disabled"'?>>
 <?foreach($arResult["TIME_ZONE_LIST"] as $tz=>$tz_name):?>
-				<option value="<?=htmlspecialcharsbx($tz)?>"<?=($arResult["arUser"]["TIME_ZONE"] == $tz? ' SELECTED="SELECTED"' : '')?>><?=htmlspecialcharsbx($tz_name)?></option>
+            <option value="<?=htmlspecialcharsbx($tz)?>"<?=($arResult["arUser"]["TIME_ZONE"] == $tz? ' SELECTED="SELECTED"' : '')?>><?=htmlspecialcharsbx($tz_name)?></option>
 <?endforeach?>
-			</select>
-		</td>
-	</tr>
+        </select>
+    </td>
+</tr>
 <?endif?>
-	</tbody>
+</tbody>
 </table>
+<br/><br/>
 </div>
 
 <div class="profile-link profile-user-div-link text-center">
@@ -169,118 +171,120 @@ document.getElementById('bx_auth_secure').style.display = 'inline-block';
     </h4>
 </div>
 <div id="user_div_personal" class="profile-block-<?=strpos($arResult["opened"], "personal") === false ? "hidden" : "shown"?>">
-<table class="data-table profile-table">
-    <?/*<thead>
-			<tr>
-				<td colspan="2">&nbsp;</td>
-			</tr>
-		</thead>*/?>
-	<tbody>
-		<tr>
-			<td><?=GetMessage('USER_PROFESSION')?></td>
-			<td><input type="text" name="PERSONAL_PROFESSION" maxlength="255" value="<?=$arResult["arUser"]["PERSONAL_PROFESSION"]?>" /></td>
-		</tr>
-		<tr>
-			<td><?=GetMessage('USER_WWW')?></td>
-			<td><input type="text" name="PERSONAL_WWW" maxlength="255" value="<?=$arResult["arUser"]["PERSONAL_WWW"]?>" /></td>
-		</tr>
-		<tr>
-			<td><?=GetMessage('USER_ICQ')?></td>
-			<td><input type="text" name="PERSONAL_ICQ" maxlength="255" value="<?=$arResult["arUser"]["PERSONAL_ICQ"]?>" /></td>
-		</tr>
-		<tr>
-			<td><?=GetMessage('USER_GENDER')?></td>
-			<td><select name="PERSONAL_GENDER">
-				<option value=""><?=GetMessage("USER_DONT_KNOW")?></option>
-				<option value="M"<?=$arResult["arUser"]["PERSONAL_GENDER"] == "M" ? " SELECTED=\"SELECTED\"" : ""?>><?=GetMessage("USER_MALE")?></option>
-				<option value="F"<?=$arResult["arUser"]["PERSONAL_GENDER"] == "F" ? " SELECTED=\"SELECTED\"" : ""?>><?=GetMessage("USER_FEMALE")?></option>
-			</select></td>
-		</tr>
-		<tr>
-			<td><?=GetMessage("USER_BIRTHDAY_DT")?> (<?=$arResult["DATE_FORMAT"]?>):</td>
-			<td><?
-			$APPLICATION->IncludeComponent(
-				'bitrix:main.calendar',
-				'',
-				array(
-					'SHOW_INPUT' => 'Y',
-					'FORM_NAME' => 'form1',
-					'INPUT_NAME' => 'PERSONAL_BIRTHDAY',
-					'INPUT_VALUE' => $arResult["arUser"]["PERSONAL_BIRTHDAY"],
-					'SHOW_TIME' => 'N'
-				),
-				null,
-				array('HIDE_ICONS' => 'Y')
-			);
+<br/><br/>
+<table class="data-table profile-table table table-hover">
+<?/*<thead>
+        <tr>
+            <td colspan="2">&nbsp;</td>
+        </tr>
+    </thead>*/?>
+<tbody>
+    <tr>
+        <td><?=GetMessage('USER_PROFESSION')?></td>
+        <td><input type="text" name="PERSONAL_PROFESSION" maxlength="255" value="<?=$arResult["arUser"]["PERSONAL_PROFESSION"]?>" /></td>
+    </tr>
+    <tr>
+        <td><?=GetMessage('USER_WWW')?></td>
+        <td><input type="text" name="PERSONAL_WWW" maxlength="255" value="<?=$arResult["arUser"]["PERSONAL_WWW"]?>" /></td>
+    </tr>
+    <tr>
+        <td><?=GetMessage('USER_ICQ')?></td>
+        <td><input type="text" name="PERSONAL_ICQ" maxlength="255" value="<?=$arResult["arUser"]["PERSONAL_ICQ"]?>" /></td>
+    </tr>
+    <tr>
+        <td><?=GetMessage('USER_GENDER')?></td>
+        <td><select name="PERSONAL_GENDER" class="selectpicker">
+            <option value=""><?=GetMessage("USER_DONT_KNOW")?></option>
+            <option value="M"<?=$arResult["arUser"]["PERSONAL_GENDER"] == "M" ? " SELECTED=\"SELECTED\"" : ""?>><?=GetMessage("USER_MALE")?></option>
+            <option value="F"<?=$arResult["arUser"]["PERSONAL_GENDER"] == "F" ? " SELECTED=\"SELECTED\"" : ""?>><?=GetMessage("USER_FEMALE")?></option>
+        </select></td>
+    </tr>
+    <tr>
+        <td><?=GetMessage("USER_BIRTHDAY_DT")?> (<?=$arResult["DATE_FORMAT"]?>):</td>
+        <td><?
+        $APPLICATION->IncludeComponent(
+            'bitrix:main.calendar',
+            '',
+            array(
+                'SHOW_INPUT' => 'Y',
+                'FORM_NAME' => 'form1',
+                'INPUT_NAME' => 'PERSONAL_BIRTHDAY',
+                'INPUT_VALUE' => $arResult["arUser"]["PERSONAL_BIRTHDAY"],
+                'SHOW_TIME' => 'N'
+            ),
+            null,
+            array('HIDE_ICONS' => 'Y')
+        );
 
-			//=CalendarDate("PERSONAL_BIRTHDAY", $arResult["arUser"]["PERSONAL_BIRTHDAY"], "form1", "15")
-			?></td>
-		</tr>
-		<tr>
-			<td><?=GetMessage("USER_PHOTO")?></td>
-			<td>
-			<?=$arResult["arUser"]["PERSONAL_PHOTO_INPUT"]?>
-			<?
-			if (strlen($arResult["arUser"]["PERSONAL_PHOTO"])>0)
-			{
-			?>
-			<br />
-				<?=$arResult["arUser"]["PERSONAL_PHOTO_HTML"]?>
-			<?
-			}
-			?></td>
-		<?/*<tr>
-			<td colspan="2" class="profile-header"><?=GetMessage("USER_PHONES")?></td>
-		</tr>*/?>
-		<tr>
-			<td><?=GetMessage('USER_PHONE')?></td>
-			<td><input type="text" name="PERSONAL_PHONE" maxlength="255" value="<?=$arResult["arUser"]["PERSONAL_PHONE"]?>" /></td>
-		</tr>
-		<tr>
-			<td><?=GetMessage('USER_FAX')?></td>
-			<td><input type="text" name="PERSONAL_FAX" maxlength="255" value="<?=$arResult["arUser"]["PERSONAL_FAX"]?>" /></td>
-		</tr>
-		<tr>
-			<td><?=GetMessage('USER_MOBILE')?></td>
-			<td><input type="text" name="PERSONAL_MOBILE" maxlength="255" value="<?=$arResult["arUser"]["PERSONAL_MOBILE"]?>" /></td>
-		</tr>
-		<tr>
-			<td><?=GetMessage('USER_PAGER')?></td>
-			<td><input type="text" name="PERSONAL_PAGER" maxlength="255" value="<?=$arResult["arUser"]["PERSONAL_PAGER"]?>" /></td>
-		</tr>
-		<?/*<tr>
-			<td colspan="2" class="profile-header"><?=GetMessage("USER_POST_ADDRESS")?></td>
-		</tr>*/?>
-		<tr>
-			<td><?=GetMessage('USER_COUNTRY')?></td>
-			<td><?=$arResult["COUNTRY_SELECT"]?></td>
-		</tr>
-		<tr>
-			<td><?=GetMessage('USER_STATE')?></td>
-			<td><input type="text" name="PERSONAL_STATE" maxlength="255" value="<?=$arResult["arUser"]["PERSONAL_STATE"]?>" /></td>
-		</tr>
-		<tr>
-			<td><?=GetMessage('USER_CITY')?></td>
-			<td><input type="text" name="PERSONAL_CITY" maxlength="255" value="<?=$arResult["arUser"]["PERSONAL_CITY"]?>" /></td>
-		</tr>
-		<tr>
-			<td><?=GetMessage('USER_ZIP')?></td>
-			<td><input type="text" name="PERSONAL_ZIP" maxlength="255" value="<?=$arResult["arUser"]["PERSONAL_ZIP"]?>" /></td>
-		</tr>
-		<tr>
-			<td><?=GetMessage("USER_STREET")?></td>
-			<td><textarea cols="60" rows="5" name="PERSONAL_STREET"><?=$arResult["arUser"]["PERSONAL_STREET"]?></textarea></td>
-		</tr>
-		<tr>
-			<td><?=GetMessage('USER_MAILBOX')?></td>
-			<td><input type="text" name="PERSONAL_MAILBOX" maxlength="255" value="<?=$arResult["arUser"]["PERSONAL_MAILBOX"]?>" /></td>
-		</tr>
-		<tr>
-			<td><?=GetMessage("USER_NOTES")?></td>
-			<td><textarea cols="60" rows="5" name="PERSONAL_NOTES"><?=$arResult["arUser"]["PERSONAL_NOTES"]?></textarea></td>
-		</tr>
-	</tbody>
+        //=CalendarDate("PERSONAL_BIRTHDAY", $arResult["arUser"]["PERSONAL_BIRTHDAY"], "form1", "15")
+        ?></td>
+    </tr>
+    <tr>
+        <td><?=GetMessage("USER_PHOTO")?></td>
+        <td>
+        <?=$arResult["arUser"]["PERSONAL_PHOTO_INPUT"]?>
+        <?
+        if (strlen($arResult["arUser"]["PERSONAL_PHOTO"])>0)
+        {
+        ?>
+        <br />
+            <?=$arResult["arUser"]["PERSONAL_PHOTO_HTML"]?>
+        <?
+        }
+        ?></td>
+    <?/*<tr>
+        <td colspan="2" class="profile-header"><?=GetMessage("USER_PHONES")?></td>
+    </tr>*/?>
+    <tr>
+        <td><?=GetMessage('USER_PHONE')?></td>
+        <td><input type="text" name="PERSONAL_PHONE" maxlength="255" value="<?=$arResult["arUser"]["PERSONAL_PHONE"]?>" /></td>
+    </tr>
+    <tr>
+        <td><?=GetMessage('USER_FAX')?></td>
+        <td><input type="text" name="PERSONAL_FAX" maxlength="255" value="<?=$arResult["arUser"]["PERSONAL_FAX"]?>" /></td>
+    </tr>
+    <tr>
+        <td><?=GetMessage('USER_MOBILE')?></td>
+        <td><input type="text" name="PERSONAL_MOBILE" maxlength="255" value="<?=$arResult["arUser"]["PERSONAL_MOBILE"]?>" /></td>
+    </tr>
+    <tr>
+        <td><?=GetMessage('USER_PAGER')?></td>
+        <td><input type="text" name="PERSONAL_PAGER" maxlength="255" value="<?=$arResult["arUser"]["PERSONAL_PAGER"]?>" /></td>
+    </tr>
+    <?/*<tr>
+        <td colspan="2" class="profile-header"><?=GetMessage("USER_POST_ADDRESS")?></td>
+    </tr>*/?>
+    <tr>
+        <td><?=GetMessage('USER_COUNTRY')?></td>
+        <td><?=$arResult["COUNTRY_SELECT"]?></td>
+    </tr>
+    <tr>
+        <td><?=GetMessage('USER_STATE')?></td>
+        <td><input type="text" name="PERSONAL_STATE" maxlength="255" value="<?=$arResult["arUser"]["PERSONAL_STATE"]?>" /></td>
+    </tr>
+    <tr>
+        <td><?=GetMessage('USER_CITY')?></td>
+        <td><input type="text" name="PERSONAL_CITY" maxlength="255" value="<?=$arResult["arUser"]["PERSONAL_CITY"]?>" /></td>
+    </tr>
+    <tr>
+        <td><?=GetMessage('USER_ZIP')?></td>
+        <td><input type="text" name="PERSONAL_ZIP" maxlength="255" value="<?=$arResult["arUser"]["PERSONAL_ZIP"]?>" /></td>
+    </tr>
+    <tr>
+        <td><?=GetMessage("USER_STREET")?></td>
+        <td><textarea class="form-control" cols="60" rows="5" name="PERSONAL_STREET"><?=$arResult["arUser"]["PERSONAL_STREET"]?></textarea></td>
+    </tr>
+    <tr>
+        <td><?=GetMessage('USER_MAILBOX')?></td>
+        <td><input type="text" name="PERSONAL_MAILBOX" maxlength="255" value="<?=$arResult["arUser"]["PERSONAL_MAILBOX"]?>" /></td>
+    </tr>
+    <tr>
+        <td><?=GetMessage("USER_NOTES")?></td>
+        <td><textarea class="form-control" cols="60" rows="5" name="PERSONAL_NOTES"><?=$arResult["arUser"]["PERSONAL_NOTES"]?></textarea></td>
+    </tr>
+</tbody>
 </table>
+<br/><br/>
 </div>
 
 
@@ -318,11 +322,12 @@ document.getElementById('bx_auth_secure').style.display = 'inline-block';
         </h4>
     </div>
 	<div id="user_div_admin" class="profile-block-<?=strpos($arResult["opened"], "admin") === false ? "hidden" : "shown"?>">
+        <br/><br/>
         <div class="form-group">
             <label for="comment">Комментарии и заметки:</label>
             <textarea class="form-control" rows="10" id="comment" name="ADMIN_NOTES"><?=$arResult["arUser"]["ADMIN_NOTES"]?></textarea>
         </div>
-
+        <br/><br/>
         <? /*
         <table class="data-table profile-table">
 		<thead>
