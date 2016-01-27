@@ -59,7 +59,7 @@
 
 				<div class="bx_my_order">
 					
-					<table class="bx_my_order_table">
+					<table class="bx_my_order_table  table-responsive">
 						<thead>
 							<tr>
 								<td>
@@ -129,22 +129,32 @@
 									</ul>
 
 								</td>
-								<td class="bx_my_order_table_manag">
+								<td class="bx_my_order_table_manag  table-responsive">
 									<p style="text-align: right; font-size: 16px !important;"><?=$order["ORDER"]["DATE_STATUS_FORMATED"];?></p>
 									<div class="bx_my_order_status <?=$arResult["INFO"]["STATUS"][$key]['COLOR']?><?/*yellow*/ /*red*/ /*green*/ /*gray*/?>"><?=$arResult["INFO"]["STATUS"][$key]["NAME"]?></div>
                                     <div class="bx_my_order_butts">
+										<?if($order["ORDER"]["CANCELED"] != "Y"){?>
                                         <?//old classes 4 buttons: bx_big bx_bt_button_type_2 bx_cart bx_order_action?>
-                                        <a class="btn btn-lg btn-success" href="<?=$order["ORDER"]["URL_TO_COPY"]?>">
-                                            <span class="glyphicon glyphicon-refresh"></span>&nbsp;
-                                            <?=GetMessage('SPOL_REPEAT_ORDER')?>
-                                        </a>
-                                        <?if($order["ORDER"]["CANCELED"] != "Y"):?>
-                                            &nbsp&nbsp&nbsp&nbsp&nbsp
-                                            <a class="btn btn-lg btn-danger" href="<?=$order["ORDER"]["URL_TO_CANCEL"]?>">
-                                                <span class="glyphicon glyphicon-remove">&nbsp;
-                                                    Отменить<?//=GetMessage('SPOL_CANCEL_ORDER')?>
-                                            </a>
-                                        <?endif?>
+                                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12  text-center">
+                                                <a class="btn btn-lg btn-success" href="<?=$order["ORDER"]["URL_TO_COPY"]?>">
+                                                    <span class="glyphicon glyphicon-refresh"></span>&nbsp;
+                                                    <?=GetMessage('SPOL_REPEAT_ORDER')?>
+                                                </a>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12  text-center"></div>
+                                                <a class="btn btn-lg btn-danger" href="<?=$order["ORDER"]["URL_TO_CANCEL"]?>">
+                                                    <span class="glyphicon glyphicon-remove"></span>&nbsp;
+                                                        Отменить<?//=GetMessage('SPOL_CANCEL_ORDER')?>
+                                                </a>
+                                            </div>
+                                        <? } else { ?>
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                                                <a class="btn btn-lg btn-success" href="<?=$order["ORDER"]["URL_TO_COPY"]?>">
+                                                    <span class="glyphicon glyphicon-refresh"></span>&nbsp;
+                                                    <?=GetMessage('SPOL_REPEAT_ORDER')?>
+                                                </a>
+                                            </div>
+                                        <?}?>
                                     </div>
 <?/*=======
 								<td>

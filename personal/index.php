@@ -5,7 +5,10 @@
 <div id="registrationpanel" class="container">
     <br/><p>
         Приветствуем на сайте <strong>Torino Pizza</strong>!
-        Вы вошли как <strong><a class="headinga" href="#us_params"><? echo CUser::GetFullName() ?></a></strong>.
+        Вы вошли как
+        <strong>
+            <a class="headinga" href="/auth/index.php"><? echo CUser::GetFullName() ?></a>
+        </strong>.
     </p>
 
 
@@ -24,7 +27,7 @@
     <div class="bx-auth registrationpanel" id="" style="padding-top: 0px !important; width:100%; max-width: 100% !important;">
     <hr/>
     <div class="bx-auth registrationpanel" id="" style="padding-top: 0px !important; width:100%; max-width: 100% !important;">
-    <h2 class="hed text-center"><strong>Ваши заказы</strong></h2>
+    <h2 class="hed text-center"><strong>Параметры ваших заказов</strong></h2>
          <?$APPLICATION->IncludeComponent("bitrix:sale.personal.order", "persOrder", Array(
 	
 	),
