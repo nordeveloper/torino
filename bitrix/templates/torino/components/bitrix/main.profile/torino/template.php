@@ -8,8 +8,6 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
 	die();
 ?>
 
-<div class="bx-auth-profile">
-
 <?ShowError($arResult["strProfileError"]);?>
 <?
 if ($arResult['DATA_SAVED'] == 'Y')
@@ -34,6 +32,12 @@ else
 
 var cookie_prefix = '<?=$arResult["COOKIE_PREFIX"]?>';
 </script>
+
+<div
+    class="bx-auth-profile profile-block-<?=strpos($arResult["opened"], "usrparams") === false ? "hidden" : "shown"?>"
+    id="user_div_usrparams">
+
+
 <form method="post" name="form1" action="<?=$arResult["FORM_TARGET"]?>" enctype="multipart/form-data">
 <?=$arResult["BX_SESSION_CHECK"]?>
 <input type="hidden" name="lang" value="<?=LANG?>" />
@@ -42,6 +46,7 @@ var cookie_prefix = '<?=$arResult["COOKIE_PREFIX"]?>';
 <div class="profile-link profile-user-div-link text-center">
     <h4>
 	    <a title="<?=GetMessage("REG_SHOW_HIDE")?>" href="javascript:void(0)" onclick="SectionClick('reg')"><?=GetMessage("REG_SHOW_HIDE")?></a>
+        &nbsp;<span class="small glyphicon glyphicon-chevron-down"></span>
     </h4>
 </div>
 <div class="profile-block-<?=strpos($arResult["opened"], "reg") === false ? "hidden" : "shown"?>" id="user_div_reg">
@@ -167,7 +172,10 @@ if($arResult["ID"]>0)
 
 <div class="profile-link profile-user-div-link text-center">
     <h4>
-        <a title="<?=GetMessage("USER_SHOW_HIDE")?>" href="javascript:void(0)" onclick="SectionClick('personal')"><?=GetMessage("USER_PERSONAL_INFO")?></a>
+        <a title="<?=GetMessage("USER_SHOW_HIDE")?>" href="javascript:void(0)" onclick="SectionClick('personal')">
+            <?=GetMessage("USER_PERSONAL_INFO")?>
+            &nbsp;<span class="small glyphicon glyphicon-chevron-down"></span>
+        </a>
     </h4>
 </div>
 <div id="user_div_personal" class="profile-block-<?=strpos($arResult["opened"], "personal") === false ? "hidden" : "shown"?>">
@@ -319,6 +327,7 @@ if($arResult["ID"]>0)
 	<div class="profile-link profile-user-div-link text-center">
         <h4>
             <a title="<?=GetMessage("USER_SHOW_HIDE")?>" href="javascript:void(0)" onclick="SectionClick('admin')"><?=GetMessage("USER_ADMIN_NOTES")?></a>
+            &nbsp;<span class="small glyphicon glyphicon-chevron-down"></span>
         </h4>
     </div>
 	<div id="user_div_admin" class="profile-block-<?=strpos($arResult["opened"], "admin") === false ? "hidden" : "shown"?>">

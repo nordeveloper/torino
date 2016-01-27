@@ -313,3 +313,7 @@ font.text { font-size:1.2em; line-height: 1.5em; font-weight: bold; font-family:
 .profile-user-div-link h4 a{
     font-weight:bold; color:#337ab7;
 }
+
+
+h2#us_params a, h2#us_buys a { font-size: 1em; color:#333333; }
+h2#us_params a:hover, h2#us_buys a:hover { color:#337ab7; }

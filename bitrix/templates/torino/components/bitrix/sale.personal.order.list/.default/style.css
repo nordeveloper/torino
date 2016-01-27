@@ -6,7 +6,13 @@
     font-weight: bold; color: #337ab7; }
 .bx_mo_link{ margin: 0 !important; }
 
-
+thead tr td {
+    /*background: rgba(102, 169, 224, 0.25);*/
+    background: #337ab7 !important; color:#F7F7F7 !important;
+    font-size:1.3em !important;
+}
+thead tr td a.headinga2 {color:#F7F7F7 !important;}
+.bx_my_order thead tr td a.headinga2:hover {color: #e4f3f8 !important;}
 
 
 .bx_my_order .bx_my_order_table td a.btn

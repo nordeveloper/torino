@@ -49,13 +49,14 @@ if (strlen($arResult["ERROR_MESSAGE"]) <= 0)
 	$naHidden = ($naCount == 0) ? "style=\"display:none\"" : "";
 
 	?>
-	<div class="fullwidth" id="basketbasket">
+	<div class="row" id="basketbasket">
 		<form method="post" action="<?=POST_FORM_ACTION_URI?>" name="basket_form" id="basket_form">
 			<div id="basket_form_container">
 				<div class="bx_ordercart">
 					<div class="bx_sort_container" id="baskethead">
 						<span>
-                            Корзина пользователя &nbsp;&nbsp;<strong><a id="usname"><? echo CUser::GetFullName() ?></a></strong>:
+                            Корзина пользователя &nbsp;&nbsp;
+							<strong><a id="usname" href="/personal/index.php"><? echo CUser::GetFullName() ?></a></strong>:
                             <?//=GetMessage("SALE_ITEMS")?>
                         </span>
 						<a href="javascript:void(0)" id="basket_toolbar_button" class="ordbutts current" onclick="showBasketItemsList()"><?=GetMessage("SALE_BASKET_ITEMS")?><div id="normal_count" class="flat" style="display:none">&nbsp;(<?=$normalCount?>)</div></a>
