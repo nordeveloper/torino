@@ -7,10 +7,12 @@
 #userbasket .panel
 {background: rgba(102, 169, 224, 0.15);}
 
+.panel-heading .panel-title { font-size: 1.3em; font-weight: bold; line-height: 1.3em; }
 
 
-
-
+#basket_items_list thead td {
+    font-size: 1.3em; font-weight: bold; line-height: 1.3em; text-align: center;
+}
 
 
 
