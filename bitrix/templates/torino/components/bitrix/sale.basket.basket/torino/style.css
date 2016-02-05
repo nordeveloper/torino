@@ -29,10 +29,10 @@ table { width:100% !important;}
 
 
 
-.price, .sumprice { font-size:1.3em; font-weight:bold; }
+.price, .sumprice, .quantity { font-size:1.3em; font-weight:bold; }
 
-
-
+td.fwb 		{ text-align: center;  }
+td.fwb h2 	{ font-weight: bold; }
 
 
 

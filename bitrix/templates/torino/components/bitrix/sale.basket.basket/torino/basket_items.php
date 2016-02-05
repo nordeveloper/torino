@@ -37,13 +37,25 @@ if ($normalCount > 0):
                 if ($arItem["DELAY"] == "N" && $arItem["CAN_BUY"] == "Y"):?>
                     <tr id="<?=$arItem["ID"]?>">
 
-                        <td class="itemphoto col-lg-2 col-md-2 hidden-sm hidden-xs"></td>
+                        <td class="itemphoto col-lg-2 col-md-2 hidden-sm hidden-xs">
+                            <?if (strlen($arItem["DETAIL_PAGE_URL"]) > 0):?>
+                            <a href="<?=$arItem["DETAIL_PAGE_URL"] ?>"><?endif;?>
+                                    <? if (isset($arItem["PREVIEW_PICTURE_SRC"]) && ($arItem["PREVIEW_PICTURE_SRC"] != ""))  { ?>
+                                        <img src="<?=$arItem["PREVIEW_PICTURE_SRC"]?>" alt="<?=$arItem["NAME"]?>" title="<?=$arItem["NAME"]?>" class="img-responsive img-thumbnail" />
+                                    <? } else { ?>
+                                        <img src="<?=$arItem["PREVIEW_PICTURE_SRC"]?>" alt="<?=$arItem["NAME"]?>" title="<?=$arItem["NAME"]?>" class="img-responsive img-thumbnail" />
+                                    <? } ?>
+                                <?if (strlen($arItem["DETAIL_PAGE_URL"]) > 0):?>
+                            </a><?endif;?>
+                        </td>
 
                         <td class="item col-lg-4 col-md-4 col-sm-4 col-xs-6">
                             <h2 class="bx_ordercart_itemtitle">
-                                <?if (strlen($arItem["DETAIL_PAGE_URL"]) > 0):?><a href="<?=$arItem["DETAIL_PAGE_URL"] ?>"><?endif;?>
+                                <?if (strlen($arItem["DETAIL_PAGE_URL"]) > 0):?>
+                                <a href="<?=$arItem["DETAIL_PAGE_URL"] ?>"><?endif;?>
                                     <?=$arItem["NAME"]?>
-                                    <?if (strlen($arItem["DETAIL_PAGE_URL"]) > 0):?></a><?endif;?>
+                                    <?if (strlen($arItem["DETAIL_PAGE_URL"]) > 0):?>
+                                </a><?endif;?>
                             </h2>
 
                             <?if (isset($arItem["PROPERTY_CONSIST_VALUE"]) && ($arItem["PROPERTY_CONSIST_VALUE"] != "")):?>
@@ -67,24 +79,55 @@ if ($normalCount > 0):
 
                         <td  class="price text-center  col-lg-1 col-md-1 hidden-sm hidden-xs">
                             <?=$arItem["FULL_PRICE"]?>&nbsp;р.
+                            <input name="<?echo $arItem['ID'];?>_priceperitem" id="<?echo $arItem['ID'];?>_priceperitem" type="hidden" value=" <?=$arItem["FULL_PRICE"]?>"/>
                         </td>
 
                         <td  class="quantity text-center  col-lg-2 col-md-2 hidden-sm hidden-xs">
-                            <?=$arItem["QUANTITY"]?>
+                            <? $quantID = $arItem["ID"]+"_quantity"; ?>
+
+                            <div style="display: inline-block;position: relative;">
+                                <div class="input-group">
+                                    <input class="form-control text-center spinner" id="<? echo $quantID; ?>" type="text" name="<? echo $quantID; ?>" value="<?=$arItem["QUANTITY"]?>">
+                                </div>
+                                <script>
+                                    $("input[name='<? echo $quantID; ?>']").TouchSpin({
+                                        min: 1,
+                                        max: 100,
+                                        decimals: 0,
+                                        step: 1
+                                    });
+
+                                    $( "input[name='<? echo $quantID; ?>']" ).on( "change", function() {
+                                        var prc =  $("#<?echo $arItem['ID'];?>_priceperitem")[0].value;
+                                        $("#<?echo $quantID;?>_price").html((this.value*prc).toFixed(2).toString()+" р.");
+                                    });
+
+                                </script>
+                            </div>
+
+
                         </td>
 
-                        <td  class="sumprice text-center  col-lg-2 col-md-2 col-sm-2 col-xs-3">
+                        <td id="<?echo $quantID;?>_price" class="sumprice text-center  col-lg-2 col-md-2 col-sm-2 col-xs-3">
                             <?=$arItem["SUM"]?>
                         </td>
 
 						<td class="control text-center col-lg-3 col-md-3 col-sm-3 col-xs-3">
 							<a href="#" class="btn btn-danger btn-lg">
-								<span class="glyphicon glyphicon-remove"></span> Удалить
+								<span class="glyphicon glyphicon-remove"></span>&nbsp;Удалить
 							</a>
 						</td>
 
                 <? endif;
             endforeach;?>
+
+
+
+
+
+
+
+
 
 
 			</tbody>
@@ -147,10 +190,14 @@ if ($normalCount > 0):
 
 					<tr>
 						<td class="fwb">
-                            <h2><?=GetMessage("SALE_TOTAL")?>&nbsp;&nbsp;</h2>
+                            <h2>
+                                <?=GetMessage("SALE_TOTAL")?>&nbsp;&nbsp;
+                            </h2>
                         </td>
 						<td class="fwb" id="allSum_FORMATED">
-                            <h2><?=str_replace(" ", "&nbsp;", $arResult["allSum_FORMATED"])?></h2>
+                            <h2 id="fullbillprice">
+                                <?=str_replace(" ", "&nbsp;", $arResult["allSum_FORMATED"])?>
+                            </h2>
                         </td>
 					</tr>
 					<tr>
