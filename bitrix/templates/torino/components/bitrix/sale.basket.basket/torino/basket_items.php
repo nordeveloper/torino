@@ -38,6 +38,7 @@ if ($normalCount > 0):
                     <tr id="<?=$arItem["ID"]?>">
 
                         <td class="itemphoto col-lg-2 col-md-2 hidden-sm hidden-xs">
+
                             <?if (strlen($arItem["DETAIL_PAGE_URL"]) > 0):?>
                             <a href="<?=$arItem["DETAIL_PAGE_URL"] ?>"><?endif;?>
                                     <? if (isset($arItem["PREVIEW_PICTURE_SRC"]) && ($arItem["PREVIEW_PICTURE_SRC"] != ""))  { ?>
@@ -80,6 +81,8 @@ if ($normalCount > 0):
                         <td  class="price text-center  col-lg-1 col-md-1 hidden-sm hidden-xs">
                             <?=$arItem["FULL_PRICE"]?>&nbsp;р.
                             <input name="<?echo $arItem['ID'];?>_priceperitem" id="<?echo $arItem['ID'];?>_priceperitem" type="hidden" value=" <?=$arItem["FULL_PRICE"]?>"/>
+                            <input class="_itemfullprice" name="<?echo $arItem['ID'];?>_itemfullprice" id="<?echo $arItem['ID'];?>_itemfullprice" type="hidden"
+                                   value=" <?=$arItem["PRICE"]*$arItem["QUANTITY"]?>"/>
                         </td>
 
                         <td  class="quantity text-center  col-lg-2 col-md-2 hidden-sm hidden-xs">
@@ -90,6 +93,14 @@ if ($normalCount > 0):
                                     <input class="form-control text-center spinner" id="<? echo $quantID; ?>" type="text" name="<? echo $quantID; ?>" value="<?=$arItem["QUANTITY"]?>">
                                 </div>
                                 <script>
+                                    function refreshBill(){
+                                        var newBill = 0;
+                                        $("input._itemfullprice").each(function() {
+                                            newBill+= parseFloat(this.value);
+                                        });
+                                        $("#fullbillprice").html(newBill.toFixed(2).toString()+" р.");
+                                    }
+
                                     $("input[name='<? echo $quantID; ?>']").TouchSpin({
                                         min: 1,
                                         max: 100,
@@ -99,7 +110,10 @@ if ($normalCount > 0):
 
                                     $( "input[name='<? echo $quantID; ?>']" ).on( "change", function() {
                                         var prc =  $("#<?echo $arItem['ID'];?>_priceperitem")[0].value;
+                                        $("#<?echo $arItem['ID'];?>_itemfullprice")[0].value = this.value*prc;
                                         $("#<?echo $quantID;?>_price").html((this.value*prc).toFixed(2).toString()+" р.");
+
+                                        refreshBill();
                                     });
 
                                 </script>
@@ -120,14 +134,6 @@ if ($normalCount > 0):
 
                 <? endif;
             endforeach;?>
-
-
-
-
-
-
-
-
 
 
 			</tbody>
@@ -174,17 +180,23 @@ if ($normalCount > 0):
 				<?if ($bWeightColumn):?>
 					<tr>
 						<td class="custom_t1"><?=GetMessage("SALE_TOTAL_WEIGHT")?></td>
-						<td class="custom_t2" id="allWeight_FORMATED"><?=$arResult["allWeight_FORMATED"]?></td>
+						<td class="custom_t2" id="allWeight_FORMATED">
+                            <?=$arResult["allWeight_FORMATED"]?>
+                        </td>
 					</tr>
 				<?endif;?>
 				<?if ($arParams["PRICE_VAT_SHOW_VALUE"] == "Y"):?>
 					<tr>
 						<td><?echo GetMessage('SALE_VAT_EXCLUDED')?></td>
-						<td id="allSum_wVAT_FORMATED"><?=$arResult["allSum_wVAT_FORMATED"]?></td>
+						<td id="allSum_wVAT_FORMATED">
+                            <?=$arResult["allSum_wVAT_FORMATED"]?>
+                        </td>
 					</tr>
 					<tr>
 						<td><?echo GetMessage('SALE_VAT_INCLUDED')?></td>
-						<td id="allVATSum_FORMATED"><?=$arResult["allVATSum_FORMATED"]?></td>
+						<td id="allVATSum_FORMATED">
+                            <?=$arResult["allVATSum_FORMATED"]?>
+                        </td>
 					</tr>
 				<?endif;?>
 
@@ -195,8 +207,13 @@ if ($normalCount > 0):
                             </h2>
                         </td>
 						<td class="fwb" id="allSum_FORMATED">
-                            <h2 id="fullbillprice">
-                                <?=str_replace(" ", "&nbsp;", $arResult["allSum_FORMATED"])?>
+                            <h2>
+                                <?//=str_replace(" ", "&nbsp;", $arResult["allSum_FORMATED"])?>
+                                <span id="fullbillprice">
+                                    <?=str_replace(",", "", number_format($arResult["allSum"], 2))?>
+                                    р.
+                                </span>
+                                <input name="finalbillprice" id="finalbillprice" type="hidden" value="<?=$arResult["allSum"]?>"/>
                             </h2>
                         </td>
 					</tr>
