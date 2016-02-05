@@ -1,6 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Оформление заказа");
+$APPLICATION->SetTitle("Torino: Оформление заказа");
 ?><?
 if (!CUser::IsAuthorized()):
 ?>
@@ -17,24 +17,41 @@ if (!CUser::IsAuthorized()):
 	<?$APPLICATION->IncludeComponent(
 	"bitrix:main.register",
 	".default",
-	Array(
-		"SHOW_FIELDS" => array(),
-		"REQUIRED_FIELDS" => array(),
-		"AUTH" => "Y",
-		"USE_BACKURL" => "Y",
-		"SUCCESS_PAGE" => "/personal/order.php",
-		"SET_TITLE" => "Y",
-		"USER_PROPERTY" => array(),
-		"USER_PROPERTY_NAME" => ""
-	)
-);?>
+		Array(
+			"SHOW_FIELDS" => array(),
+			"REQUIRED_FIELDS" => array(),
+			"AUTH" => "Y",
+			"USE_BACKURL" => "Y",
+			"SUCCESS_PAGE" => "/personal/order.php",
+			"SET_TITLE" => "Y",
+			"USER_PROPERTY" => array(),
+			"USER_PROPERTY_NAME" => ""
+		)
+	);?>
 <?
 else:
 ?>
-<div>Добро пожаловать. Ваш логин - <? echo CUser::GetLogin()?></div>
-<?
-endif;
-?>
+<div id="registrationpanel" class="container">
+    <br/>
+    <p>
+        <strong>Оформление заказа</strong>
+         для пользователя
+        <strong>
+            <a class="headinga" href="/auth/index.php"><? echo trim(CUser::GetFullName())?></a>
+        </strong>.
+        Вы можете перейти в
+        <strong>
+            <a class="headinga" href="/personal/basket.php">Корзину</a>
+        </strong>.
+    </p>
+    <div class="row"><hr/></div>
+</div>
+
+
+<?endif;?>
+
+
+
 <?$APPLICATION->IncludeComponent(
 	"bitrix:sale.order.ajax",
 	"torino",

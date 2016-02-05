@@ -27,8 +27,7 @@
 			<th align="center"><?= GetMessage("SALE_WEIGHT")?></th>
 		<?endif;?>
 	</tr>
-	<?
-	foreach($arResult["ITEMS"]["DelDelCanBuy"] as $arBasketItems)
+	<?foreach($arResult["ITEMS"]["DelDelCanBuy"] as $arBasketItems)
 	{
 		?>
 		<tr>

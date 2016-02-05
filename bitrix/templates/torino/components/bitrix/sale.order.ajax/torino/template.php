@@ -142,7 +142,7 @@ if (!function_exists("cmpBySort"))
 			{
 				?><form action="<?=$APPLICATION->GetCurPage();?>" method="POST" name="ORDER_FORM" id="ORDER_FORM" enctype="multipart/form-data">
 				<?=bitrix_sessid_post()?>
-				<div id="order_form_content">
+				<div id="order_form_content" class="container">
 				<?
 			}
 			else

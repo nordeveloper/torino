@@ -1,8 +1,10 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 include($_SERVER["DOCUMENT_ROOT"].$templateFolder."/props_format.php");
 ?>
-<div class="section">
-<h4><?=GetMessage("SOA_TEMPL_PROP_INFO")?></h4>
+<div class="section row">
+	<h2 class="hed text-center" id="us_params">
+		<?=GetMessage("SOA_TEMPL_PROP_INFO")?>
+	</h2><br/>
 	<?
 	$bHideProps = true;
 
@@ -69,10 +71,10 @@ include($_SERVER["DOCUMENT_ROOT"].$templateFolder."/props_format.php");
 	endif;
 	?>
 </div>
+<div class="row"><hr/></div>
 
-<br/>
-<div class="bx_section">
-	<h4>
+<div class="bx_section row">
+    <h2 class="hed text-center">
 		<?=GetMessage("SOA_TEMPL_BUYER_INFO")?>
 		<?
 		$bHideProps = false;
@@ -96,7 +98,7 @@ include($_SERVER["DOCUMENT_ROOT"].$templateFolder."/props_format.php");
 		endif;
 		?>
 		<input type="hidden" name="showProps" id="showProps" value="N" />
-	</h4>
+	</h2><br/>
 	<div id="sale_order_props" <?=($bHideProps && $_POST["showProps"] != "Y")?"style='display:none;'":''?>>
 		<?
 		PrintPropsForm($arResult["ORDER_PROP"]["USER_PROPS_N"], $arParams["TEMPLATE_LOCATION"]);
@@ -104,7 +106,7 @@ include($_SERVER["DOCUMENT_ROOT"].$templateFolder."/props_format.php");
 		?>
 	</div>
 </div>
-
+<div class="row"><hr/></div>
 <script type="text/javascript">
 	function fGetBuyerProps(el)
 	{

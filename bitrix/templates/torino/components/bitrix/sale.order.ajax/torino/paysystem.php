@@ -51,8 +51,8 @@
 			submitForm();
 		}
 	</script>
-	<div class="bx_section">
-		<h4><?=GetMessage("SOA_TEMPL_PAY_SYSTEM")?></h4>
+	<div class="bx_section row">
+		<h2  class="hed text-center"><?=GetMessage("SOA_TEMPL_PAY_SYSTEM")?></h2>
 		<?
 		if ($arResult["PAY_FROM_ACCOUNT"] == "Y")
 		{

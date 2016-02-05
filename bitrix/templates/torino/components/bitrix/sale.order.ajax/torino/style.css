@@ -1,3 +1,27 @@
+#order_form_content {font-size: 1.4em !important;}
+#order_form_content .bx_block input[type="text"],
+#order_form_content .bx_block textarea,
+#order_form_content .bx_block select {
+    font-size: 1em !important;
+}
+
+
+
+.bx_order_make .bx_block {
+    padding: 0 !important; margin: 0 !important;
+}
+
+
+.bx_element label .bx_description {
+    font-size: 1.1em !important;
+}
+
+.delivopt .bx_description { float:left !important;}
+
+
+/*============================================*/
+
+
 #order_form_div .sale_data-table.summary td {
 	background: #fff !important;
 }

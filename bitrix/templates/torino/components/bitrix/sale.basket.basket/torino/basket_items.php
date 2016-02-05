@@ -44,7 +44,7 @@ if ($normalCount > 0):
                                     <? if (isset($arItem["PREVIEW_PICTURE_SRC"]) && ($arItem["PREVIEW_PICTURE_SRC"] != ""))  { ?>
                                         <img src="<?=$arItem["PREVIEW_PICTURE_SRC"]?>" alt="<?=$arItem["NAME"]?>" title="<?=$arItem["NAME"]?>" class="img-responsive img-thumbnail" />
                                     <? } else { ?>
-                                        <img src="<?=$arItem["PREVIEW_PICTURE_SRC"]?>" alt="<?=$arItem["NAME"]?>" title="<?=$arItem["NAME"]?>" class="img-responsive img-thumbnail" />
+                                        <img src="<?=SITE_TEMPLATE_PATH?>\images\logos700x700.png" alt="<?=$arItem["NAME"]?>" title="<?=$arItem["NAME"]?>" class="img-responsive img-thumbnail" />
                                     <? } ?>
                                 <?if (strlen($arItem["DETAIL_PAGE_URL"]) > 0):?>
                             </a><?endif;?>
@@ -108,7 +108,7 @@ if ($normalCount > 0):
                                         step: 1
                                     });
 
-                                    $( "input[name='<? echo $quantID; ?>']" ).on( "change", function() {
+                                    $( "input[name='<? echo $quantID; ?>']" ).on("change", function() {
                                         var prc =  $("#<?echo $arItem['ID'];?>_priceperitem")[0].value;
                                         $("#<?echo $arItem['ID'];?>_itemfullprice")[0].value = this.value*prc;
                                         $("#<?echo $quantID;?>_price").html((this.value*prc).toFixed(2).toString()+" р.");
