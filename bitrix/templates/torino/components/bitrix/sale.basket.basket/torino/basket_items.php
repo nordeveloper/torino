@@ -13,21 +13,21 @@ if ($normalCount > 0):
 <div id="basket_items_list">
 	<div class="bx_ordercart_order_table_container">
 		<table id="basket_items" class="table-responsive col-md-12">
-			<thead>
+			<thead class="hidden-sm hidden-xs">
 				<tr>
-					<td class="itemphoto xs-invisible"></td>
+                    <?/*<td class="itemphoto hidden-sm hidden-xs"></td>*/?>
 
-					<td class="item" id="col_Name">
+					<td class="item" colspan="2" id="col_Name">
                         Наименование блюда
                     </td>
-
-                    <td id="col_Controls"></td>
 
                     <td id="col_Price">Цена</td>
 
                     <td id="col_Quant">Количество</td>
 
                     <td id="col_SumPrice">Стоимость</td>
+
+                    <td id="col_Controls"></td>
 
 				</tr>
 			</thead>
@@ -37,10 +37,9 @@ if ($normalCount > 0):
                 if ($arItem["DELAY"] == "N" && $arItem["CAN_BUY"] == "Y"):?>
                     <tr id="<?=$arItem["ID"]?>">
 
+                        <td class="itemphoto col-lg-2 col-md-2 hidden-sm hidden-xs"></td>
 
-                        <td class="itemphoto"></td>
-
-                        <td class="item" colspan="" class="item">
+                        <td class="item col-lg-4 col-md-4 col-sm-4 col-xs-6">
                             <h2 class="bx_ordercart_itemtitle">
                                 <?if (strlen($arItem["DETAIL_PAGE_URL"]) > 0):?><a href="<?=$arItem["DETAIL_PAGE_URL"] ?>"><?endif;?>
                                     <?=$arItem["NAME"]?>
@@ -49,42 +48,40 @@ if ($normalCount > 0):
 
                             <?if (isset($arItem["PROPERTY_CONSIST_VALUE"]) && ($arItem["PROPERTY_CONSIST_VALUE"] != "")):?>
                                 <p class="description">
-                                    <?=$arItem["PROPERTY_CONSIST_VALUE"]?>.
+                                    <b>Ингридиенты:</b> <?=$arItem["PROPERTY_CONSIST_VALUE"]?>.
                                 </p>
                             <?endif;?>
 
                             <?if (isset($arItem["PROPERTY_NUTRITION_VALUE"]) && ($arItem["PROPERTY_NUTRITION_VALUE"] != "")):?>
                                 <p class="nutrition">
-                                    Сведения о пищевой ценности (на 100 гр.): <?=$arItem["PROPERTY_NUTRITION_VALUE"]?>.
+                                    <b>Белки/Жиры/Углеводы (на 100 гр.):</b> <?=$arItem["PROPERTY_NUTRITION_VALUE"]?>.
                                 </p>
                             <?endif;?>
 
                             <?if (isset($arItem["PROPERTY_CALORIES_VALUE"]) && ($arItem["PROPERTY_CALORIES_VALUE"] != "")):?>
                                 <p class="nutrition">
-                                    Калорийность (на 100 гр.): <?=$arItem["PROPERTY_CALORIES_VALUE"]?>.
+                                    <b>Калорийность (на 100 гр.):</b> <?=$arItem["PROPERTY_CALORIES_VALUE"]?>.
                                 </p>
                             <?endif;?>
-
-                            <?//test_dump($arItem)?>
                         </td>
 
-                        <td class="control">
-                            <a href="#" class="btn btn-danger btn-lg">
-                                <span class="glyphicon glyphicon-remove"></span> Удалить
-                            </a>
+                        <td  class="price text-center  col-lg-1 col-md-1 hidden-sm hidden-xs">
+                            <?=$arItem["FULL_PRICE"]?>&nbsp;р.
                         </td>
 
-                        <td  class="price">
-                            <?=$arItem["FULL_PRICE_FORMATED"]?>
-                        </td>
-
-                        <td  class="quantity">
+                        <td  class="quantity text-center  col-lg-2 col-md-2 hidden-sm hidden-xs">
                             <?=$arItem["QUANTITY"]?>
                         </td>
 
-                        <td  class="sumprice">
+                        <td  class="sumprice text-center  col-lg-2 col-md-2 col-sm-2 col-xs-3">
                             <?=$arItem["SUM"]?>
                         </td>
+
+						<td class="control text-center col-lg-3 col-md-3 col-sm-3 col-xs-3">
+							<a href="#" class="btn btn-danger btn-lg">
+								<span class="glyphicon glyphicon-remove"></span> Удалить
+							</a>
+						</td>
 
                 <? endif;
             endforeach;?>
@@ -130,7 +127,7 @@ if ($normalCount > 0):
 		</div>
 
 		<div class="bx_ordercart_order_pay_right">
-			<table class="bx_ordercart_order_sum">
+			<table class="bx_ordercart_order_sum table-responsive">
 				<?if ($bWeightColumn):?>
 					<tr>
 						<td class="custom_t1"><?=GetMessage("SALE_TOTAL_WEIGHT")?></td>
@@ -149,8 +146,12 @@ if ($normalCount > 0):
 				<?endif;?>
 
 					<tr>
-						<td class="fwb"><?=GetMessage("SALE_TOTAL")?></td>
-						<td class="fwb" id="allSum_FORMATED"><?=str_replace(" ", "&nbsp;", $arResult["allSum_FORMATED"])?></td>
+						<td class="fwb">
+                            <h2><?=GetMessage("SALE_TOTAL")?>&nbsp;&nbsp;</h2>
+                        </td>
+						<td class="fwb" id="allSum_FORMATED">
+                            <h2><?=str_replace(" ", "&nbsp;", $arResult["allSum_FORMATED"])?></h2>
+                        </td>
 					</tr>
 					<tr>
 						<td class="custom_t1"></td>
@@ -165,16 +166,20 @@ if ($normalCount > 0):
 			<div style="clear:both;"></div>
 		</div>
 		<div style="clear:both;"></div>
-
-		<div class="bx_ordercart_order_pay_center">
+        <br><br>
+		<div class="bx_ordercart_order_pay_center text-center">
 
 			<?if ($arParams["USE_PREPAYMENT"] == "Y" && strlen($arResult["PREPAY_BUTTON"]) > 0):?>
 				<?=$arResult["PREPAY_BUTTON"]?>
 				<span><?=GetMessage("SALE_OR")?></span>
 			<?endif;?>
 
-			<a href="javascript:void(0)" onclick="checkOut();" class="checkout"><?=GetMessage("SALE_ORDER")?></a>
+			<a href="javascript:void(0)" onclick="checkOut();" class="checkout btn btn-lg btn-success">
+                <span class="glyphicon glyphicon-ok"></span>
+                <?=GetMessage("SALE_ORDER")?>
+            </a>
 		</div>
+        <br><br>
 	</div>
 </div>
 <?

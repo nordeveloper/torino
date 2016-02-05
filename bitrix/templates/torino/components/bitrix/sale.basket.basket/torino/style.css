@@ -1,3 +1,43 @@
+table { width:100% !important;}
+#basket_items { border: 0px !important; }
+
+
+#basket_items thead tr {
+    border-bottom: 1px solid #616367;
+}
+
+#basket_items tbody tr {
+    border-bottom: 1px solid #c3c7ce;
+}
+
+#basket_items tbody tr:hover{
+    background:rgba(102, 169, 224, 0.15);
+}
+
+
+.panel-heading h3 a {
+    color:#e4f3f8;
+}
+
+.panel-heading h3 a:hover {
+    color: #b7d1e4;
+}
+
+
+#basket_items h2 { font-size: 1.3em; }
+
+
+
+
+.price, .sumprice { font-size:1.3em; font-weight:bold; }
+
+
+
+
+
+
+/*============================================*/
+
 #userbasket{
     margin-top:30px;
 }
@@ -14,7 +54,7 @@
     font-size: 1.3em; font-weight: bold; line-height: 1.3em; text-align: center;
 }
 
-
+div#basket_form_container { border:0px; border-radius:0px; }
 
 
 
@@ -65,8 +105,11 @@
     border-bottom-color: transparent;
 }
 
+.panel-tabs > li:hover { background: transparent !important; }
 
-
+.panel-tabs > li > a:hover {
+	background-color: rgba(255,255,255, .5) !important;
+}
 
 
 

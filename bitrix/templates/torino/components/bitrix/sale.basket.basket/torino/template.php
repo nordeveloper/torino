@@ -54,13 +54,15 @@ if (strlen($arResult["ERROR_MESSAGE"]) <= 0)
         <div class="row">
             <div class="col-md-12">
             <form method="post" action="<?=POST_FORM_ACTION_URI?>" name="basket_form" id="basket_form">
-                <div class="panel panel-primary" id="basket_form_container">
+                <div class="panel panel-primary box-shadow--8dp" id="basket_form_container">
                     <div class="panel-heading" id="baskethead">
                         <h3 class="panel-title">
-                            <span>
+                            <span class="hidden-xs hidden-sm">
                                 Корзина пользователя &nbsp;&nbsp;
-							    <strong><a id="usname" href="/personal/index.php"><? echo CUser::GetFullName() ?></a></strong><?//=GetMessage("SALE_ITEMS")?>
                             </span>
+                            <span class="hidden-xs">
+							    <strong><a id="usname" href="/personal/index.php"><? echo CUser::GetFullName() ?></a></strong><?//=GetMessage("SALE_ITEMS")?>
+                            </span> &nbsp;
                         </h3>
                         <span class="pull-right">
                             <!-- Tabs -->

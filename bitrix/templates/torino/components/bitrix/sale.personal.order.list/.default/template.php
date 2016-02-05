@@ -57,7 +57,7 @@
 
 				<?endif?>
 
-				<div class="bx_my_order">
+				<div class="bx_my_order box-shadow--8dp">
 					
 					<table class="bx_my_order_table  table-responsive">
 						<thead>
