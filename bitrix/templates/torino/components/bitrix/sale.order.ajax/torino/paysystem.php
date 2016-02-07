@@ -52,7 +52,7 @@
 		}
 	</script>
 	<div class="bx_section row">
-		<h2  class="hed text-center"><?=GetMessage("SOA_TEMPL_PAY_SYSTEM")?></h2>
+		<h2  class="hed text-center"><?=GetMessage("SOA_TEMPL_PAY_SYSTEM")?></h2><br>
 		<?
 		if ($arResult["PAY_FROM_ACCOUNT"] == "Y")
 		{
@@ -182,7 +182,7 @@
 				if (count($arResult["PAY_SYSTEM"]) == 1)
 				{
 					?>
-					<div class="bx_block horizontal">
+					<div class="paymentopt bx_block col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center"><?//bx_block horizontal?>
 						<div class="bx_element">
 							<input type="hidden" name="PAY_SYSTEM_ID" value="<?=$arPaySystem["ID"]?>">
 							<input type="radio"
@@ -261,3 +261,4 @@
 		<div style="clear: both;"></div>
 	</div>
 </div>
+<div class="row"><hr></div>

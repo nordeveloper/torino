@@ -17,7 +17,7 @@ function ChangeGenerate(val)
 }
 //-->
 </script>
-<table class="order-auth">
+<table class="order-auth container text-center">
 	<tr>
 		<td>
 			<?if($arResult["AUTH"]["new_user_registration"]=="Y"):?>

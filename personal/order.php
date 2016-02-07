@@ -31,7 +31,7 @@ if (!CUser::IsAuthorized()):
 <?
 else:
 ?>
-<div id="registrationpanel" class="container">
+<div id="registrationpanel" class="row">
     <br/>
     <p>
         <strong>Оформление заказа</strong>

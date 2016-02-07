@@ -2,7 +2,7 @@
 include($_SERVER["DOCUMENT_ROOT"].$templateFolder."/props_format.php");
 ?>
 <div class="section row">
-	<h2 class="hed text-center" id="us_params">
+	<h2 class="hed text-center">
 		<?=GetMessage("SOA_TEMPL_PROP_INFO")?>
 	</h2><br/>
 	<?

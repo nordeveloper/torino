@@ -7,8 +7,8 @@ $bUseDiscount = false;
 $bPriceType = false;
 $bShowNameWithPicture = ($bDefaultColumns) ? true : false; // flat to show name and picture column in one column
 ?>
-<div class="bx_ordercart">
-	<h4><?=GetMessage("SALE_PRODUCTS_SUMMARY");?></h4>
+<div class="bx_ordercart row">
+	<h2 class="hed text-center"><?=GetMessage("SALE_PRODUCTS_SUMMARY");?></h2><br>
 	<div class="bx_ordercart_order_table_container">
 		<table>
 			<thead>

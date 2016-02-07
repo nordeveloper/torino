@@ -254,7 +254,8 @@
 
 									$arFileTmp = CFile::ResizeImageGet(
 										$arDelivery["LOGOTIP"]["ID"],
-										array("width" => "95", "height" =>"55"),
+										//array("width" => "95", "height" =>"55"),
+										array("width" => "250", "height" =>"145"),
 										BX_RESIZE_IMAGE_PROPORTIONAL,
 										true
 									);
@@ -270,8 +271,11 @@
 								</div>
 
 								<div class="bx_description">
-									<div class="name"><strong><?= htmlspecialcharsbx($arDelivery["NAME"])?></strong></div>
-									<span class="bx_result_price">
+									<div class="name">
+                                        <strong><?= htmlspecialcharsbx($arDelivery["NAME"])?></strong>
+                                        <?=GetMessage("SALE_DELIV_PRICE");?>: <b><?=$arDelivery["PRICE_FORMATED"]?></b><br />
+                                    </div>
+									<?/*<span class="bx_result_price">
 										<?
 										if (strlen($arDelivery["PERIOD_TEXT"])>0)
 										{
@@ -280,7 +284,7 @@
 										}
 										?>
 										<?=GetMessage("SALE_DELIV_PRICE");?>: <b><?=$arDelivery["PRICE_FORMATED"]?></b><br />
-									</span>
+									</span>*/?>
 									<p>
 										<?
 										if (strlen($arDelivery["DESCRIPTION"])>0)

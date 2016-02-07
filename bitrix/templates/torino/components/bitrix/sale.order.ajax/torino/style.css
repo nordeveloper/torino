@@ -16,7 +16,7 @@
     font-size: 1.1em !important;
 }
 
-.delivopt .bx_description { float:left !important;}
+
 
 
 /*============================================*/
@@ -409,8 +409,8 @@ div.bx_section div.bx_block div.bx_element input[type=checkbox],
 .bx_order_make .bx_block.horizontal .bx_logotype{margin-right: 0}
 .bx_order_make .bx_logotype span{
 	display: block;
-	width: 100px;
-	height: 60px;
+	width: 255px;/*100px;*/
+	height: 150px;/*60px;*/
 	background-repeat: no-repeat;
 	background-position: center;
 }

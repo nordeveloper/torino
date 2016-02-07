@@ -25,7 +25,7 @@ CJSCore::Init(array('fx', 'popup', 'window', 'ajax'));
 
 <a name="order_form"></a>
 
-<div id="order_form_div" class="order-checkout">
+<div id="order_form_div" class="order-checkout row">
 <NOSCRIPT>
 	<div class="errortext"><?=GetMessage("SOA_NO_JS")?></div>
 </NOSCRIPT>
@@ -58,7 +58,7 @@ if (!function_exists("cmpBySort"))
 }
 ?>
 
-<div class="bx_order_make">
+<div class="bx_order_make container">
 	<?
 	if(!$USER->IsAuthorized() && $arParams["ALLOW_AUTO_REGISTER"] == "N")
 	{
@@ -142,7 +142,7 @@ if (!function_exists("cmpBySort"))
 			{
 				?><form action="<?=$APPLICATION->GetCurPage();?>" method="POST" name="ORDER_FORM" id="ORDER_FORM" enctype="multipart/form-data">
 				<?=bitrix_sessid_post()?>
-				<div id="order_form_content" class="container">
+				<div id="order_form_content" class="row">
 				<?
 			}
 			else
