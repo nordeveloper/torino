@@ -53,9 +53,9 @@ else:
 
 
 <?$APPLICATION->IncludeComponent(
-	"bitrix:sale.order.ajax",
-	"torino",
-	Array(
+	"bitrix:sale.order.ajax", 
+	"torino", 
+	array(
 		"PAY_FROM_ACCOUNT" => "Y",
 		"ONLY_FULL_PAY_FROM_ACCOUNT" => "N",
 		"COUNT_DELIVERY_TAX" => "N",
@@ -75,9 +75,19 @@ else:
 		"PATH_TO_AUTH" => "/personal/signupin.php",
 		"SET_TITLE" => "Y",
 		"DISABLE_BASKET_REDIRECT" => "N",
-		"PRODUCT_COLUMNS" => array(),
-		"PROP_1" => array()
-	)
+		"PRODUCT_COLUMNS" => array(
+			0 => "PREVIEW_PICTURE",
+			1 => "PREVIEW_TEXT",
+			2 => "PROPERTY_CONSIST",
+			3 => "PROPERTY_NUTRITION",
+			4 => "PROPERTY_CALORIES",
+			5 => "PROPERTY_4",
+		),
+		"PROP_1" => array(
+		),
+		"COMPONENT_TEMPLATE" => "torino"
+	),
+	false
 );?>
 
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

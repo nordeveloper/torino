@@ -188,7 +188,9 @@ if (!function_exists("cmpBySort"))
 					<input type="hidden" name="profile_change" id="profile_change" value="N">
 					<input type="hidden" name="is_ajax_post" id="is_ajax_post" value="Y">
 					<input type="hidden" name="json" value="Y">
-					<div class="bx_ordercart_order_pay_center"><a href="javascript:void();" onclick="submitForm('Y'); return false;" id="ORDER_CONFIRM_BUTTON" class="checkout"><?=GetMessage("SOA_TEMPL_BUTTON")?></a></div>
+					<div id="commitment" class="bx_ordercart_order_pay_center text-center">
+                        <a href="javascript:void();" onclick="submitForm('Y'); return false;" id="ORDER_CONFIRM_BUTTON" class="btn btn-lg btn-success"><span class="glyphicon glyphicon-check"></span>&nbsp;<?=GetMessage("SOA_TEMPL_BUTTON")?></a>
+					</div>
 				</form>
 				<?
 				if($arParams["DELIVERY_NO_AJAX"] == "N")

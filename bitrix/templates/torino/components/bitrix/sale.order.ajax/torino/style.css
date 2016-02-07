@@ -17,9 +17,66 @@
 }
 
 
+.bx_ordercart_order_table_container {
+	border:0px !important;
+	border-radius: 0px !important;
+}
+
+.bx_ordercart .bx_ordercart_order_table_container
+table.bluetable thead tr td {
+    font-size: 1.4em;
+    font-weight: bold;
+    line-height: 2.2em;
+    color:#fff;
+    background-color:#337ab7;
+    border-color:#337ab7;
+    text-align: center;
+}
+.bx_ordercart .bx_ordercart_order_table_container table.bluetable td.custom,
+.bx_ordercart .bx_ordercart_order_table_container table.bluetable td.price
+{
+    font-size: 1.35em;
+    font-weight: bold;
+    line-height: 1.5em;
+    text-align: center;
+}
+
+.bx_ordercart .bx_ordercart_order_table_container table.bluetable tbody
+{ background: rgba(102, 169, 224, 0.15); }
+.bx_ordercart .bx_ordercart_order_table_container table.bluetable tbody tr{
+    border-bottom:1px solid #c3c7ce;
+}
+.bx_ordercart .bx_ordercart_order_table_container table.bluetable tbody tr:hover
+{ background: rgba(102, 169, 224, 0.15); }
 
 
-/*============================================*/
+.bx_ordercart .bx_ordercart_order_table_container .bluetable .bx_ordercart_itemtitle a {
+    font-size: 0.7em;
+    color:#337ab7;
+}
+.bx_ordercart .bx_ordercart_order_table_container .bluetable .bx_ordercart_itemtitle a:hover {
+    color: #1d4567;
+}
+
+
+
+
+.bx_ordercart .bx_ordercart_order_table_container table.bluetable td.item {
+    white-space: normal;
+}
+
+
+.bx_ordercart table.bx_ordercart_order_sum.finalbillprice tr td {
+    font-size:1.5em; color:#1d4567;
+}
+
+#commitment a, #commitment a span {
+    font-size: 1.6em !important;
+}
+
+.bx_ordercart_order_pay_center { border:0px !important;}
+
+    /*============================================*/
 
 
 #order_form_div .sale_data-table.summary td {

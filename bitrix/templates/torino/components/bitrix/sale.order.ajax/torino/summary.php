@@ -10,7 +10,7 @@ $bShowNameWithPicture = ($bDefaultColumns) ? true : false; // flat to show name 
 <div class="bx_ordercart row">
 	<h2 class="hed text-center"><?=GetMessage("SALE_PRODUCTS_SUMMARY");?></h2><br>
 	<div class="bx_ordercart_order_table_container">
-		<table>
+		<table class="table-responsive col-md-12 bluetable">
 			<thead>
 				<tr>
 					<td class="margin"></td>
@@ -41,15 +41,15 @@ $bShowNameWithPicture = ($bDefaultColumns) ? true : false; // flat to show name 
 
 					foreach ($arResult["GRID"]["HEADERS"] as $id => $arColumn):
 
-						if (in_array($arColumn["id"], array("PROPS", "TYPE", "NOTES"))) // some values are not shown in columns in this template
-							continue;
+                        if (in_array($arColumn["id"], array("PROPS", "TYPE", "NOTES", "PREVIEW_TEXT", "PROPERTY_CONSIST_VALUE", "PROPERTY_NUTRITION_VALUE", "PROPERTY_CALORIES_VALUE", "PROPERTY_4_VALUE"))) // some values are not shown in columns in this template
+                            continue;
 
 						if ($arColumn["id"] == "PREVIEW_PICTURE" && $bShowNameWithPicture)
 							continue;
 
 						if ($arColumn["id"] == "NAME" && $bShowNameWithPicture):
 						?>
-							<td class="item" colspan="2">
+							<td class="item col-md-6" colspan="2">
 						<?
 							echo GetMessage("SALE_PRODUCTS");
 						elseif ($arColumn["id"] == "NAME" && !$bShowNameWithPicture):
@@ -59,12 +59,12 @@ $bShowNameWithPicture = ($bDefaultColumns) ? true : false; // flat to show name 
 							echo $arColumn["name"];
 						elseif ($arColumn["id"] == "PRICE"):
 						?>
-							<td class="price">
+							<td class="price col-md-2">
 						<?
 							echo $arColumn["name"];
 						else:
 						?>
-							<td class="custom">
+							<td class="custom col-md-2">
 						<?
 							echo $arColumn["name"];
 						endif;
@@ -72,7 +72,6 @@ $bShowNameWithPicture = ($bDefaultColumns) ? true : false; // flat to show name 
 							</td>
 					<?endforeach;?>
 
-					<td class="margin"></td>
 				</tr>
 			</thead>
 
@@ -83,7 +82,7 @@ $bShowNameWithPicture = ($bDefaultColumns) ? true : false; // flat to show name 
 					<?
 					if ($bShowNameWithPicture):
 					?>
-						<td class="itemphoto">
+						<td class="itemphoto col-md-3">
 							<div class="bx_ordercart_photo_container">
 								<?
 								if (strlen($arData["data"]["PREVIEW_PICTURE_SRC"]) > 0):
@@ -129,7 +128,7 @@ $bShowNameWithPicture = ($bDefaultColumns) ? true : false; // flat to show name 
 
 						$class = ($arColumn["id"] == "PRICE_FORMATED") ? "price" : "";
 
-						if (in_array($arColumn["id"], array("PROPS", "TYPE", "NOTES"))) // some values are not shown in columns in this template
+						if (in_array($arColumn["id"], array("PROPS", "TYPE", "NOTES", "PREVIEW_TEXT", "PROPERTY_CONSIST_VALUE", "PROPERTY_NUTRITION_VALUE", "PROPERTY_CALORIES_VALUE", "PROPERTY_4_VALUE"))) // some values are not shown in columns in this template
 							continue;
 
 						if ($arColumn["id"] == "PREVIEW_PICTURE" && $bShowNameWithPicture)
@@ -140,13 +139,39 @@ $bShowNameWithPicture = ($bDefaultColumns) ? true : false; // flat to show name 
 						if ($arColumn["id"] == "NAME"):
 							$width = 70 - ($imgCount * 20);
 						?>
-							<td class="item" style="width:<?=$width?>%">
+							<td class="item col-md-6">
 
 								<h2 class="bx_ordercart_itemtitle">
 									<?if (strlen($arItem["DETAIL_PAGE_URL"]) > 0):?><a href="<?=$arItem["DETAIL_PAGE_URL"] ?>"><?endif;?>
 										<?=$arItem["NAME"]?>
 									<?if (strlen($arItem["DETAIL_PAGE_URL"]) > 0):?></a><?endif;?>
-								</h2>
+								</h2><br>
+
+								<?if (isset($arItem["PREVIEW_TEXT"]) && ($arItem["PREVIEW_TEXT"] !="")){?>
+									<p>
+										<?=$arItem["PREVIEW_TEXT"]?>
+									</p>
+								<?}?>
+								<?if (isset($arItem["PROPERTY_CONSIST_VALUE"]) && ($arItem["PROPERTY_CONSIST_VALUE"] !="")){?>
+									<p>
+										<b>Ингридиенты:</b> <?=$arItem["PROPERTY_CONSIST_VALUE"]?>
+									</p>
+								<?}?>
+								<?if (isset($arItem["PROPERTY_NUTRITION_VALUE"]) && ($arItem["PROPERTY_NUTRITION_VALUE"] !="")){?>
+									<p>
+										<b>Белки/Жиры/Углеводы (на 100 гр.):</b> <?=$arItem["PROPERTY_NUTRITION_VALUE"]?>
+									</p>
+								<?}?>
+								<?if (isset($arItem["PROPERTY_CALORIES_VALUE"]) && ($arItem["PROPERTY_CALORIES_VALUE"] !="")){?>
+									<p>
+										<b>Калорийность (на 100 гр.):</b> <?=$arItem["PROPERTY_CALORIES_VALUE"]?>
+									</p>
+								<?}?>
+								<?if (isset($arItem["PROPERTY_4_VALUE"]) && ($arItem["PROPERTY_4_VALUE"] !="")){?>
+									<p>
+										<b>Порция (в гр.):</b> <?=$arItem["PROPERTY_4_VALUE"]?>
+									</p>
+								<?}?>
 
 								<div class="bx_ordercart_itemart">
 									<?
@@ -260,9 +285,9 @@ $bShowNameWithPicture = ($bDefaultColumns) ? true : false; // flat to show name 
 						<?
 						elseif ($arColumn["id"] == "PRICE_FORMATED"):
 						?>
-							<td class="price right">
+							<td class="price col-md-2">
 								<div class="current_price"><?=$arItem["PRICE_FORMATED"]?></div>
-								<div class="old_price right">
+								<div class="old_price">
 									<?
 									if (doubleval($arItem["DISCOUNT_PRICE"]) > 0):
 										echo SaleFormatCurrency($arItem["PRICE"] + $arItem["DISCOUNT_PRICE"], $arItem["CURRENCY"]);
@@ -281,7 +306,7 @@ $bShowNameWithPicture = ($bDefaultColumns) ? true : false; // flat to show name 
 						<?
 						elseif ($arColumn["id"] == "DISCOUNT"):
 						?>
-							<td class="custom right">
+							<td class="custom col-md-2">
 								<span><?=getColumnName($arColumn)?>:</span>
 								<?=$arItem["DISCOUNT_PRICE_PERCENT_FORMATED"]?>
 							</td>
@@ -306,7 +331,7 @@ $bShowNameWithPicture = ($bDefaultColumns) ? true : false; // flat to show name 
 						<?
 						elseif (in_array($arColumn["id"], array("QUANTITY", "WEIGHT_FORMATED", "DISCOUNT_PRICE_PERCENT_FORMATED", "SUM"))):
 						?>
-							<td class="custom right">
+							<td class="custom">
 								<span><?=getColumnName($arColumn)?>:</span>
 								<?=$arItem[$arColumn["id"]]?>
 							</td>
@@ -358,12 +383,12 @@ $bShowNameWithPicture = ($bDefaultColumns) ? true : false; // flat to show name 
 
 	<div class="bx_ordercart_order_pay">
 		<div class="bx_ordercart_order_pay_right">
-			<table class="bx_ordercart_order_sum">
+			<table class="bx_ordercart_order_sum finalbillprice">
 				<tbody>
-					<tr>
+					<?/*<tr>
 						<td class="custom_t1" colspan="<?=$colspan?>" class="itog"><?=GetMessage("SOA_TEMPL_SUM_WEIGHT_SUM")?></td>
 						<td class="custom_t2" class="price"><?=$arResult["ORDER_WEIGHT_FORMATED"]?></td>
-					</tr>
+					</tr> */?>
 					<tr>
 						<td class="custom_t1" colspan="<?=$colspan?>" class="itog"><?=GetMessage("SOA_TEMPL_SUM_SUMMARY")?></td>
 						<td class="custom_t2" class="price"><?=$arResult["ORDER_PRICE_FORMATED"]?></td>
@@ -435,9 +460,14 @@ $bShowNameWithPicture = ($bDefaultColumns) ? true : false; // flat to show name 
 
 		</div>
 		<div style="clear:both;"></div>
-		<div class="bx_section">
-			<h4><?=GetMessage("SOA_TEMPL_SUM_COMMENTS")?></h4>
-			<div class="bx_block w100"><textarea name="ORDER_DESCRIPTION" id="ORDER_DESCRIPTION" style="max-width:100%;min-height:120px"><?=$arResult["USER_VALS"]["ORDER_DESCRIPTION"]?></textarea></div>
+        <div class="row"><hr></div>
+		<div class="bx_section row">
+			<h2 class="hed text-center"><?=GetMessage("SOA_TEMPL_SUM_COMMENTS")?></h2>
+			<div class="bx_block w100">
+                <textarea name="ORDER_DESCRIPTION" id="ORDER_DESCRIPTION" style="max-width:100%;min-height:120px">
+                    <?=$arResult["USER_VALS"]["ORDER_DESCRIPTION"]?>
+                </textarea>
+            </div>
 			<input type="hidden" name="" value="">
 			<div style="clear: both;"></div><br />
 		</div>
