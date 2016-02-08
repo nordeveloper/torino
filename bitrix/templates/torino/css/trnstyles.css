@@ -288,6 +288,12 @@ a.addtocart.adding
 .iteminfohead{ height: 3em; vertical-align: middle !important; }
 
 
+#forgottable{
+    margin:5px auto;
+}
+#forgottable tbody td {text-align: left; padding:5px 10px;}
+#forgottable tfoot td.text-center {text-align: center;}
+
 /*========Shadows=======*/
 
 .box-shadow--2dp {

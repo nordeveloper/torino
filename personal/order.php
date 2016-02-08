@@ -31,7 +31,7 @@ if (!CUser::IsAuthorized()):
 <?
 else:
 ?>
-<div id="registrationpanel" class="row">
+<div id="registrationpanel" class="container">
     <br/>
     <p>
         <strong>Оформление заказа</strong>
@@ -53,9 +53,9 @@ else:
 
 
 <?$APPLICATION->IncludeComponent(
-	"bitrix:sale.order.ajax", 
-	"torino", 
-	array(
+	"bitrix:sale.order.ajax",
+	"torino",
+	Array(
 		"PAY_FROM_ACCOUNT" => "Y",
 		"ONLY_FULL_PAY_FROM_ACCOUNT" => "N",
 		"COUNT_DELIVERY_TAX" => "N",
@@ -75,19 +75,9 @@ else:
 		"PATH_TO_AUTH" => "/personal/signupin.php",
 		"SET_TITLE" => "Y",
 		"DISABLE_BASKET_REDIRECT" => "N",
-		"PRODUCT_COLUMNS" => array(
-			0 => "PREVIEW_PICTURE",
-			1 => "PREVIEW_TEXT",
-			2 => "PROPERTY_CONSIST",
-			3 => "PROPERTY_NUTRITION",
-			4 => "PROPERTY_CALORIES",
-			5 => "PROPERTY_4",
-		),
-		"PROP_1" => array(
-		),
-		"COMPONENT_TEMPLATE" => "torino"
-	),
-	false
+		"PRODUCT_COLUMNS" => array(),
+		"PROP_1" => array()
+	)
 );?>
 
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
