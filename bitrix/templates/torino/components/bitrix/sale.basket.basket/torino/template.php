@@ -134,6 +134,11 @@ if (strlen($arResult["ERROR_MESSAGE"]) <= 0)
 
 
 
-<?} else {
-	ShowError($arResult["ERROR_MESSAGE"]);
-} ?>
+<?} else {?>
+    <div class="row">
+        <br><h2 class="hed text-center">
+            <b><?=ShowError($arResult["ERROR_MESSAGE"]);?></b>
+        </h2><br>
+    </div>
+<?}?>
+

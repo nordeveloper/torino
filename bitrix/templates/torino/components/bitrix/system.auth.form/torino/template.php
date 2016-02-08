@@ -162,7 +162,7 @@ else:
 				<strong>Torino Pizza</strong>! <br /><br />
                 Вы вошли как<br />
 				<a class="systhref" href="/auth/index.php" title="<?=GetMessage("AUTH_PROFILE")?>"><i><?=$arResult["USER_NAME"]?></i></a><br />
-                <a class="systhref" style="font-weight:bold;" href="/auth/index.php" title="<?=GetMessage("AUTH_PROFILE")?>">[<?=$arResult["USER_LOGIN"]?>]</a>
+                <?/* <a class="systhref" style="font-weight:bold;" href="/auth/index.php" title="<?=GetMessage("AUTH_PROFILE")?>">[<?=$arResult["USER_LOGIN"]?>]</a> */ ?>
                 <br /><br />
 			</td>
 		</tr>
