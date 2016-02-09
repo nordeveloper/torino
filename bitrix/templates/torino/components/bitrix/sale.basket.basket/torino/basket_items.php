@@ -127,8 +127,9 @@ if ($normalCount > 0):
                         </td>
 
 						<td class="control text-center col-lg-3 col-md-3 col-sm-3 col-xs-3">
-							<a href="#" class="btn btn-danger btn-lg">
-								<span class="glyphicon glyphicon-remove"></span>&nbsp;Удалить
+							<a href="<?=str_replace("#ID#", $arItem["ID"], $arUrls["delete"])?>" class="btn btn-danger btn-lg">
+								<span class="glyphicon glyphicon-remove"></span>
+                                &nbsp;Удалить
 							</a>
 						</td>
 

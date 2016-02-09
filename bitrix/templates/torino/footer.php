@@ -14,7 +14,7 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
         <footer class="footer" id="infofooter">
             <div class="container">
                 <div class="col-lg-5 col-md-5 col-sm-4 col-xs-4" id="footinfo">
-                    <p>© 2015. Torino group.<br/>
+                    <p>© 2016. Torino group.<br/>
                         Разработка сайта: «Интеллектуальные системы».</p>
                 </div>
                 <div class="col-lg-2 col-md-2 col-sm-4 col-xs-4" id="footlogo">

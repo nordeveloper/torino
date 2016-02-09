@@ -1496,7 +1496,7 @@ window.JCCatalogSection.prototype.Basket = function()
 			this.InitPopupWindow();
 			this.obPopupWin.setTitleBar({
 				content: BX.create('div', {
-					style: { marginRight: '30px', whiteSpace: 'nowrap' },
+                    style: { marginRight: '30px', whiteSpace: 'nowrap' },
 					text: BX.message('TITLE_BASKET_PROPS')
 				})
 			});
@@ -1615,7 +1615,8 @@ window.JCCatalogSection.prototype.BasketResult = function(arResult)
 		}
 		this.obPopupWin.setTitleBar({
 			content: BX.create('div', {
-				style: { marginRight: '30px', whiteSpace: 'nowrap' },
+                style: { marginRight: '30px', whiteSpace: 'nowrap' },
+                //props : { className: "ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix ui-draggable-handle"},
 				text: (successful ? BX.message('TITLE_SUCCESSFUL') : BX.message('TITLE_ERROR'))
 			})
 		});

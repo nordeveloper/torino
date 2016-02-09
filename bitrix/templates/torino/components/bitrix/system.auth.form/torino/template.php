@@ -161,7 +161,8 @@ else:
                 Приветствуем на сайте <br />
 				<strong>Torino Pizza</strong>! <br /><br />
                 Вы вошли как<br />
-				<a class="systhref" href="/auth/index.php" title="<?=GetMessage("AUTH_PROFILE")?>"><i><?=$arResult["USER_NAME"]?></i></a><br />
+				<a class="systhref" href="/auth/index.php" title="<?=GetMessage("AUTH_PROFILE")?>"><b><?=$arResult["USER_NAME"]?></b></a><br />
+				<a class="systhref" href="/personal/basket.php" title="Корзина пользователя <?=GetMessage("AUTH_PROFILE")?>">[<i>Корзина</i>]</a><br />
                 <?/* <a class="systhref" style="font-weight:bold;" href="/auth/index.php" title="<?=GetMessage("AUTH_PROFILE")?>">[<?=$arResult["USER_LOGIN"]?>]</a> */ ?>
                 <br /><br />
 			</td>

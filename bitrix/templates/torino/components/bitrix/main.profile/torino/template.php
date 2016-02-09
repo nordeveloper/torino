@@ -385,11 +385,11 @@ if($arResult["ID"]>0)
     <div style="margin:20px 0 0 0px;" class="profile-link profile-user-div-link text-center">
         <br/><br/>
 	    <p>
-            <button class="btn btn-lg btn-success" type="submit" name="save">
+            <button class="btn btn-lg btn-success" type="submit" value="submit" name="save">
                 <span class='glyphicon glyphicon-check'></span>&nbsp;&nbsp;<?=(($arResult["ID"]>0) ? GetMessage("MAIN_SAVE") : GetMessage("MAIN_ADD"))?>
             </button>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button class="btn btn-lg btn-danger" type="reset">
+            <button class="btn btn-lg btn-danger" type="reset" value="cancel" name="cancel">
                 <span class='glyphicon glyphicon-remove'></span>&nbsp;&nbsp;<?=GetMessage('MAIN_RESET');?>
             </button>
         </p>
