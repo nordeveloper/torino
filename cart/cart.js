@@ -13,6 +13,9 @@ Cart.Init = function()
         var addLink = this;
         $(addLink).addClass("adding");
         var id = this.getAttribute('data-item-id');
+        var quantid = this.getAttribute('data-item-quantity');
+        console.log("lesh");
+        console.log(quantid);
         Cart.AddItem(id,1)
             .done(function(data)
             {

@@ -158,7 +158,9 @@ if (!empty($arResult['ITEMS'])) {
                                                         </div>
                                                     <div id="<? echo $arItemIDs['BASKET_ACTIONS']; ?>" class="bx_catalog_item_controls_blocktwo text-center">
                                                         <?/*<a class="bx_bt_button bx_medium btn btn-darkredbutton" role="button" id="<? echo $arItemIDs['BUY_LINK']; ?>"  href="javascript:void(0)" rel="nofollow"> */?>
-                                                        <a id="<? echo $arItemIDs['BUY_LINK']; ?>" role="button" class="bx_bt_button bx_medium btn btn-darkredbutton addtocart" href="javascript:void(0)" rel="nofollow" data-item-id="<? echo $arItem['ID'] ?>">
+                                                        <a id="<? echo $arItemIDs['BUY_LINK']; ?>" role="button"
+                                                           class="bx_bt_button bx_medium btn btn-darkredbutton addtocart" href="javascript:void(0)" rel="nofollow"
+                                                           data-item-id="<? echo $arItem['ID'] ?>" data-item-quantity="<? echo $arItemIDs['QUANTITY']; ?>">
                                                             <?if ($arParams['ADD_TO_BASKET_ACTION'] == 'BUY')
                                                             {
                                                                 echo ('' != $arParams['MESS_BTN_BUY'] ? $arParams['MESS_BTN_BUY'] : GetMessage('CT_BCS_TPL_MESS_BTN_BUY'));
