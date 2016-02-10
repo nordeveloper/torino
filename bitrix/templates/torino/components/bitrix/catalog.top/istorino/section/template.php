@@ -63,7 +63,11 @@ global $APPLICATION;
         <div class="thumbnail bx_catalog_item_container">
             <a id="<? echo $arItemIDs['PICT']; ?>" href="<?= $arItem['DETAIL_PAGE_URL']; ?>"><img alt="<?= $imgTitle; ?>" title="<?= $imgTitle; ?>" src="<?= $arItem['PREVIEW_PICTURE']['SRC']; ?>" class="img-responsive img-thumbnail"></a>
             <div class="caption">
-                <h3 class="text-center iteminfohead"><?= $arItem["NAME"]?></h3>
+                <h3 class="text-center iteminfohead">
+                    <a id="<? echo $arItemIDs['PICT']; ?>" href="<?= $arItem['DETAIL_PAGE_URL']; ?>">
+                        <?= $arItem["NAME"]?>
+                    </a>
+                </h3>
                 <p class="text-justify iteminfo2">
                     <?= $arItem["PREVIEW_TEXT"]?>
                 </p>
