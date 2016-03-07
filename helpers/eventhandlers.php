@@ -44,5 +44,22 @@ class EventHandlers
 //        Trace($arFields);
     }
 
+    public static function OnBeforeEventAddHandler(&$event, &$lid, &$arFields)
+    {
+        if ($event == "SALE_NEW_ORDER")
+        {
+            $orderId = $arFields['ORDER_ID'];
+
+            $dbOrderProps = CSaleOrderPropsValue::GetList(
+                array("SORT" => "ASC"),
+                array("ORDER_ID" => $orderId, "CODE"=>array("ORDER_PHONE"))
+            );
+
+            if ($arOrderProps = $dbOrderProps->GetNext()) {
+                $arFields['PHONE'] = $arOrderProps['~VALUE'];
+            }
+        }
+    }
+
 
 }
