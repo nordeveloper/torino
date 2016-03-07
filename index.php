@@ -204,7 +204,7 @@
 		"CACHE_TYPE" => "A",
 		"COMPONENT_TEMPLATE" => "trnSlider",
 		"CONVERT_CURRENCY" => "N",
-		"DETAIL_URL" => "/catalog/#SECTION_CODE#/#CODE#/",
+		"DETAIL_URL" => "#SITE_DIR#/catalog/#SECTION_CODE#/#CODE#/",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
 		"DISPLAY_TOP_PAGER" => "N",
 		"ELEMENT_SORT_FIELD" => "sort",
@@ -253,7 +253,7 @@
 		"SECTION_CODE" => "",
 		"SECTION_ID" => "2",
 		"SECTION_ID_VARIABLE" => "SECTION_ID",
-		"SECTION_URL" => "/catalog/#SECTION_CODE#/",
+		"SECTION_URL" => "#SITE_DIR#/catalog/#SECTION_CODE#/",
 		"SECTION_USER_FIELDS" => array(
 			0 => "",
 			1 => "",

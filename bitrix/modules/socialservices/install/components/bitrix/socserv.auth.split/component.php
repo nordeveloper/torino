@@ -27,7 +27,25 @@ $arResult["AUTH_SERVICES"] = $arServices;
 //***************************************
 //Checking the input parameters.
 //***************************************
-if((isset($_REQUEST["code"]) && $_REQUEST["code"] <> '') || (isset($_REQUEST["auth_service_id"]) && $_REQUEST["auth_service_id"] <> '' && isset($arResult["AUTH_SERVICES"][$_REQUEST["auth_service_id"]])) && (check_bitrix_sessid() || CSocServAuthManager::CheckUniqueKey(false)))
+if(
+	(
+		(
+			isset($_REQUEST["code"])
+			&& $_REQUEST["code"] <> ''
+		)
+		||
+		(
+			isset($_REQUEST["auth_service_id"])
+			&& $_REQUEST["auth_service_id"] <> ''
+			&& isset($arResult["AUTH_SERVICES"][$_REQUEST["auth_service_id"]])
+		)
+	)
+	&&
+	(
+		check_bitrix_sessid()
+		|| CSocServAuthManager::CheckUniqueKey(false)
+	)
+)
 {
 	$arResult["CURRENT_SERVICE"] = $_REQUEST["auth_service_id"];
 	if(isset($_REQUEST["auth_service_error"]) && $_REQUEST["auth_service_error"] <> '')

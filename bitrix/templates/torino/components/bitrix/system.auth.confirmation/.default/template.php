@@ -1,10 +1,10 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
 
-    <div class="fullwidth">
-    <div class="centered"><div class="bx-auth wrkdiv" id="registrationpanel" style="padding-top: 0px !important;">
+    <div class="container text-center">
 
-
-<p><?echo $arResult["MESSAGE_TEXT"]?></p>
+<div class="row">
+	<br><h2 class="hed text-center"><?echo $arResult["MESSAGE_TEXT"]?></h2><br>
+</div>
 <?//here you can place your own messages
 	switch($arResult["MESSAGE_CODE"])
 	{
@@ -32,8 +32,8 @@
 	}
 ?>
 <?if($arResult["SHOW_FORM"]):?>
-	<form method="post" action="<?echo $arResult["FORM_ACTION"]?>">
-		<table class="data-table bx-confirm-table">
+	<form method="post" class="text-center" action="<?echo $arResult["FORM_ACTION"]?>">
+		<table  id="forgottable" class="data-table bx-confirm-table">
 			<tr>
 				<td>
 					<?echo GetMessage("CT_BSAC_LOGIN")?>:
@@ -51,7 +51,9 @@
 				</td>
 			</tr>
 			<tr>
-				<td colspan="2"><input type="submit"  style="padding: 4px 77px;" class="systhref-submit" value="<?echo GetMessage("CT_BSAC_CONFIRM")?>" /></td>
+				<td colspan="2">
+                    <input type="submit" class="btn btn-success btn-lg" value="<?=GetMessage("CT_BSAC_CONFIRM")?>"/>
+                </td>
 			</tr>
 		</table>
 		<input type="hidden" name="<?echo $arParams["USER_ID"]?>" value="<?echo $arResult["USER_ID"]?>" />
@@ -60,4 +62,4 @@
 	<?$APPLICATION->IncludeComponent("bitrix:system.auth.authorize", "", array());?>
 <?endif?>
 
-</div></div></div>
+</div>

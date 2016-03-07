@@ -138,4 +138,7 @@ $MESS["RATING_MAIN_TYPE_STANDART"] = "Плюс / Мінус";
 $MESS["RATING_MAIN_TYPE_LIKE"] = "мені подобається";
 $MESS["P_SHOW_NAVIGATION"] = "Відображати навігаційну ланцюжок 'хлібні крихти' в рамках комплексного компонента";
 $MESS["IBLOCK_SORT_ID_SORTED"] = "ID (з можливістю сортування)";
+$MESS["P_UPLOADER_TYPE_FORM_SIMPLE"] = "завантажувач HTML5";
+$MESS["P_UPLOADER_TYPE_APPLET"] = "Завантажувач HTML5 або Java/ActiveX";
+$MESS["P_UPLOADER_TYPE_FLASH"] = "Завантажувач HTML5 або Flash-завантажувач";
 ?>

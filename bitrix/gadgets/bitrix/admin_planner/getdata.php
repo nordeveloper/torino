@@ -64,7 +64,6 @@ else
 {
 	$accessToken = $objBitrixOAuth->getStorageToken();
 }
-AddMessage2Log($accessToken);
 
 if($accessToken != '' && $domain != '' && !$needAuthorize)
 {

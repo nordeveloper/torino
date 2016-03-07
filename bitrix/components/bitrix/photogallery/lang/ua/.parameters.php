@@ -136,4 +136,7 @@ $MESS["P_APPLET_LAYOUT_EXTENDED"] = "Стандартний шаблон";
 $MESS["P_DRAG_SORT"] = "Сортувати фотографії в альбомі перетягуванням";
 $MESS["P_UPLOAD_MAX_FILE_SIZE"] = "Максимальний розмір завантажуваного файлу (не повинен перевищувати #upload_max_filesize#б), Мб";
 $MESS["IBLOCK_SORT_ID_SORTED"] = "ID (з можливістю сортування)";
+$MESS["P_UPLOADER_TYPE_FORM_SIMPLE"] = "завантажувач HTML5";
+$MESS["P_UPLOADER_TYPE_APPLET"] = "Завантажувач HTML5 або Java/ActiveX";
+$MESS["P_UPLOADER_TYPE_FLASH"] = "Завантажувач HTML5 або Flash-завантажувач";
 ?>

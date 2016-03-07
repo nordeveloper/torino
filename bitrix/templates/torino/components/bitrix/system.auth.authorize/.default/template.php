@@ -1,4 +1,4 @@
-<div class="fullwidth"><div class="centered"><div class="bx-auth wrkdiv" id="registrationpanel" style="padding-top: 0px !important;">
+<div class="container text-center">
 <?
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 ?>
@@ -7,13 +7,21 @@ ShowMessage($arParams["~AUTH_RESULT"]);
 ShowMessage($arResult['ERROR_MESSAGE']);
 ?>
 
-<div class="bx-auth">
+<div class="">
 <?if($arResult["AUTH_SERVICES"]):?>
-	<div class="bx-auth-title"><?echo GetMessage("AUTH_TITLE")?></div>
+	<div class="bx-auth-title row">
+		<h2 class="hed text-center">
+		    <?echo GetMessage("AUTH_TITLE")?>
+        </h2>
+	</div>
 <?endif?>
-	<div class="bx-auth-note" style="float:none;"><?=GetMessage("AUTH_PLEASE_AUTH")?></div>
+	<div class="bx-auth-note row">
+        <h2 class="hed text-center">
+            <?=GetMessage("AUTH_PLEASE_AUTH")?>
+        </h2>
+    </div>
 
-	<form name="form_auth" method="post" target="_top" action="<?=$arResult["AUTH_URL"]?>">
+	<form class="text-center"  name="form_auth" method="post" target="_top" action="<?=$arResult["AUTH_URL"]?>">
 
 		<input type="hidden" name="AUTH_FORM" value="Y" />
 		<input type="hidden" name="TYPE" value="AUTH" />
@@ -24,7 +32,7 @@ ShowMessage($arResult['ERROR_MESSAGE']);
 		<input type="hidden" name="<?=$key?>" value="<?=$value?>" />
 		<?endforeach?>
 
-		<table class="bx-auth-table">
+		<table class="table-responsive bx-auth-table" id="authtable">
 			<tr>
 				<td class="bx-auth-label"><?=GetMessage("AUTH_LOGIN")?></td>
 				<td><input class="bx-auth-input" type="text" name="USER_LOGIN" maxlength="255" value="<?=$arResult["LAST_LOGIN"]?>" /></td>
@@ -58,18 +66,24 @@ document.getElementById('bx_auth_secure').style.display = 'inline-block';
 					<td><input class="bx-auth-input" type="text" name="captcha_word" maxlength="50" value="" size="15" /></td>
 				</tr>
 			<?endif;?>
-			<tr>
-				<td></td>
-				<td class="authorize-submit-cell"><input type="submit" style="padding: 4px 77px;" class="systhref-submit" name="Login" value="<?=GetMessage("AUTH_AUTHORIZE")?>" /></td>
-			</tr>
             <?if ($arResult["STORE_PASSWORD"] == "Y"):?>
                 <tr>
                     <td></td>
                     <td></td>
                 </tr>
             <?endif?>
+
+            <tr>
+                <td colspan="2" class="authorize-submit-cell text-center">
+                    <input type="checkbox" id="USER_REMEMBER" name="USER_REMEMBER" value="Y" /><label for="USER_REMEMBER">&nbsp;<?=GetMessage("AUTH_REMEMBER_ME")?></label>
+                </td>
+            </tr>
+			<tr>
+				<td colspan="2" class="authorize-submit-cell text-center">
+                    <input type="submit" class="btn btn-success btn-lg" name="Login" value="<?=GetMessage("AUTH_AUTHORIZE")?>">
+                </td>
+			</tr>
 		</table>
-        <input type="checkbox" id="USER_REMEMBER" name="USER_REMEMBER" value="Y" /><label for="USER_REMEMBER">&nbsp;<?=GetMessage("AUTH_REMEMBER_ME")?></label>
 <?if($arParams["NOT_SHOW_LINKS"] != "Y" && $arResult["NEW_USER_REGISTRATION"] == "Y" && $arParams["AUTHORIZE_REGISTRATION"] != "Y"):?>
 		<noindex>
 			<p>
@@ -128,4 +142,6 @@ $APPLICATION->IncludeComponent("bitrix:socserv.auth.form", "",
 					"GROUP_ID" => array("2")
 				)
 			);?>
-</div></div></div>
+
+
+</div>

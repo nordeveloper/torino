@@ -3,8 +3,12 @@
 if(count($arResult["PERSON_TYPE"]) > 1)
 {
 	?>
-	<div class="section">
-		<h4><?=GetMessage("SOA_TEMPL_PERSON_TYPE")?></h4>
+	<div class="section row">
+
+        <h2 class="hed text-center" id="us_params">
+            <?=GetMessage("SOA_TEMPL_PERSON_TYPE")?>
+        </h2>
+
 		<?foreach($arResult["PERSON_TYPE"] as $v):?>
 			<div class="label left">
 				<input type="radio" id="PERSON_TYPE_<?=$v["ID"]?>" name="PERSON_TYPE" value="<?=$v["ID"]?>"<?if ($v["CHECKED"]=="Y") echo " checked=\"checked\"";?> onClick="submitForm()"> <label for="PERSON_TYPE_<?=$v["ID"]?>"><?=$v["NAME"]?></label><br />

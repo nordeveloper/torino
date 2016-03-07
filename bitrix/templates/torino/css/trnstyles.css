@@ -1,4 +1,12 @@
 /* Common */
+body
+{ background:#f8f8f8 url("../images/pizzaback2.jpg") repeat; }
+
+
+a, a:hover, a:active {text-decoration: none;}
+a:visited {text-decoration: none !important;}
+
+
 @font-face {
     font-family: "PT Sans Narrow"; /* Имя шрифта */
     src: url(../fonts/pt_sans-regular.ttf); /* Путь к файлу со шрифтом */
@@ -53,7 +61,7 @@ img.top-ico2 { float:left; width:1.5em; margin:-0.2em 0.5em 0.75em 0; }
 
 /* Footer */
 #footingdvd {margin-top:4em;}
-#wavefooter{background:#fff url("../images/torr_40.png") repeat-x; height:50px;}
+#wavefooter{background:url("../images/torr_40.png") repeat-x; height:50px;}
 
 #infofooter{background:#ffcc00; padding: 1.1em 0; }
 #footlogo img { margin:auto; }
@@ -106,4 +114,285 @@ h3.sechead {font-size: 1.3em; margin-top:2.3em; }
 a.addtocart.adding
 {
     background: url("../images/loader.gif") no-repeat 50% 120% #337ab7;
+}
+
+
+
+
+/* == From Cat == */
+
+.bx_catalog_item_container{
+    padding:5% 3% 15% 3%;
+    background-color: rgba(255, 255, 255, 0.35);
+    border: 1px solid #dddddd; border-radius: 10px;
+    cursor: pointer;
+}
+
+.bx_catalog_item_container:hover{
+    background-color: rgba(255, 255, 255, 0.75);
+    border: 1px solid #aaaaaa;
+    border-radius: 10px;
+}
+
+.bx_catalog_item_container:hover .img-thumbnail {border: 1px solid #aaaaaa; }
+
+.bx_catalog_item_container.thumbnail { padding:5% 3% 0% 3%; }
+
+
+
+
+
+/*============================*/
+
+.btn-greenbutton, .btn-redbutton, .btn-darkredbutton {
+    font-size: 1.1em !important;
+    font-weight:bold !important;
+    margin-top: 2em; padding:0.5em 2em !important;
+}
+.btn-greenbutton.active {
+    color: rgba(255, 255, 255, 0.75);
+}
+.btn-greenbutton {
+    color: #ffffff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    background-color: #0e7832;
+    background-image: -moz-linear-gradient(top, #0c662a, #11943d);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0c662a), to(#11943d));
+    background-image: -webkit-linear-gradient(top, #0c662a, #11943d);
+    background-image: -o-linear-gradient(top, #0c662a, #11943d);
+    background-image: linear-gradient(to bottom, #0c662a, #11943d);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0c662a', endColorstr='#ff11943d', GradientType=0);
+    border-color: #11943d #11943d #094f21;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    *background-color: #11943d;
+    /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.btn-greenbutton:hover,
+.btn-greenbutton:focus,
+.btn-greenbutton:active,
+.btn-greenbutton.active,
+.btn-greenbutton.disabled,
+.btn-greenbutton[disabled] {
+    color: #ffffff !important;
+    background-color: #11943d !important;
+    *background-color: #0f7d33 !important;
+}
+.btn-greenbutton:active,
+.btn-greenbutton.active {
+    background-color: #0c662a ;
+}
+
+
+
+.btn-redbutton.active {
+    color: rgba(255, 255, 255, 0.75);
+}
+.btn-redbutton,.btn-darkredbutton:hover {
+    color: #ffffff !important;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    background-color: #d60018;
+    background-image: -moz-linear-gradient(top, #c20016, #f5001c);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#c20016), to(#f5001c));
+    background-image: -webkit-linear-gradient(top, #c20016, #f5001c);
+    background-image: -o-linear-gradient(top, #c20016, #f5001c);
+    background-image: linear-gradient(to bottom, #c20016, #f5001c);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffc20016', endColorstr='#fff5001c', GradientType=0);
+    border-color: #f5001c #f5001c #a80013;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    *background-color: #f5001c;
+    /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.btn-redbutton:hover,
+.btn-redbutton:focus,
+.btn-redbutton:active,
+.btn-redbutton.active,
+.btn-redbutton.disabled,
+.btn-redbutton[disabled] {
+    color: #ffffff;
+    background-color: #f5001c !important;
+    *background-color: #db0019 !important;
+}
+.btn-redbutton:active,
+.btn-redbutton.active {
+    background-color: #c20016 !important;
+}
+
+
+
+.btn-darkredbutton.active {
+    color: rgba(255, 255, 255, 0.75);
+}
+.btn-darkredbutton {
+    color: #ffffff !important;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    background-color: #ae0014;
+    background-image: -moz-linear-gradient(top, #c20016, #8f0010);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#c20016), to(#8f0010));
+    background-image: -webkit-linear-gradient(top, #c20016, #8f0010);
+    background-image: -o-linear-gradient(top, #c20016, #8f0010);
+    background-image: linear-gradient(to bottom, #c20016, #8f0010);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffc20016', endColorstr='#ff8f0010', GradientType=0);
+    border-color: #8f0010 #8f0010 #430008;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    *background-color: #8f0010;
+    /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+/*.btn-darkredbutton:hover,*/
+.btn-darkredbutton:focus,
+.btn-darkredbutton:active,
+.btn-darkredbutton.active,
+.btn-darkredbutton.disabled,
+.btn-darkredbutton[disabled] {
+    color: #ffffff;
+    background-color: #8f0010 !important;
+    *background-color: #76000d !important;
+}
+.btn-darkredbutton:active,
+.btn-darkredbutton.active {
+    background-color: #5c000a !important;
+}
+
+
+/*============================*/
+
+.input-group { font-size: 2em;}
+.input-group .btn-default a{
+    width:100%; height:100%;
+    font-weight: bold;
+}
+.input-group .btn-default a:hover{
+    text-decoration: none;
+}
+
+/*============================*/
+
+
+/*.catsecitems {padding:2em 0 3em 0 !important;}*/
+/*.catsecitems:hover { background: rgba(51, 122, 183, 0.11); }*/
+.catsecitems {padding:1em 0.25em 1em 0.25em !important;}
+
+
+/*============================*/
+
+.iteminfo { width:100%; height: 12em; }
+.iteminfo2 { width:100%; height: 7em; }
+.iteminfohead{ height: 3em; vertical-align: middle !important; }
+
+
+#forgottable{
+    margin:5px auto;
+}
+#forgottable tbody td {text-align: left; padding:5px 10px;}
+#forgottable tfoot td.text-center {text-align: center;}
+
+/*========Shadows=======*/
+
+.box-shadow--2dp {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12)
+}
+.box-shadow--3dp {
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .14), 0 3px 3px -2px rgba(0, 0, 0, .2), 0 1px 8px 0 rgba(0, 0, 0, .12)
+}
+.box-shadow--4dp {
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12), 0 2px 4px -1px rgba(0, 0, 0, .2)
+}
+.box-shadow--6dp {
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12), 0 3px 5px -1px rgba(0, 0, 0, .2)
+}
+.box-shadow--8dp {
+    box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .2)
+}
+.box-shadow--16dp {
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, .14), 0 6px 30px 5px rgba(0, 0, 0, .12), 0 8px 10px -5px rgba(0, 0, 0, .2)
+}
+/*============================*/
+
+font.text { font-size:1.2em; line-height: 1.5em; font-weight: bold; font-family: "PT Sans Narrow"; }
+
+.secitemdets a    { color:#333; }
+.secitemdets h4 a { color: #214f77; }
+.secitemdets a:hover {text-decoration: none; color:#337ab7; }
+
+.secitemtext {margin-bottom: 2em;}
+
+
+.cata3_price { float: right !important;}
+.cata3_price .bx_price{
+    font-family:'PT Sans Narrow', Helvetica, Arial, sans-serif; color: #0d7db4;
+    font-size: 1.3em !important; margin-top: 0.2em;
+    /*font-size: 20px !important;*/
+}
+
+
+
+#registrationpanel, #registrationpanel a, #registrationpanel p
+{ font-size:1.1em;}
+
+.profile-user-div-link h4 a{
+    font-weight:bold; color:#337ab7;
+}
+
+
+h2#us_params a, h2#us_buys a { font-size: 1em; color:#333333; }
+h2#us_params a:hover, h2#us_buys a:hover { color:#337ab7; }
+
+
+
+/************* Buying Popup ********************/
+table.popup-window { cursor: pointer;}
+.popup-window-titlebar .popup-window-top-row td { background: transparent !important;}
+table.popup-window tr.popup-window-top-row {
+    border: 1px solid #e78f08;  border-radius: 4px;
+    background: #f6a828 url("/js/jquery-ui-1.11.3.custom/images/ui-bg_gloss-wave_35_f6a828_500x100.png") 50% 50% repeat-x;
+    color: #ffffff;
+    font-weight: bold;
+    padding: .4em 1em;
+    font-size:1.3em;
+}
+
+
+a.popup-window-close-icon.popup-window-titlebar-close-icon{
+    padding:8px !important;
+    margin-top: 0px;
+    background: #f6f6f6 url("/js/jquery-ui-1.11.3.custom/images/ui-icons_ef8c08_256x240.png") -96px -128px no-repeat !important;
+
+}
+
+
+.popup-window-content img {
+    padding:5px; margin: 10px;
+    border-radius:4px; border:1px solid #a9a9a9;
+}
+.popup-window-content p, .popup-window-buttons span{
+    text-align:center;
+    font-size:1.3em; margin:5px;
+    font-weight:bold;
+    color:#214f77;
+}
+
+.popup-window-buttons>span{
+    margin-left:0px !important;
+    padding-left:0px !important;
+}
+
+.popup-window-buttons span{
+    width:100% !important;
+    text-align:center;
+    font-size:1.2em;
+    margin:5px; padding-bottom:15px;
+    font-weight:bold; color:#214f77;
+    font-family:"PT Sans Narrow";
+}
+
+.popup-window-buttons span:hover{
+    color: #378acb;
 }

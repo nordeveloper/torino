@@ -52,4 +52,7 @@ $MESS["P_UPLOADER_TYPE"] = "Тип завантажувача";
 $MESS["P_APPLET_LAYOUT"] = "Схема множинного завантажувача";
 $MESS["P_APPLET_LAYOUT_SIMPLE"] = "Спрощений шаблон завантажувача";
 $MESS["P_APPLET_LAYOUT_EXTENDED"] = "Стандартний шаблон";
+$MESS["P_UPLOADER_TYPE_FORM_SIMPLE"] = "завантажувач HTML5";
+$MESS["P_UPLOADER_TYPE_APPLET"] = "Завантажувач HTML5 або Java/ActiveX";
+$MESS["P_UPLOADER_TYPE_FLASH"] = "Завантажувач HTML5 або Flash-завантажувач";
 ?>

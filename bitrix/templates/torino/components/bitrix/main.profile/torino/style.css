@@ -1,3 +1,10 @@
+.table-hover tr { background-color: transparent !important; cursor: pointer; }
+.table-hover tr:hover { background-color: rgba(50, 180, 227, 0.25) !important; }
+
+.table-hover td, .table-hover input { font-size: 1.05em; }
+
+
+
 .profile-block-hidden
 {
 	display: none;

@@ -25,6 +25,7 @@ $MESS["ALLOW_TABLE_TITLE"] = "дозволити таблиці";
 $MESS["ALLOW_QUOTE_TITLE"] = "дозволити цитування";
 $MESS["ALLOW_CODE_TITLE"] = "дозволити коди";
 $MESS["ALLOW_FONT_TITLE"] = "дозволити шрифти";
+$MESS["ALLOW_ALIGN_TITLE"] = "дозволити вирівнювання";
 $MESS["F_ENTITY_TYPE"] = "Тип сутності";
 $MESS["F_ENTITY_ID"] = "Числовий ID сутності";
 $MESS["F_ENTITY_XML_ID"] = "Буквенно-числовий ID сутності (XML ID)";

@@ -1,3 +1,119 @@
+table { width:100% !important;}
+#basket_items { border: 0px !important; }
+
+
+#basket_items thead tr {
+    border-bottom: 1px solid #616367;
+}
+
+#basket_items tbody tr {
+    border-bottom: 1px solid #c3c7ce;
+}
+
+#basket_items tbody tr:hover{
+    background:rgba(102, 169, 224, 0.15);
+}
+
+
+.panel-heading h3 a {
+    color:#e4f3f8;
+}
+
+.panel-heading h3 a:hover {
+    color: #b7d1e4;
+}
+
+
+#basket_items h2 { font-size: 1.3em; }
+
+
+
+
+.price, .sumprice, .quantity { font-size:1.3em; font-weight:bold; }
+
+td.fwb 		{ text-align: center;  }
+td.fwb h2 	{ font-weight: bold; }
+
+
+
+/*============================================*/
+
+#userbasket{
+    margin-top:30px;
+}
+#userbasket .panel-body {
+    background: transparent;
+}
+#userbasket .panel
+{background: rgba(102, 169, 224, 0.15);}
+
+.panel-heading .panel-title { font-size: 1.3em; font-weight: bold; line-height: 1.3em; }
+
+
+#basket_items_list thead td {
+    font-size: 1.3em; font-weight: bold; line-height: 1.3em; text-align: center;
+}
+
+div#basket_form_container { border:0px; border-radius:0px; }
+
+
+
+
+
+
+
+
+
+
+/*Panel tabs*/
+.panel-tabs {
+    position: relative;
+    bottom: 30px;
+    clear:both;
+    border-bottom: 1px solid transparent;
+}
+
+.panel-tabs > li {
+    float: left;
+    margin-bottom: -1px;
+}
+
+.panel-tabs > li > a {
+    margin-right: 2px;
+    margin-top: 4px;
+    line-height: .85;
+    border: 1px solid transparent;
+    border-radius: 4px 4px 0 0;
+    color: #ffffff;
+}
+
+.panel-tabs > li > a:hover {
+    border-color: transparent;
+    color: #ffffff;
+    background-color: transparent;
+}
+
+.panel-tabs > li.active > a,
+.panel-tabs > li.active > a:hover,
+.panel-tabs > li.active > a:focus {
+    color: #fff;
+    cursor: default;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    background-color: rgba(255,255,255, .23);
+    border-bottom-color: transparent;
+}
+
+.panel-tabs > li:hover { background: transparent !important; }
+
+.panel-tabs > li > a:hover {
+	background-color: rgba(255,255,255, .5) !important;
+}
+
+
+
+/*==========================================*/
 .bx_ordercart .bx_sort_container{
 	margin-bottom:35px;
 	min-height:32px;
@@ -843,7 +959,7 @@ input.bt2:active{border:1px solid #d2d2d2}
 }
 
 .bx-touch .quantity_control{ display: none; }
-
+/*
 #baskethead{
     width:100%;
     padding:10px 0px; text-align: left;
@@ -865,4 +981,4 @@ input.bt2:active{border:1px solid #d2d2d2}
 }
 #baskethead a:hover {
     color:#13b1e3 !important;
-}
+}*/

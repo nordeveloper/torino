@@ -124,13 +124,13 @@
 </script>
 
 <input type="hidden" name="BUYER_STORE" id="BUYER_STORE" value="<?=$arResult["BUYER_STORE"]?>" />
-<div class="bx_section">
+<div class="bx_section row">
 	<?
 	if(!empty($arResult["DELIVERY"]))
 	{
 		$width = ($arParams["SHOW_STORES_IMAGES"] == "Y") ? 850 : 700;
 		?>
-		<h4><?=GetMessage("SOA_TEMPL_DELIVERY")?></h4>
+		<h2 class="hed text-center"><?=GetMessage("SOA_TEMPL_DELIVERY")?></h2><br/>
 		<?
 
 		foreach ($arResult["DELIVERY"] as $delivery_id => $arDelivery)
@@ -159,7 +159,8 @@
 
 									$arFileTmp = CFile::ResizeImageGet(
 										$arDelivery["LOGOTIP"]["ID"],
-										array("width" => "95", "height" =>"55"),
+										//array("width" => "95", "height" =>"55"),
+                                        array("width" => "250", "height" =>"145"),
 										BX_RESIZE_IMAGE_PROPORTIONAL,
 										true
 									);
@@ -235,7 +236,7 @@
 				else
 					$clickHandler = "onClick = \"BX('ID_DELIVERY_ID_".$arDelivery["ID"]."').checked=true;submitForm();\"";
 				?>
-					<div class="bx_block w100 vertical">
+					<div class="delivopt bx_block col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center">
 
 						<div class="bx_element">
 
@@ -253,7 +254,8 @@
 
 									$arFileTmp = CFile::ResizeImageGet(
 										$arDelivery["LOGOTIP"]["ID"],
-										array("width" => "95", "height" =>"55"),
+										//array("width" => "95", "height" =>"55"),
+										array("width" => "250", "height" =>"145"),
 										BX_RESIZE_IMAGE_PROPORTIONAL,
 										true
 									);
@@ -264,11 +266,16 @@
 								endif;
 								?>
 
-								<div class="bx_logotype"><span style='background-image:url(<?=$deliveryImgURL?>);'></span></div>
+								<div class="bx_logotype">
+									<span style='background-image:url(<?=$deliveryImgURL?>);'></span>
+								</div>
 
 								<div class="bx_description">
-									<div class="name"><strong><?= htmlspecialcharsbx($arDelivery["NAME"])?></strong></div>
-									<span class="bx_result_price">
+									<div class="name">
+                                        <strong><?= htmlspecialcharsbx($arDelivery["NAME"])?></strong>
+                                        <?=GetMessage("SALE_DELIV_PRICE");?>: <b><?=$arDelivery["PRICE_FORMATED"]?></b><br />
+                                    </div>
+									<?/*<span class="bx_result_price">
 										<?
 										if (strlen($arDelivery["PERIOD_TEXT"])>0)
 										{
@@ -277,7 +284,7 @@
 										}
 										?>
 										<?=GetMessage("SALE_DELIV_PRICE");?>: <b><?=$arDelivery["PRICE_FORMATED"]?></b><br />
-									</span>
+									</span>*/?>
 									<p>
 										<?
 										if (strlen($arDelivery["DESCRIPTION"])>0)
@@ -306,4 +313,4 @@
 	}
 ?>
 <div class="clear"></div>
-</div>
+</div><div class="row"><hr/></div>

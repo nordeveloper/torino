@@ -1,15 +1,8 @@
-.catsecitems {padding:2em 0 3em 0 !important;}
-.catsecitems:hover { background: rgba(51, 122, 183, 0.11); }
 
-font.text { font-size:1.2em; line-height: 1.5em; font-weight: bold; font-family: "PT Sans Narrow"; }
 
-.secitemdets a    { color:#333; }
-.secitemdets h4 a { color: #214f77; }
-.secitemdets a:hover {text-decoration: none; color:#337ab7; }
 
-.secitemtext {margin-bottom: 2em;}
 
-    /* catalog.section */
+  /* catalog.section */
 .bx_catalog_list_home{
 	margin-bottom:20px;
 	border-bottom:1px solid #e5e5e5;
@@ -752,11 +745,6 @@ font.text { font-size:1.2em; line-height: 1.5em; font-weight: bold; font-family:
     font-size: 16px; color: #3f3f3f;
 }
 
-.cata3_price { float: right !important;}
-.cata3_price .bx_price{
-    font-family:'PT Sans Narrow', Helvetica, Arial, sans-serif; color: #0d7db4;
-    font-size: 20px !important;
-}
 
 #catalogItems3 .bx_catalog_item_controls_blockone{
     margin-top: -33px;

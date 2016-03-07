@@ -25,7 +25,7 @@ CJSCore::Init(array('fx', 'popup', 'window', 'ajax'));
 
 <a name="order_form"></a>
 
-<div id="order_form_div" class="order-checkout">
+<div id="order_form_div" class="order-checkout row">
 <NOSCRIPT>
 	<div class="errortext"><?=GetMessage("SOA_NO_JS")?></div>
 </NOSCRIPT>
@@ -58,7 +58,7 @@ if (!function_exists("cmpBySort"))
 }
 ?>
 
-<div class="bx_order_make">
+<div class="bx_order_make container">
 	<?
 	if(!$USER->IsAuthorized() && $arParams["ALLOW_AUTO_REGISTER"] == "N")
 	{
@@ -142,7 +142,7 @@ if (!function_exists("cmpBySort"))
 			{
 				?><form action="<?=$APPLICATION->GetCurPage();?>" method="POST" name="ORDER_FORM" id="ORDER_FORM" enctype="multipart/form-data">
 				<?=bitrix_sessid_post()?>
-				<div id="order_form_content">
+				<div id="order_form_content" class="row">
 				<?
 			}
 			else
@@ -188,7 +188,9 @@ if (!function_exists("cmpBySort"))
 					<input type="hidden" name="profile_change" id="profile_change" value="N">
 					<input type="hidden" name="is_ajax_post" id="is_ajax_post" value="Y">
 					<input type="hidden" name="json" value="Y">
-					<div class="bx_ordercart_order_pay_center"><a href="javascript:void();" onclick="submitForm('Y'); return false;" id="ORDER_CONFIRM_BUTTON" class="checkout"><?=GetMessage("SOA_TEMPL_BUTTON")?></a></div>
+					<div id="commitment" class="bx_ordercart_order_pay_center text-center">
+                        <a href="javascript:void();" onclick="submitForm('Y'); return false;" id="ORDER_CONFIRM_BUTTON" class="btn btn-lg btn-success"><span class="glyphicon glyphicon-check"></span>&nbsp;<?=GetMessage("SOA_TEMPL_BUTTON")?></a>
+					</div>
 				</form>
 				<?
 				if($arParams["DELIVERY_NO_AJAX"] == "N")

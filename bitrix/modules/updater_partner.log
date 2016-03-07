@@ -20,3 +20,9 @@
 2014-12-29 00:07:15 -  - exec CUpdateClientPartner::GetStepUpdateInfo
 2014-12-29 00:07:15 -  - exec CUpdateClientPartner::ParseServerData
 2014-12-29 00:07:15 -  - TIME UpdateStepModules 0.266 sec
+2016-02-01 23:42:25 -  - exec CUpdateClientPartner::GetUpdatesList
+2016-02-01 23:42:25 -  - exec CUpdateClientPartner::__CollectRequestData
+2016-02-01 23:42:25 -  - utf=Y&lang=ru&stable=Y&CANGZIP=Y&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=bazzar.cafe&LICENSE_KEY=X&SUPD_STS=1&SUPD_URS=0&SUPD_URSA=18&TYPENC=D&CLIENT_PHPVER=5.4.40&dbv=5.6.26&instm=main%2C15.5.8%2CY%3Bclouds%2C15.5.1%2CN%3Bfileman%2C15.5.2%2CN%3Bblog%2C15.5.3%2CN%3Bsecurity%2C15.5.4%2CN%3Bsearch%2C15.5.1%2CN%3Bforum%2C15.5.2%2CN%3Bconversion%2C15.5.5%2CN%3Bbitrix.sitecorporate%2C14.5.0%2CN%3Bseo%2C15.5.5%2CN%3Bcatalog%2C15.5.0%2CN%3Bpull%2C15.5.8%2CN%3Bhighloadblock%2C15.5.0%2CN%3Bsale%2C14.11.19%2CN%3Bphotogallery%2C15.0.0%2CN%3Bperfmon%2C15.5.1%2CN%3Bform%2C15.0.2%2CN%3Bsender%2C15.5.3%2CN%3Bbitrix.eshop%2C14.5.0%2CN%3Bvote%2C15.5.0%2CN%3Bsocialservices%2C15.5.2%2CN%3Btranslate%2C14.0.0%2CN%3Babtest%2C15.5.5%2CN%3Biblock%2C15.5.8%2CN%3Bscale%2C14.5.2%2CN%3Bsubscribe%2C15.0.2%2CN%3Breport%2C15.0.0%2CN%3Bcurrency%2C15.5.1%2CN%3Bcompression%2C14.0.0%2CN%3Bmobileapp%2C15.5.7%2CN%3Bstoreassist%2C15.0.3%2CN%3Bbitrixcloud%2C15.5.0%2CN%3Beshopapp%2C15.0.0%2CN%3Bnsandrey.emptyinstall%2C1.0.2%2CN&reqm=bitrix.sitecorporate%2Cbitrix.eshop%2Cnsandrey.emptyinstall&fullmoduleinfo=Y&SUPD_SRS=RU&SUPD_CMP=Y
+2016-02-01 23:42:25 -  - exec CUpdateClientPartner::GetHTTPPage
+2016-02-01 23:42:26 -  - TIME GetUpdatesList(request) 0.649 sec
+2016-02-01 23:42:26 -  - exec CUpdateClientPartner::ParseServerData

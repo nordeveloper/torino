@@ -39,6 +39,26 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 		<link rel="stylesheet" type="text/css" href="/js/tango/skin.css" media="screen" />
 		<link rel="stylesheet" type="text/css" href="/js/tango/mskin.css" media="handheld" />
         <link href="//cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/3.3.0/ekko-lightbox.min.css" rel="stylesheet">
+
+        <!--Spin Edit -->
+        <link rel="stylesheet" type="text/css" href="<?=SITE_TEMPLATE_PATH?>/css/jquery.bootstrap-touchspin.css" />
+        <script type="text/javascript" src="<?=SITE_TEMPLATE_PATH?>/js/jquery.bootstrap-touchspin.js"></script>
+
+
+
+        <!-- Google Analytics -- >
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-XXXXX-Y', 'auto');
+            ga('send', 'pageview');
+        </script>
+        <!-- End Google Analytics -->
+
+
 	</HEAD>
 
 	<BODY>
@@ -54,7 +74,7 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
             <div class="navbar-header" id="toppest">
                 <span id="menutoggler" class="top-left visible-xs"><a href="#">Меню</a></span>
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainmenu">
-                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                    <span class="glyphicon glyphicon-th-list"></span>
                 </button>
             </div>
 
@@ -65,14 +85,31 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
                         <!-- <img class="img-responsive top-ico" src="images/Shopping-Cart-03-128.png" alt="Вход для пользователей"/> -->
                         <!-- <img class="img-responsive top-ico" src="images/Shopping-Basket-01-128.png" alt="Вход для пользователей"/> -->
                     </li>
-                    <li class="hidden-xs"><a>
-                            <!-- <span class="glyphicon glyphicon-user"></span> -->
-                            Вход для пользователей:
-                        </a></li>
-                    <li class="active"><a href="#">
-                            <img class="img-responsive top-ico2 hidden visible-xs" src="<?=SITE_TEMPLATE_PATH?>/images/Pizza-02-128.png" alt="Вход для пользователей"/>
-                            <span class="signin">Войти</span><span id="buycart"></span>
-                        </a></li>
+
+                    <?if ($USER->IsAuthorized()) {?>
+                        <li class="hidden-xs"><a>
+                                <!-- <span class="glyphicon glyphicon-user"></span> -->
+                                Вы вошли как:
+                            </a></li>
+                        <li class="active"><a href="#">
+                                <img class="img-responsive top-ico2 hidden visible-xs" src="<?=SITE_TEMPLATE_PATH?>/images/Pizza-02-128.png" alt="Вход для пользователей"/>
+                                <span class="signin">
+                                    <?$userData = CUser::GetByID($_SESSION['SESS_AUTH']['USER_ID'])->Fetch();;
+                                      echo $userData["LAST_NAME"]." ".$userData["NAME"];?>
+                                </span><span id="buycart"></span>
+                            </a>
+                        </li>
+                    <?} else {?>
+                        <li class="hidden-xs"><a>
+                                <!-- <span class="glyphicon glyphicon-user"></span> -->
+                                Вход для пользователей:
+                            </a></li>
+                        <li class="active"><a href="#">
+                                <img class="img-responsive top-ico2 hidden visible-xs" src="<?=SITE_TEMPLATE_PATH?>/images/Pizza-02-128.png" alt="Вход для пользователей"/>
+                                <span class="signin">Войти</span><span id="buycart"></span>
+                            </a>
+                        </li>
+                    <?}?>
                 </ul>
             </div><!--/.nav-collapse -->
         </div>
@@ -98,7 +135,7 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
             var login_dialog;
             login_dialog = $("#login_dialog").dialog({
                 autoOpen: false,
-                height: 340,
+                height: 380,
                 width: 310,
                 modal: true,
                 closeOnEscape: true

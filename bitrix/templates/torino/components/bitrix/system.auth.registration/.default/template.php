@@ -16,10 +16,17 @@
 
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 ?>
-<div class="fullwidth">
-    <div class="centered">
+<div class="container">
+
+        <div class="row">
+            <h2 class="hed text-center">
+                <b><?=GetMessage("AUTH_REGISTER")?></b><br>
+                <?  ShowMessage($arParams["~AUTH_RESULT"]); ?><br>
+            </h2>
+        </div>
+
         <div class="bx-auth" id="registrationpanel">
-        <?  ShowMessage($arParams["~AUTH_RESULT"]); ?>
+        <?//  ShowMessage($arParams["~AUTH_RESULT"]); ?>
         <?if($arResult["USE_EMAIL_CONFIRMATION"] === "Y" && is_array($arParams["AUTH_RESULT"]) &&  $arParams["AUTH_RESULT"]["TYPE"] === "OK"):?>
         <p><?echo GetMessage("AUTH_EMAIL_SENT")?></p>
         <?else:?>
@@ -28,7 +35,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
             <p><?echo GetMessage("AUTH_EMAIL_WILL_BE_SENT")?></p>
         <?endif?>
         <noindex>
-        <form method="post" action="<?=$arResult["AUTH_URL"]?>" name="bform">
+        <form  class="text-center" method="post" action="<?=$arResult["AUTH_URL"]?>" name="bform">
         <?
         if (strlen($arResult["BACKURL"]) > 0)
         {
@@ -40,12 +47,12 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
             <input type="hidden" name="AUTH_FORM" value="Y" />
             <input type="hidden" name="TYPE" value="REGISTRATION" />
 
-        <table class="data-table bx-registration-table" id="regtable">
-            <thead>
+        <table class="table-responsive data-table bx-registration-table" id="regtable">
+            <?/*<thead>
                 <tr>
                     <td colspan="2"><b><?=GetMessage("AUTH_REGISTER")?></b></td>
                 </tr>
-            </thead>
+            </thead> */?>
             <tbody>
                 <tr>
                     <td><?=GetMessage("AUTH_NAME")?></td>
@@ -124,15 +131,24 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
             </tbody>
             <tfoot>
                 <tr>
-                    <td></td>
-                    <td><input type="submit" class="systhref-submit" name="Register" value="<?=GetMessage("AUTH_REGISTER")?>" /></td>
+                    <td colspan="2" class="text-center">
+                        <br>
+                        <p><?echo $arResult["GROUP_POLICY"]["PASSWORD_REQUIREMENTS"];?></p>
+                        <p><span class="starrequired">*</span><?=GetMessage("AUTH_REQ")?></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="text-center">
+                        <br>
+                        <input type="submit" class="btn btn-success btn-lg" name="Register" value="<?=GetMessage("AUTH_REGISTER")?>">
+                        <br>
+                    </td>
                 </tr>
             </tfoot>
         </table>
-        <p><?echo $arResult["GROUP_POLICY"]["PASSWORD_REQUIREMENTS"];?></p>
-        <p><span class="starrequired">*</span><?=GetMessage("AUTH_REQ")?></p>
 
-        <p> <br/><br/>
+
+        <p class="text-center"> <br/><br/>
             Если Вы уже зарегистрированный пользователь, то пожалуйста
             <a class="systhref" href="<?=$arResult["AUTH_AUTH_URL"]?>" rel="nofollow"><b>Авторизуйтесь</b></a>.
             <br/><br/><br/><br/>
@@ -147,5 +163,5 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
         <?endif?>
         </div>
 
-    </div>
+
 </div>
