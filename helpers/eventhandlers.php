@@ -51,12 +51,12 @@ class EventHandlers
             $orderId = $arFields['ORDER_ID'];
 
             $dbOrderProps = CSaleOrderPropsValue::GetList(
-                array("SORT" => "ASC"),
-                array("ORDER_ID" => $orderId, "CODE"=>array("ORDER_PHONE"))
+                array("CODE" => "ASC"),
+                array("ORDER_ID" => $orderId, "CODE"=>array("ORDER_PHONE","ORDER_ADDRESS","ORDER_COMMENTS"))
             );
 
-            if ($arOrderProps = $dbOrderProps->GetNext()) {
-                $arFields['PHONE'] = $arOrderProps['~VALUE'];
+            while ($arOrderProps = $dbOrderProps->GetNext()) {
+                $arFields[$arOrderProps['CODE']] = $arOrderProps['~VALUE'];
             }
         }
     }
