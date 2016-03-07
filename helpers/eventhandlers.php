@@ -7,21 +7,42 @@ class EventHandlers
 
     public static function OnBeforeUserAddHandler(&$arArgs)
     {
-        Trace(self::$userPhone);
-        Trace($arArgs);
-        $arArgs["LOGIN"]=self::$userPhone;
+//        Trace("OnBeforeUserAddHandler");
+//        Trace(self::$userPhone);
+//        Trace($arArgs);
+
+        // 'no@mail.net' is default value in 'Магазин - Свойства заказа - Список свойств - Email'
+        // nonempty email is required (by Bitrix core) for login autogeneration when non-registered user is making an order
+        if ($arArgs["EMAIL"]=="no@mail.net")
+            $arArgs["EMAIL"] = "";
+
+        if (!empty(self::$userPhone))
+            $arArgs["LOGIN"]=self::$userPhone;
     }
 
     public static function OnSaleCalculateOrderPropsHandler(&$arOrder)
     {
         $id = BitrixHelpers::GetOrderPropId("ORDER_PHONE");
         self::$userPhone = $arOrder["ORDER_PROP"][$id];
-
+        //Trace("OnSaleCalculateOrderPropsHandler");
         //Trace($arOrder);
     }
 
     public static function OnSaleComponentOrderOneStepProcessHandler(&$arResult,&$arUserResult,&$arParams)
     {
-        $arResult["ERROR"][] = 'Такой пользователь существует';
+        //Trace("OnSaleComponentOrderOneStepProcessHandler");
+        //Trace($arResult);
+        //Trace($arUserResult);
+        //Trace($arParams);
+        //$arResult["ERROR"][] = 'Такой пользователь существует';
     }
+
+    public static function OnOrderAddHandler($id, $arFields)
+    {
+//        Trace("OnOrderAddHandler");
+//        Trace($id);
+//        Trace($arFields);
+    }
+
+
 }
