@@ -49,8 +49,7 @@ function Test()
 $res = AddEventHandler("main","OnBeforeUserAdd",array("EventHandlers","OnBeforeUserAddHandler"),100,$_SERVER["DOCUMENT_ROOT"]."/helpers/eventhandlers.php");
 AddEventHandler("sale","OnSaleCalculateOrderProps",array("EventHandlers","OnSaleCalculateOrderPropsHandler"),100,$_SERVER["DOCUMENT_ROOT"]."/helpers/eventhandlers.php");
 AddEventHandler("sale","OnSaleComponentOrderOneStepProcess",array("EventHandlers","OnSaleComponentOrderOneStepProcessHandler"),100,$_SERVER["DOCUMENT_ROOT"]."/helpers/eventhandlers.php");
+AddEventHandler("main", "OnBeforeEventAdd", array("EventHandlers", "OnBeforeEventAddHandler"),100,$_SERVER["DOCUMENT_ROOT"]."/helpers/eventhandlers.php");
 //Trace($res);
-
-
 
 ?>
