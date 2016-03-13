@@ -84,7 +84,7 @@ class EventHandlers
 
             $dbOrderProps = CSaleOrderPropsValue::GetList(
                 array("CODE" => "ASC"),
-                array("ORDER_ID" => $orderId, "CODE"=>array("ORDER_PHONE","ORDER_ADDRESS","ORDER_ADDRESS_DETAILS"))
+                array("ORDER_ID" => $orderId, "CODE"=>array("ORDER_PHONE","ORDER_ADDRESS","ORDER_ADDRESS_DETAILS","ORDER_NAME"))
             );
 
             while ($arOrderProps = $dbOrderProps->GetNext()) {
