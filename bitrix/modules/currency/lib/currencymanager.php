@@ -297,4 +297,11 @@ class CurrencyManager
 		}
 		return self::$datetimeTemplate;
 	}
+  
+  public static function currencyBaseRateAgent()
+    {
+      // Temporary solution (Rasul)
+        //static::updateBaseRates();
+        return '\Bitrix\Currency\CurrencyManager::currencyBaseRateAgent();';
+    }
 }
