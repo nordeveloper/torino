@@ -396,3 +396,24 @@ a.popup-window-close-icon.popup-window-titlebar-close-icon{
 .popup-window-buttons span:hover{
     color: #378acb;
 }
+
+/* Order page */
+[data-target]
+{
+    display: none;
+}
+
+[data-action].selected
+{
+    font-weight: bold;
+}
+
+div.reg-info
+{
+    padding-bottom: 20px;
+}
+
+div.reg-info span
+{
+    font-weight: bold;
+}

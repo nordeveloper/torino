@@ -3,7 +3,34 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Torino: Оформление заказа");
 ?><?
 if (!CUser::IsAuthorized()):
+
 ?>
+	<script type="text/javascript">
+		$(function(){
+			$('[data-action]').on('click', function(){
+
+				$this = $(this);
+				$('[data-action]').removeClass('selected');
+				$this.addClass('selected');
+				$('[data-target]').slideUp().promise().done(function(){
+					$('[data-target="'+ $this.attr('data-action') +'"]').slideDown();
+				});
+
+			});
+		});
+	</script>
+	<div>
+		Вы не авторизованы. Вы можете
+		<ul>
+			<li data-action="sign-in">Войти</li>
+			<li data-action="sign-up">Зарегистрироваться</li>
+			<li data-action="continue">Продолжить без регистрации</li>
+		</ul>
+	</div>
+
+	<div class="divider"></div>
+
+	<div data-target="sign-in">
 	<?$APPLICATION->IncludeComponent(
 	"bitrix:system.auth.form",
 	"torino",
@@ -14,6 +41,8 @@ if (!CUser::IsAuthorized()):
 		"SHOW_ERRORS" => "N"
 	)
 );?>
+	</div>
+	<div data-target="sign-up">
 	<?$APPLICATION->IncludeComponent(
 	"bitrix:main.register",
 	".default",
@@ -28,6 +57,7 @@ if (!CUser::IsAuthorized()):
 			"USER_PROPERTY_NAME" => ""
 		)
 	);?>
+	</div>
 <?
 else:
 ?>
@@ -50,8 +80,7 @@ else:
 
 <?endif;?>
 
-
-
+<div <? if (!CUser::IsAuthorized()) echo 'data-target="continue"' ?>>
 <?$APPLICATION->IncludeComponent(
 	"bitrix:sale.order.ajax",
 	"torino",
@@ -79,5 +108,5 @@ else:
 		"PROP_1" => array()
 	)
 );?>
-
+</div>
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

@@ -464,9 +464,7 @@ $bShowNameWithPicture = ($bDefaultColumns) ? true : false; // flat to show name 
 		<div class="bx_section row">
 			<h2 class="hed text-center"><?=GetMessage("SOA_TEMPL_SUM_COMMENTS")?></h2>
 			<div class="bx_block w100">
-                <textarea name="ORDER_DESCRIPTION" id="ORDER_DESCRIPTION" style="max-width:100%;min-height:120px">
-                    <?=$arResult["USER_VALS"]["ORDER_DESCRIPTION"]?>
-                </textarea>
+                <textarea name="ORDER_DESCRIPTION" id="ORDER_DESCRIPTION" style="max-width:100%;min-height:120px"><?=$arResult["USER_VALS"]["ORDER_DESCRIPTION"]?></textarea>
             </div>
 			<input type="hidden" name="" value="">
 			<div style="clear: both;"></div><br />

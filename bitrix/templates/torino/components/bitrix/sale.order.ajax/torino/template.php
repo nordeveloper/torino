@@ -158,8 +158,10 @@ if (!function_exists("cmpBySort"))
 					top.BX.scrollToNode(top.BX('ORDER_FORM'));
 				</script>
 				<?
-			}
+			}?>
 
+			<div class="order-details">
+				<?
 			include($_SERVER["DOCUMENT_ROOT"].$templateFolder."/person_type.php");
 			include($_SERVER["DOCUMENT_ROOT"].$templateFolder."/props.php");
 			if ($arParams["DELIVERY_TO_PAYSYSTEM"] == "p2d")
@@ -179,7 +181,7 @@ if (!function_exists("cmpBySort"))
 			if(strlen($arResult["PREPAY_ADIT_FIELDS"]) > 0)
 				echo $arResult["PREPAY_ADIT_FIELDS"];
 			?>
-
+			</div>
 			<?if($_POST["is_ajax_post"] != "Y")
 			{
 				?>
