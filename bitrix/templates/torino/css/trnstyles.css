@@ -403,6 +403,16 @@ a.popup-window-close-icon.popup-window-titlebar-close-icon{
     display: none;
 }
 
+[data-action]
+{
+    cursor: pointer;
+}
+
+[data-action]:hover
+{
+
+}
+
 [data-action].selected
 {
     font-weight: bold;
