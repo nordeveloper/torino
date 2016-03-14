@@ -82,11 +82,9 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 
             <div id="navbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden-xs">
-                        <img class="img-responsive top-ico" src="<?=SITE_TEMPLATE_PATH?>/images/Pizza-02-128.png" alt="Личный кабинет"/>
-                    </li>
+
                     <li class="active"><a href="#">
-                            <img class="img-responsive top-ico2 hidden visible-xs" src="<?=SITE_TEMPLATE_PATH?>/images/Pizza-02-128.png" alt="Личный кабинет"/>
+                            <img class="img-responsive top-ico2 " src="<?=SITE_TEMPLATE_PATH?>/images/Pizza-02-128.png" alt="Личный кабинет"/>
                             <span class="signin">
                                 <?if ($USER->IsAuthorized()) {
                                     $userData = CUser::GetByID($_SESSION['SESS_AUTH']['USER_ID'])->Fetch();
@@ -100,11 +98,9 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
                             </span>
                         </a>
                     </li>
-                    <li class="hidden-xs">
-                        <img class="img-responsive top-ico" src="<?=SITE_TEMPLATE_PATH?>/images/cart512.png" alt="Моя Корзина"/>
-                    </li>
-                    <li class="active"><a href="#">
-                            <img class="img-responsive top-ico2 hidden visible-xs" src="<?=SITE_TEMPLATE_PATH?>/images/cart512.png" alt="Моя Корзина"/>
+
+                    <li class="active"><a href="<?SITE_DIR?>/personal/basket.php">
+                            <img class="img-responsive top-ico2  " src="<?=SITE_TEMPLATE_PATH?>/images/cart512.png" alt="Моя Корзина"/>
                             <span id="buycart">Корзина</span>
                         </a>
                     </li>

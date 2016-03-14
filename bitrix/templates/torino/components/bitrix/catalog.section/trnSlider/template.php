@@ -92,11 +92,23 @@ if (!empty($arResult['ITEMS'])) {
                                     <div class="caption">
                                         <h3 class="text-center iteminfohead"><?= $arItem["NAME"]?></h3>
                                         <p class="text-justify iteminfo2">
-                                            <?= $arItem["PREVIEW_TEXT"]?>
+                                            <?if (isset($arItem["PROPERTIES"]["CONSIST"]) && ($arItem["PROPERTIES"]["CONSIST"]["VALUE"] != "")):?>
+                                                <b><i><?= $arItem["PROPERTIES"]["CONSIST"]["NAME"]?>:</i></b>
+                                                <?= $arItem["PROPERTIES"]["CONSIST"]["VALUE"]?>.
+                                            <?else:?>
+                                                <?= $arItem["PREVIEW_TEXT"]?>
+                                            <?endif;?>
+                                            <br>
+                                            <?if (isset($arItem["PROPERTIES"]["PORTION"]) && ($arItem["PROPERTIES"]["PORTION"]["VALUE"] != "")):?>
+                                                <b><i><?= $arItem["PROPERTIES"]["PORTION"]["NAME"]?>:</i></b>
+                                                <?= $arItem["PROPERTIES"]["PORTION"]["VALUE"]?> гр.
+                                            <?endif;?>
+
                                         </p>
                                         <div class="pricer table-responsive">
 
                                             <div class="bx_catalog_item_controls">
+
                                                 <?if ($arItem['CAN_BUY']) {?>
                                                         <div class="bx_catalog_item_controls_blockone">
                                                             <div style="display: inline-block;position: relative;" class="col-lg-7 col-md-12 col-sm-12 col-xs-12">

@@ -106,7 +106,9 @@
 		"PRODUCT_SUBSCRIPTION" => "N",
 		"PROPERTY_CODE" => array(
 			0 => "",
-			1 => "",
+			1 => "4",
+			2 => "CONSIST",
+			3 => "",
 		),
 		"SECTION_CODE" => "",
 		"SECTION_ID" => "1",
