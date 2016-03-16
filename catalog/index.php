@@ -78,8 +78,9 @@ $APPLICATION->SetTitle("Каталог");
 		"ELEMENT_SORT_FIELD2" => "id",
 		"ELEMENT_SORT_ORDER2" => "desc",
 		"LIST_PROPERTY_CODE" => array(
-			0 => "",
-			1 => "",
+			0 => "CONSIST",
+			1 => "PORTION",
+			2 => "",
 		),
 		"INCLUDE_SUBSECTIONS" => "A",
 		"LIST_META_KEYWORDS" => "-",
@@ -87,7 +88,9 @@ $APPLICATION->SetTitle("Каталог");
 		"LIST_BROWSER_TITLE" => "-",
 		"DETAIL_PROPERTY_CODE" => array(
 			0 => "",
-			1 => "",
+			1 => "CONSIST",
+			2 => "PORTION",
+			3 => "",
 		),
 		"DETAIL_META_KEYWORDS" => "-",
 		"DETAIL_META_DESCRIPTION" => "-",

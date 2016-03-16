@@ -213,7 +213,19 @@ if (!empty($arResult['ITEMS']))
         </div>
         <div class="secitemdets secitemtext text-justify">
             <a href="<? echo $arItem['DETAIL_PAGE_URL']; ?>">
-                <? echo $arItem['PREVIEW_TEXT']; ?>
+				<?// echo $arItem['PREVIEW_TEXT']; ?>
+				<?if (isset($arItem["PROPERTIES"]["CONSIST"]) && ($arItem["PROPERTIES"]["CONSIST"]["VALUE"] != "")):?>
+					<b><i><?= $arItem["PROPERTIES"]["CONSIST"]["NAME"]?>:</i></b>
+					<?= $arItem["PROPERTIES"]["CONSIST"]["VALUE"]?>.
+				<?else:?>
+					<?= $arItem["PREVIEW_TEXT"]?>
+				<?endif;?>
+				<br>
+				<?if (isset($arItem["PROPERTIES"]["PORTION"]) && ($arItem["PROPERTIES"]["PORTION"]["VALUE"] != "")):?>
+					<b><i><?= $arItem["PROPERTIES"]["PORTION"]["NAME"]?>:</i></b>
+					<?= $arItem["PROPERTIES"]["PORTION"]["VALUE"]?> гр.
+				<?endif;?>
+
             </a>
         </div>
     </div>
@@ -334,83 +346,7 @@ if (!empty($arResult['ITEMS']))
 		}?>
         <div style="clear: both;"></div></div>
 
-        <?if (isset($arItem['DISPLAY_PROPERTIES']) && !empty($arItem['DISPLAY_PROPERTIES']))
-		{?>
-			<div class="bx_catalog_item_articul">
-            <?foreach ($arItem['DISPLAY_PROPERTIES'] as $arOneProp)
-			{
-				?><br><strong><? echo $arOneProp['NAME']; ?></strong> <?
-					echo (
-						is_array($arOneProp['DISPLAY_VALUE'])
-						? implode('<br>', $arOneProp['DISPLAY_VALUE'])
-						: $arOneProp['DISPLAY_VALUE']
-					);
-			}?>
-			</div>
-<?
-		}
-		$emptyProductProperties = empty($arItem['PRODUCT_PROPERTIES']);
-		if ('Y' == $arParams['ADD_PROPERTIES_TO_BASKET'] && !$emptyProductProperties)
-		{
-?>
-		<div id="<? echo $arItemIDs['BASKET_PROP_DIV']; ?>" style="display: none;">
-<?
-			if (!empty($arItem['PRODUCT_PROPERTIES_FILL']))
-			{
-				foreach ($arItem['PRODUCT_PROPERTIES_FILL'] as $propID => $propInfo)
-				{
-?>
-					<input type="hidden" name="<? echo $arParams['PRODUCT_PROPS_VARIABLE']; ?>[<? echo $propID; ?>]" value="<? echo htmlspecialcharsbx($propInfo['ID']); ?>">
-<?
-					if (isset($arItem['PRODUCT_PROPERTIES'][$propID]))
-						unset($arItem['PRODUCT_PROPERTIES'][$propID]);
-				}
-			}
-			$emptyProductProperties = empty($arItem['PRODUCT_PROPERTIES']);
-			if (!$emptyProductProperties)
-			{
-?>
-				<table>
-<?
-					foreach ($arItem['PRODUCT_PROPERTIES'] as $propID => $propInfo)
-					{
-?>
-						<tr><td><? echo $arItem['PROPERTIES'][$propID]['NAME']; ?></td>
-							<td>
-<?
-								if(
-									'L' == $arItem['PROPERTIES'][$propID]['PROPERTY_TYPE']
-									&& 'C' == $arItem['PROPERTIES'][$propID]['LIST_TYPE']
-								)
-								{
-									foreach($propInfo['VALUES'] as $valueID => $value)
-									{
-										?><label><input type="radio" name="<? echo $arParams['PRODUCT_PROPS_VARIABLE']; ?>[<? echo $propID; ?>]" value="<? echo $valueID; ?>" <? echo ($valueID == $propInfo['SELECTED'] ? '"checked"' : ''); ?>><? echo $value; ?></label><br><?
-									}
-								}
-								else
-								{
-									?><select name="<? echo $arParams['PRODUCT_PROPS_VARIABLE']; ?>[<? echo $propID; ?>]"><?
-									foreach($propInfo['VALUES'] as $valueID => $value)
-									{
-										?><option value="<? echo $valueID; ?>" <? echo ($valueID == $propInfo['SELECTED'] ? 'selected' : ''); ?>><? echo $value; ?></option><?
-									}
-									?></select><?
-								}
-?>
-							</td></tr>
-<?
-					}
-?>
-				</table>
-<?
-			}
-?>
-		</div>
-<?
-		}
-
-		$arJSParams = array(
+		<?$arJSParams = array(
 			'PRODUCT_TYPE' => $arItem['CATALOG_TYPE'],
 			'SHOW_QUANTITY' => ($arParams['USE_PRODUCT_QUANTITY'] == 'Y'),
 			'SHOW_ADD_BASKET_BTN' => false,

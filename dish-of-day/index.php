@@ -70,8 +70,9 @@ $arrFilterAll   = array("PROPERTY_day_dish_VALUE"=>$dayNames[Date("w")], "!SECTI
 		"ELEMENT_COUNT" => "3",
 		"LINE_ELEMENT_COUNT" => "3",
 		"PROPERTY_CODE" => array(
-			0 => "",
-			1 => "",
+			0 => "CONSIST",
+			1 => "PORTION",
+			2 => "",
 		),
 		"OFFERS_LIMIT" => "5",
 		"VIEW_MODE" => "SECTION",

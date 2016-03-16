@@ -322,7 +322,12 @@ font.text { font-size:1.2em; line-height: 1.5em; font-weight: bold; font-family:
 .secitemdets h4 a { color: #214f77; }
 .secitemdets a:hover {text-decoration: none; color:#337ab7; }
 
-.secitemtext {margin-bottom: 2em;}
+.secitemtext 
+{
+margin-bottom: 2em;
+height: 125px;
+overflow: hidden;
+}
 
 
 .cata3_price { float: right !important;}

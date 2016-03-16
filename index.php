@@ -249,8 +249,9 @@
 		"PRODUCT_QUANTITY_VARIABLE" => "",
 		"PRODUCT_SUBSCRIPTION" => "N",
 		"PROPERTY_CODE" => array(
-			0 => "",
-			1 => "",
+			0 => "CONSIST",
+			1 => "PORTION",
+			2 => "",
 		),
 		"SECTION_CODE" => "",
 		"SECTION_ID" => "2",
@@ -387,8 +388,9 @@
 		"PRODUCT_QUANTITY_VARIABLE" => "",
 		"PRODUCT_SUBSCRIPTION" => "N",
 		"PROPERTY_CODE" => array(
-			0 => "",
-			1 => "",
+			0 => "CONSIST",
+			1 => "PORTION",
+			2 => "",
 		),
 		"SECTION_CODE" => "",
 		"SECTION_ID" => "3",
