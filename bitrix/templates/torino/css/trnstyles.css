@@ -403,11 +403,11 @@ a.popup-window-close-icon.popup-window-titlebar-close-icon{
     color: #378acb;
 }
 
-/* Order page
-[data-target]
+/* Order page */
+[data-action-target]
 {
     display: none;
-}*/
+}
 
 [data-action]
 {
