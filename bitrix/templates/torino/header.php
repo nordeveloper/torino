@@ -92,8 +92,11 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
             <div id="navbar">
                 <ul class="nav navbar-nav navbar-right">
 
-                    <li class="active"><a href="#">
-                            <img class="img-responsive top-ico2 " src="<?=SITE_TEMPLATE_PATH?>/images/Pizza-02-128.png" alt="Личный кабинет"/>
+                    <li class="active">
+                        <a href="#" onmouseover="$(this).children('img')[0].src='<?=SITE_TEMPLATE_PATH?>/images/Pizza-02-128l.png';" onmouseout="$(this).children('img')[0].src='<?=SITE_TEMPLATE_PATH?>/images/Pizza-02-128.png'">
+                            <img class="img-responsive top-ico2 " alt="Личный кабинет" title="Личный кабинет"
+                                 src="<?=SITE_TEMPLATE_PATH?>/images/Pizza-02-128.png"/>
+
                             <span class="signin">
                                 <?if ($USER->IsAuthorized()) {
                                     $userData = CUser::GetByID($_SESSION['SESS_AUTH']['USER_ID'])->Fetch();
@@ -108,8 +111,11 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
                         </a>
                     </li>
 
-                    <li class="active"><a href="<?SITE_DIR?>/personal/basket.php">
-                            <img class="img-responsive top-ico2  " src="<?=SITE_TEMPLATE_PATH?>/images/cart512.png" alt="Моя Корзина"/>
+                    <li class="active">
+                        <a href="<?SITE_DIR?>/personal/basket.php" onmouseover="$(this).children('img')[0].src='<?=SITE_TEMPLATE_PATH?>/images/cart512l.png';" onmouseout="$(this).children('img')[0].src='<?=SITE_TEMPLATE_PATH?>/images/cart512.png'">
+                            <img class="img-responsive top-ico2" alt="Моя Корзина" title="Моя Корзина"
+                                 src="<?=SITE_TEMPLATE_PATH?>/images/cart512.png"/>
+
                             <span id="buycart">Корзина</span>
                         </a>
                     </li>
