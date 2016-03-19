@@ -90,20 +90,25 @@ if (!empty($arResult['ITEMS'])) {
                                 <div class="thumbnail bx_catalog_item_container">
                                     <a id="<? echo $arItemIDs['PICT']; ?>" href="<?= $arItem['DETAIL_PAGE_URL']; ?>"><img alt="<?= $imgTitle; ?>" title="<?= $imgTitle; ?>" src="<?= $arItem['PREVIEW_PICTURE']['SRC']; ?>" class="img-responsive img-thumbnail"></a>
                                     <div class="caption">
-                                        <h3 class="text-center iteminfohead sameheight"><?= $arItem["NAME"]?></h3>
+                                        <h3 class="text-center iteminfohead sameheight">
+                                            <a href="<?= $arItem['DETAIL_PAGE_URL']; ?>">
+                                                <?= $arItem["NAME"]?>
+                                            </a>
+                                        </h3>
                                         <p class="text-justify iteminfo2 sameheight">
-                                            <?if (isset($arItem["PROPERTIES"]["CONSIST"]) && ($arItem["PROPERTIES"]["CONSIST"]["VALUE"] != "")):?>
-                                                <b><i><?= $arItem["PROPERTIES"]["CONSIST"]["NAME"]?>:</i></b>
-                                                <?= $arItem["PROPERTIES"]["CONSIST"]["VALUE"]?>.
-                                            <?else:?>
-                                                <?= $arItem["PREVIEW_TEXT"]?>
-                                            <?endif;?>
-                                            <br>
-                                            <?if (isset($arItem["PROPERTIES"]["PORTION"]) && ($arItem["PROPERTIES"]["PORTION"]["VALUE"] != "")):?>
-                                                <b><i><?= $arItem["PROPERTIES"]["PORTION"]["NAME"]?>:</i></b>
-                                                <?= $arItem["PROPERTIES"]["PORTION"]["VALUE"]?> гр.
-                                            <?endif;?>
-
+                                            <a href="<?= $arItem['DETAIL_PAGE_URL']; ?>">
+                                                <?if (isset($arItem["PROPERTIES"]["CONSIST"]) && ($arItem["PROPERTIES"]["CONSIST"]["VALUE"] != "")):?>
+                                                    <b><i><?= $arItem["PROPERTIES"]["CONSIST"]["NAME"]?>:</i></b>
+                                                    <?= $arItem["PROPERTIES"]["CONSIST"]["VALUE"]?>.
+                                                <?else:?>
+                                                    <?= $arItem["PREVIEW_TEXT"]?>
+                                                <?endif;?>
+                                                <br>
+                                                <?if (isset($arItem["PROPERTIES"]["PORTION"]) && ($arItem["PROPERTIES"]["PORTION"]["VALUE"] != "")):?>
+                                                    <b><i><?= $arItem["PROPERTIES"]["PORTION"]["NAME"]?>:</i></b>
+                                                    <?= $arItem["PROPERTIES"]["PORTION"]["VALUE"]?> гр.
+                                                <?endif;?>
+                                            </a>
                                         </p>
                                         <div class="pricer table-responsive sameheight">
 

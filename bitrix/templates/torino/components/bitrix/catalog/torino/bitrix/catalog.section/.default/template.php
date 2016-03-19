@@ -206,12 +206,12 @@ if (!empty($arResult['ITEMS']))
 	}
 	?>
     <div class="iteminfo">
-        <div class="secitemdets iteminfohead">
+        <div class="secitemdets iteminfohead same-height">
             <h4 class="text-center">
                 <a href="<? echo $arItem['DETAIL_PAGE_URL']; ?>"><? echo $productTitle; ?></a>
             </h4>
         </div>
-        <div class="secitemdets secitemtext text-justify">
+        <div class="secitemdets secitemtext text-justify same-height">
             <a href="<? echo $arItem['DETAIL_PAGE_URL']; ?>">
 				<?// echo $arItem['PREVIEW_TEXT']; ?>
 				<?if (isset($arItem["PROPERTIES"]["CONSIST"]) && ($arItem["PROPERTIES"]["CONSIST"]["VALUE"] != "")):?>
@@ -642,6 +642,13 @@ BX.message({
 	BTN_MESSAGE_COMPARE_REDIRECT: '<? echo GetMessageJS('CT_BCS_CATALOG_BTN_MESSAGE_COMPARE_REDIRECT') ?>',
 	SITE_ID: '<? echo SITE_ID; ?>'
 });
+</script>
+
+<script type="text/javascript">
+	$(function(){
+		equalHeights(".same-height.iteminfohead");
+		equalHeights(".same-height.secitemtext");
+	});
 </script>
 
 <?

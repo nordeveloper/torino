@@ -363,7 +363,7 @@ else
             unset($useVoteRating, $useBrands);
             ?>
 
-            <?
+            <?/*
             if (!empty($arResult['DISPLAY_PROPERTIES']) || $arResult['SHOW_OFFERS_PROPS'])
             {
                 ?>
@@ -401,7 +401,7 @@ else
 
 
             <?
-            }
+            }*/
             if ('' != $arResult['PREVIEW_TEXT'])
             {
                 if (
