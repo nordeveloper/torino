@@ -16,7 +16,8 @@ h1, h2, h3, h4, a, p {font-family: "PT Sans Narrow";}/*, Helvetica;}*/
 /*Yellows: ffcc00 vs f2ca30*/
 /* Top Navigation*/
 #topnav{background: #ffcc00; margin-bottom: 0px;}
-#topnav a {background: #ffcc00; font-size: 1.3em; color:#333; font-weight: bold;}
+#topnav a {background: #ffcc00; font-size: 1.3em; color:#000; font-weight: bold;}
+#topnav a:hover {color:#444;}
 #topnav li.active a{background: #ffcc00;}
 #topnav li.active a:hover{background: #dcaf36;}
 
@@ -25,7 +26,7 @@ img.top-ico2 { float:left; width:1.5em; margin:-0.2em 0.5em 0.75em 0; }
 
 #navbar{ float:right;}
 #toppest{ margin: 7.5px 0; float: left;}
-#toppest button{border: 2px solid #464646; margin:4.5px 15px 4.5px 0px; padding:6px 7px;}
+#toppest button{/*border: 2px solid #464646;*/ margin:4.5px 15px 4.5px 0px; padding:6px 7px;}
 #toppest:hover, #toppest:hover button, #toppest:hover a {background: #dcaf36;}
 #toppest span.icon-bar{ background: #464646;}
 
@@ -402,7 +403,7 @@ a.popup-window-close-icon.popup-window-titlebar-close-icon{
     color: #378acb;
 }
 
-/* Order page */
+/* Order page
 [data-target]
 {
     display: none;
@@ -431,4 +432,4 @@ div.reg-info
 div.reg-info span
 {
     font-weight: bold;
-}
+}*/

@@ -73,11 +73,10 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 
             <div class="navbar-header" id="toppest">
                 <span id="menutoggler" class="top-left visible-xs">
-                    <a href="#"><span class="glyphicon glyphicon-th-list"></span>&nbsp;Меню</a>
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainmenu">
+                        <a><span class="glyphicon glyphicon-th-list"></span>&nbsp;Меню</a>
+                    </button>
                 </span>
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainmenu">
-                    <span class="glyphicon glyphicon-th-list"></span>
-                </button>
             </div>
 
             <?/*
