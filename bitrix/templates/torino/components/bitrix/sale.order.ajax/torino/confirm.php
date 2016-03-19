@@ -4,6 +4,15 @@ if (!empty($arResult["ORDER"]))
 {
 	?>
 	<b><?=GetMessage("SOA_TEMPL_ORDER_COMPLETE")?></b><br /><br />
+	<? if (isset($_SESSION['NEW_USER_PASS'])):
+		global $USER;
+	?>
+		<div class="reg-info">
+			Вы были автоматически зарегистрированы на сайте.
+			<div>Логин: <span><?= $USER->GetLogin(); ?></span></div>
+			<div>Пароль: <span><?=$_SESSION['NEW_USER_PASS']?></span></div>
+		</div>
+	<? endif; ?>
 	<table class="sale_order_full_table">
 		<tr>
 			<td>

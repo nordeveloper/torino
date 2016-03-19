@@ -322,7 +322,12 @@ font.text { font-size:1.2em; line-height: 1.5em; font-weight: bold; font-family:
 .secitemdets h4 a { color: #214f77; }
 .secitemdets a:hover {text-decoration: none; color:#337ab7; }
 
-.secitemtext {margin-bottom: 2em;}
+.secitemtext 
+{
+margin-bottom: 2em;
+height: 125px;
+overflow: hidden;
+}
 
 
 .cata3_price { float: right !important;}
@@ -395,4 +400,35 @@ a.popup-window-close-icon.popup-window-titlebar-close-icon{
 
 .popup-window-buttons span:hover{
     color: #378acb;
+}
+
+/* Order page */
+[data-target]
+{
+    display: none;
+}
+
+[data-action]
+{
+    cursor: pointer;
+}
+
+[data-action]:hover
+{
+
+}
+
+[data-action].selected
+{
+    font-weight: bold;
+}
+
+div.reg-info
+{
+    padding-bottom: 20px;
+}
+
+div.reg-info span
+{
+    font-weight: bold;
 }
