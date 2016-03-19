@@ -90,8 +90,8 @@ if (!empty($arResult['ITEMS'])) {
                                 <div class="thumbnail bx_catalog_item_container">
                                     <a id="<? echo $arItemIDs['PICT']; ?>" href="<?= $arItem['DETAIL_PAGE_URL']; ?>"><img alt="<?= $imgTitle; ?>" title="<?= $imgTitle; ?>" src="<?= $arItem['PREVIEW_PICTURE']['SRC']; ?>" class="img-responsive img-thumbnail"></a>
                                     <div class="caption">
-                                        <h3 class="text-center iteminfohead"><?= $arItem["NAME"]?></h3>
-                                        <p class="text-justify iteminfo2">
+                                        <h3 class="text-center iteminfohead sameheight"><?= $arItem["NAME"]?></h3>
+                                        <p class="text-justify iteminfo2 sameheight">
                                             <?if (isset($arItem["PROPERTIES"]["CONSIST"]) && ($arItem["PROPERTIES"]["CONSIST"]["VALUE"] != "")):?>
                                                 <b><i><?= $arItem["PROPERTIES"]["CONSIST"]["NAME"]?>:</i></b>
                                                 <?= $arItem["PROPERTIES"]["CONSIST"]["VALUE"]?>.
@@ -105,7 +105,7 @@ if (!empty($arResult['ITEMS'])) {
                                             <?endif;?>
 
                                         </p>
-                                        <div class="pricer table-responsive">
+                                        <div class="pricer table-responsive sameheight">
 
                                             <div class="bx_catalog_item_controls">
 
@@ -255,6 +255,17 @@ if (!empty($arResult['ITEMS'])) {
             SITE_ID: '<? echo SITE_ID; ?>'
         });
         $(function(){
+        });
+    </script>
+
+
+    <script type="text/javascript">
+        $(function(){
+            var parentBlock = "#myCarousel<?=$arResult['ID']?>";
+            //console.log(parentBlock);
+            equalHeights("h3.sameheight", parentBlock);
+            equalHeights("p.sameheight", parentBlock);
+            //equalHeights("div.sameheight", parentBlock);
         });
     </script>
 

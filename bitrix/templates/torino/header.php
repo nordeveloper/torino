@@ -44,7 +44,8 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
         <link rel="stylesheet" type="text/css" href="<?=SITE_TEMPLATE_PATH?>/css/jquery.bootstrap-touchspin.css" />
         <script type="text/javascript" src="<?=SITE_TEMPLATE_PATH?>/js/jquery.bootstrap-touchspin.js"></script>
 
-
+        <!-- My Small Tools -->
+        <script type="text/javascript" src="<?=SITE_TEMPLATE_PATH?>/js/mytools.js"></script>
 
         <!-- Google Analytics -- >
         <script>
@@ -78,16 +79,6 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
                     </button>
                 </span>
             </div>
-
-            <?/*
-             <div class="navbar-header" id="toppest">
-                <span id="menutoggler" class="top-left visible-xs"><a href="#">Меню</a></span>
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainmenu">
-                    <span class="glyphicon glyphicon-th-list"></span>
-                </button>
-            </div>
-            */?>
-
 
             <div id="navbar">
                 <ul class="nav navbar-nav navbar-right">
