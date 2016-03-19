@@ -12,8 +12,8 @@ if (!CUser::IsAuthorized()):
 				$this = $(this);
 				$('[data-action]').removeClass('selected');
 				$this.addClass('selected');
-				$('[data-target]').slideUp().promise().done(function(){
-					$('[data-target="'+ $this.attr('data-action') +'"]').slideDown();
+				$('[data-action-target]').slideUp().promise().done(function(){
+					$('[data-action-target="'+ $this.attr('data-action') +'"]').slideDown();
 				});
 
 			});
@@ -30,7 +30,7 @@ if (!CUser::IsAuthorized()):
 
 	<div class="divider"></div>
 
-	<div data-target="sign-in">
+	<div data-action-target="sign-in">
 	<?$APPLICATION->IncludeComponent(
 	"bitrix:system.auth.form",
 	"torino",
@@ -42,7 +42,7 @@ if (!CUser::IsAuthorized()):
 	)
 );?>
 	</div>
-	<div data-target="sign-up">
+	<div data-action-target="sign-up">
 	<?$APPLICATION->IncludeComponent(
 	"bitrix:main.register",
 	".default",
@@ -80,7 +80,7 @@ else:
 
 <?endif;?>
 
-<div <? if (!CUser::IsAuthorized()) echo 'data-target="continue"' ?>>
+<div <? if (!CUser::IsAuthorized()) echo 'data-action-target="continue"' ?>>
 <?$APPLICATION->IncludeComponent(
 	"bitrix:sale.order.ajax",
 	"torino",
