@@ -22,14 +22,31 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
                 </div>
                 <div class="col-lg-5 col-md-5 col-sm-4 col-xs-4" id="footersocs">
                     <div class="pull-right" id="socbuttons">
-                        <a class="btn btn-social-icon btn-facebook" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-facebook']);"><span class="fa fa-facebook"></span></a>
-                        <a class="btn btn-social-icon btn-google" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-google']);"><span class="fa fa-google-plus"></span></a>
-                        <a class="btn btn-social-icon btn-instagram" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-instagram']);"><span class="fa fa-instagram"></span></a>
-                        <a class="btn btn-social-icon btn-linkedin" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-linkedin']);"><span class="fa fa-linkedin"></span></a>
-                        <a class="btn btn-social-icon btn-odnoklassniki" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-odnoklassniki']);"><span class="fa fa-odnoklassniki"></span></a>
-                        <a class="btn btn-social-icon btn-pinterest" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-pinterest']);"><span class="fa fa-pinterest"></span></a>
-                        <a class="btn btn-social-icon btn-twitter" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-twitter']);"><span class="fa fa-twitter"></span></a>
-                        <a class="btn btn-social-icon btn-vk" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-vk']);"><span class="fa fa-vk"></span></a>
+                        <?//Sharing?>
+                        <script type="text/javascript" src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js" charset="utf-8"></script>
+                        <script type="text/javascript" src="//yastatic.net/share2/share.js" charset="utf-8"></script>
+                        <div class="ya-share2" data-services="facebook,gplus,twitter,linkedin,lj,vkontakte,odnoklassniki,moimir"></div>
+
+                        <?/*$APPLICATION->IncludeComponent("bitrix:main.share","",Array(
+                                "HIDE" => "N",
+                                "HANDLERS" => array
+                                ("facebook","google","twitter","vk","instagram","odnoklassniki","linkedin","pinterest"),
+                                "PAGE_URL" => "/examples/test.php",
+                                "PAGE_TITLE" => "Моя страница",
+                                "SHORTEN_URL_LOGIN" => "intellesys",
+                                "SHORTEN_URL_KEY" => "R_4bca0bdf9a974defb61fa9582563722b",
+                            )
+                        );*/?>
+                        <?/*
+                            <a class="btn btn-social-icon btn-facebook" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-facebook']);"><span class="fa fa-facebook"></span></a>
+                            <a class="btn btn-social-icon btn-google" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-google']);"><span class="fa fa-google-plus"></span></a>
+                            <a class="btn btn-social-icon btn-instagram" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-instagram']);"><span class="fa fa-instagram"></span></a>
+                            <a class="btn btn-social-icon btn-linkedin" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-linkedin']);"><span class="fa fa-linkedin"></span></a>
+                            <a class="btn btn-social-icon btn-odnoklassniki" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-odnoklassniki']);"><span class="fa fa-odnoklassniki"></span></a>
+                            <a class="btn btn-social-icon btn-pinterest" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-pinterest']);"><span class="fa fa-pinterest"></span></a>
+                            <a class="btn btn-social-icon btn-twitter" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-twitter']);"><span class="fa fa-twitter"></span></a>
+                            <a class="btn btn-social-icon btn-vk" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-vk']);"><span class="fa fa-vk"></span></a>
+                        */?>
                     </div>
                 </div>
             </div>
