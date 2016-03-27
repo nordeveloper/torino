@@ -34,15 +34,23 @@ $APPLICATION->SetTitle("Контакты");?>
         </p>
     </div>
     <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-        <?$APPLICATION->IncludeComponent("bitrix:main.feedback", "torino", Array(
-            "USE_CAPTCHA" => "Y",	// Использовать защиту от автоматических сообщений (CAPTCHA) для неавторизованных пользователей
-                "OK_TEXT" => "Спасибо, ваше сообщение принято.",	// Сообщение, выводимое пользователю после отправки
-                "EMAIL_TO" => "torinopizza@gmail.com",	// E-mail, на который будет отправлено письмо
-                "REQUIRED_FIELDS" => "MESSAGE",	// Обязательные поля для заполнения
-                "EVENT_MESSAGE_ID" => "5",	// Почтовые шаблоны для отправки письма
-            ),
-            false
-        );?>
+        <?$APPLICATION->IncludeComponent(
+	"bitrix:main.feedback", 
+	"torino", 
+	array(
+		"USE_CAPTCHA" => "Y",
+		"OK_TEXT" => "Спасибо, ваше сообщение принято.",
+		"EMAIL_TO" => "rasuldev@gmail.com",
+		"REQUIRED_FIELDS" => array(
+			0 => "MESSAGE",
+		),
+		"EVENT_MESSAGE_ID" => array(
+			0 => "7",
+		),
+		"COMPONENT_TEMPLATE" => "torino"
+	),
+	false
+);?>
     </div>
 </div>
 
