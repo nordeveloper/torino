@@ -2,7 +2,7 @@ var Cart;
 if (!Cart) Cart = {};
 Cart.AddItem = function (id, quantity)
 {
-    var jqxhr = $.post("cart/cart.php",
+    var jqxhr = $.post("/cart/cart.php",
         {'action': 'add2basket', 'id': id, 'quantity': quantity});
     return jqxhr;
 }
